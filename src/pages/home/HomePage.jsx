@@ -10,8 +10,8 @@ export default function HomePage() {
       <HeroSection />
       <StatsSection />
       <LearningSolutions />
-      <OurPartners />
       <Founders />
+      <OurPartners />
     </div>
   );
 }

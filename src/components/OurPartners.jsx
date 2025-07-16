@@ -5,7 +5,6 @@ import { Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-
 const OurPartners = () => {
     const { t, i18n } = useTranslation();
     const swiperContent = [
@@ -31,7 +30,7 @@ const OurPartners = () => {
           '>
                     {t('partners.title')}
                 </h5>
-
+ 
                 <div className='section-container flex flex-col items-center justify-center mt-4 mb-8'>
                     <p className='section-paragraph text-center w-[70%] text-[#888cb7] 
               text-[1.125rem] leading-[1.22rem]
