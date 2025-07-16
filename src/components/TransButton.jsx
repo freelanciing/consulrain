@@ -44,17 +44,19 @@ const TransButton = () => {
       {isDropdownOpen && (
         <div
           className={` absolute ${
-            isArabic ? "right-0" : "left-0"
-          } mt-2 w-48  shadow-lg rounded z-50 bg-pure-white`}
+            isArabic ? "left-0" : "right-0"
+          } w-48  shadow-lg rounded z-50 bg-pure-white`}
+          style={{ padding: "1rem", marginTop: "0.5rem" }}
         >
           {languages.map(({ code, label }) => (
             <button
               key={code}
-              className={`flex items-center gap-2 w-full px-4 py-2 text-left  rounded-lg hover:bg-gray-200  hover:cursor-pointer text-gray-900${
-                code === language ? " font-bold bg-gray-100" : ""
+              className={`flex items-center gap-2 w-full px-4 py-2 text-left   hover:bg-primary-50  hover:cursor-pointer text-gray-900${
+                code === language ? "  bg-primary-50" : ""
               }`}
               onClick={() => handleLanguageChange(code)}
               disabled={code === language}
+              style={{ padding: ".3rem", marginBottom: "0.1rem" }}
             >
               {label}
             </button>

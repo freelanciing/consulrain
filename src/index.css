@@ -19,10 +19,13 @@
   -moz-osx-font-smoothing: grayscale;
 } */
 
-*,
-body {
-  margin: 0;
-  padding: 0;
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+  }
 }
 /* Customized thems */
 
