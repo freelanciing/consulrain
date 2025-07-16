@@ -20,7 +20,7 @@ const TransButton = () => {
   const isArabic = language.toLowerCase().startsWith("ar");
 
   return (
-    <div className="relative">
+    <div className="relative rounded bg-primary-50">
       <button
         className="flex items-center gap-2 text-pure-black hover:cursor-pointer"
         onClick={() => setIsDropdownOpen((open) => !open)}
