@@ -45,5 +45,11 @@
     "learningHours": "ساعات التعلم",
     "employmentRate": "معدل التوظيف",
     "impactedCountries": "البلدان المتأثرة"
+  },
+  "footer": {
+    "contactUs": "تواصل معنا",
+    "company": { "Company": "الشركة" },
+    "ourServices": { "Our Services": "خدماتنا" },
+    "training": { "Training": "التدريب" }
   }
 }
