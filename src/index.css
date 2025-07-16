@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+/* :root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+} */
+
+*,
+body {
+  margin: 0;
+  padding: 0;
+}
+/* Customized thems */
+
+@theme {
+  --font-display: "Satoshi", "sans-serif";
+  /* the system colors */
+  /* Primary */
+  --color-primary-50: oklch(97% 0.014 254.604);
+  --color-primary-100: oklch(93.2% 0.032 255.585);
+  --color-primary-200: oklch(88.2% 0.059 254.128);
+  --color-primary-300: oklch(80.9% 0.105 251.813);
+  --color-primary-400: oklch(70.7% 0.165 254.624);
+  --color-primary-500: oklch(62.3% 0.214 259.815);
+  --color-primary-600: oklch(54.6% 0.245 262.881);
+  --color-primary-700: #004eff; /*this is the main blue */
+
+  --color-primary-800: oklch(42.4% 0.199 265.638);
+  --color-primary-900: oklch(37.9% 0.146 265.522);
+
+  /* Secondary */
+  --color-secondary-50: #fff2db;
+  --color-secondary-100: #ffdfa8;
+  --color-secondary-200: #ffcc75;
+  --color-secondary-300: #ffb941;
+  --color-secondary-400: #ffa70f;
+  --color-secondary-500: #db8b00;
+  --color-secondary-600: #a86a00;
+  --color-secondary-700: #754a00;
+  --color-secondary-800: #422a00;
+  --color-secondary-900: #0f0a00;
+
+  /* Neutral */
+  --color-neutral-50: #f2f2f2;
+  --color-neutral-100: #e3e3e3;
+  --color-neutral-200: #c9c9c9;
+  --color-neutral-300: #b0b0b0;
+  --color-neutral-400: #969696;
+  --color-neutral-500: #7d7d7d;
+  --color-neutral-600: #636363;
+  --color-neutral-700: #4a4a4a;
+  --color-neutral-800: #303030;
+  --color-neutral-900: #171717;
+  /* pastel */
+  --color-pastel-yellow: #ffe66c;
+  --color-pastel-blue: #7fa6ff;
+  --color-pastel-green: #33d7d1;
+
+  /* Pure */
+  --color-pure-white: #ffffff;
+  --color-pure-black: #000000;
+  /* use this for the footer */
+  --color-pure-turquoise: #161925;
+  /* ------ */
+  --ease-fluid: cubic-bezier(0.3, 0, 0, 1);
+  --ease-snappy: cubic-bezier(0.2, 0, 0, 1);
+  /* ... */
+}

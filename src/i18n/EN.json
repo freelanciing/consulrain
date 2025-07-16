@@ -1,0 +1,14 @@
+{
+  "header": {
+    "title": "Welcome",
+    "learning": "Learning",
+    "forLearners": "For Learners",
+    "embeddedSystems": "Embedded Systems",
+    "softwareTesting": "Software Testing",
+    "mobileDevelopment": "Mobile Development",
+    "webDevelopment": "Web Development",
+    "cloudDevops": "Cloud DevOps",
+    "aiDataScience": "AI & Data Science",
+    "cybersecurity": "Cybersecurity"
+  }
+}
