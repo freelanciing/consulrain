@@ -10,5 +10,40 @@
     "cloudDevops": "Cloud DevOps",
     "aiDataScience": "AI & Data Science",
     "cybersecurity": "Cybersecurity"
+  },
+  "navbar": {
+    "learning": "Learning",
+    "hireGraduates": "Hire Our Graduates",
+    "partnership": "Sprints X Microsoft",
+    "login": "Login",
+    "joinUs": "Join Us"
+  },
+  "home": {
+    "pageTitle": "Welcome to the Home Page"
+  },
+  "services": {
+    "title": "Our",
+    "highlightedWord": "Services",
+    "aiStrategy": {
+      "title": "AI Strategy & Consulting",
+      "description": "Comprehensive AI strategy development and implementation consulting to help organizations harness the full potential of artificial intelligence for competitive advantage.",
+      "buttonText": "Get AI Strategy"
+    },
+    "digitalTransformation": {
+      "title": "Digital Transformation",
+      "description": "End-to-end digital transformation services that modernize your business processes, enhance operational efficiency, and drive innovation across your organization.",
+      "buttonText": "Transform Digitally"
+    },
+    "technologySolutions": {
+      "title": "Technology Solutions",
+      "description": "Custom technology solutions and implementation services designed to solve complex business challenges and accelerate your digital journey.",
+      "buttonText": "Explore Solutions"
+    }
+  },
+  "stats": {
+    "satisfiedUsers": "Satisfied Users",
+    "learningHours": "Learning Hours",
+    "employmentRate": "Employment Rate",
+    "impactedCountries": "Impacted Countries"
   }
 }
