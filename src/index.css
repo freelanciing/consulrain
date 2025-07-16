@@ -27,6 +27,46 @@
     scroll-behavior: smooth;
   }
 }
+
+/* Remove default link styling for NavLink components */
+a,
+a:visited,
+a:hover,
+a:active {
+  text-decoration: none !important;
+  color: inherit;
+}
+
+section{
+  margin: 40px 0;
+}
+.learning-card-button {
+  margin-top: 2rem !important;
+}
+.btn-hover-primary:hover {
+  background-color: var(--color-primary-600) !important;
+  color: white !important;
+  border-color: var(--color-primary-600) !important;
+}
+.stats {
+  padding: 30px 0;
+  width: 73%;
+  .imgBg {
+    background-color: var(--color-primary-100);
+    padding: 20px;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .stateNumber {
+    font-size: 50px;
+    font-weight: 700;
+  }
+}
+
 /* Customized thems */
 
 @theme {
