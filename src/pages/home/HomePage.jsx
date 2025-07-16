@@ -1,5 +1,6 @@
 import React from "react";
 import OurPartners from "../../components/OurPartners";
+import Founders from "../../components/Founders";
 
 export default function HomePage() {
   return (
@@ -7,6 +8,7 @@ export default function HomePage() {
       {/* <h1 className="text-4xl font-bold text-green-800">
         Welcome to the Home Page
       </h1> */}
+      <Founders />
       <OurPartners />
     </div>
   );

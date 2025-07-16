@@ -23,7 +23,12 @@ const OurPartners = () => {
         <>
 
             <div className="w-full  flex flex-col items-center justify-center  px-4 md:px-12 lg:px-24 py-8">
-                <h5 className='section-title text-[2rem] text-[#313244] md:h3 mb-8  line-height-[1.8125rem] text-center font-[600] font-family-[Gilroy-SemiBold]'>
+                <h5 className='section-title text-[2rem] 
+          text-[#313244]
+          md:h3 mb-8
+          line-height-[1.8125rem]
+          text-center font-[600] font-family-[Gilroy-SemiBold]
+          '>
                     {t('partners.title')}
                 </h5>
 
@@ -37,7 +42,7 @@ const OurPartners = () => {
                 </div>
 
                 <div className="w-[80%] px-4 md:px-12 lg:px-24 py-8 flex items-center justify-center">
-
+              
                     <Swiper
                         modules={[Pagination, Autoplay]}
                         pagination={{ clickable: true }}
@@ -46,7 +51,7 @@ const OurPartners = () => {
                             disableOnInteraction: false,
                         }}
                         loop={true}
-                        spaceBetween={40}
+                        spaceBetween={40} 
                         breakpoints={{
                             0: { slidesPerView: 2, spaceBetween: 20 },
                             640: { slidesPerView: 3, spaceBetween: 32 },
@@ -57,7 +62,7 @@ const OurPartners = () => {
                         {swiperContent.map((content, index) => (
                             <SwiperSlide
                                 key={index}
-                                className="flex items-center justify-center mb-0"
+                                className="flex items-center justify-center mb-0" 
                             >
                                 <div className="flex items-center justify-center h-[7rem] w-full">
                                     <img
@@ -69,7 +74,7 @@ const OurPartners = () => {
                             </SwiperSlide>
                         ))}
                     </Swiper>
-
+               
                 </div>
             </div>
 

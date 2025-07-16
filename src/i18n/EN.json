@@ -13,6 +13,17 @@
   },
   "partners": {
     "title": "Our Partners",
-    "description":"Over the years, we have proudly partnered with leading organizations across sectors, helping them reach their full potential, transform complexity into clarity, and achieve measurable, lasting impact."
+    "description": "Over the years, we have proudly partnered with leading organizations across sectors, helping them reach their full potential, transform complexity into clarity, and achieve measurable, lasting impact."
+  },
+  "founders": {
+    "title": "Meet The Founders",
+    "founder1": {
+      "name": "Mr. Hussein Afifi",
+      "bio": "With many years of distinguished experience in consulting, training, and auditing, Mr. Hussein brings unparalleled expertise in a wide spectrum of management systems, from quality and food safety to business continuity, risk management, compliance, governance, and medical devices.  He has led initiatives in strategic planning, operational excellence, and process optimization across diverse sectors. His thoughtful approach and deep understanding of organizational dynamics have positioned him as a tusted partner to over 1,000 organizations, spanning government entities, private enterprises, and leading organizations across the region. Mr. Hussein’s legacy defined by precision, impact, and a lasting commitment to empowering organizations to thrive with confidence"
+    },
+    "founder2": {
+      "name": "Dr. Ibtessam",
+      "bio": "holds a degree in Biotechnology and a PhD in Biotechnology,with a specialization in food safety and nutritional sciences. With a strong scientific foundation and applied expertise, she has guided organizations in developing food safety-focused, regulation-compliant systems that prioritize safety and efficiency. Her unique blend of academic rigor and hands-on experience makes her a highly respected consultant and trainer, trusted by both regional and international institutions seeking effective training and compliance solutions. "
+    }
   }
 }
