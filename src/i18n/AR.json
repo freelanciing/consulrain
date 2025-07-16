@@ -10,5 +10,11 @@
     "cloudDevops": "الحوسبة السحابية و DevOps",
     "aiDataScience": "الذكاء الاصطناعي وعلوم البيانات",
     "cybersecurity": "الأمن السيبراني"
+  },
+  "footer": {
+    "contactUs": "تواصل معنا",
+    "company": { "Company": "الشركة" },
+    "ourServices": { "Our Services": "خدماتنا" },
+    "training": { "Training": "التدريب" }
   }
 }
