@@ -157,6 +157,7 @@ export default function Footer() {
                   </a>
                 </li>
               </ul>
+              <div className="border-b-1 border-b-gray-600 h-2"></div>
               <div className="border-1  border-primary-50 rounded-lg p-2 mt-4 h-8">
                 <TransButton />
               </div>
