@@ -10,5 +10,11 @@
     "cloudDevops": "Cloud DevOps",
     "aiDataScience": "AI & Data Science",
     "cybersecurity": "Cybersecurity"
+  },
+  "footer": {
+    "contactUs": "Contact Us",
+    "company": { "Company": "Company" },
+    "ourServices": { "Our Services": "Our Services" },
+    "training": { "Training": "Training" }
   }
 }
