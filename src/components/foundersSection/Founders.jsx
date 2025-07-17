@@ -24,12 +24,8 @@ const Founders = () => {
         <div className="w-full min-h-screen flex flex-col items-center justify-center px-6 md:px-16 lg:px-28 py-20 text-pure-white">
             <div className="w-full flex flex-col items-center justify-center rounded-2xl bg-gradient-to-r from-primary-900 to-primary-700 p-10 space-y-8">
 
-                {/* <h5 className="text-3xl md:text-4xl font-semibold font-[Gilroy-SemiBold] text-center">
-                    {t('founders.title')}
-                </h5> */}
                 <SectionHeader
                     title={t("partners.title")}
-                    highlightedWord={t("services.highlightedWord")}
                     lineColor="#32d8cc"
                 />
                 <Swiper

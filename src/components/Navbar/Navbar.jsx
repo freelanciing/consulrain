@@ -3,15 +3,34 @@ import { useTranslation } from "react-i18next";
 import logo from "../../assets/logo.png";
 import { Link, NavLink } from "react-router-dom";
 import Button from "../Button/Button";
+import LoginModal from "../LoginModal/LoginModal";
+import RegisterModal from "../RegisterModal/RegisterModal";
 import { useState } from "react";
 
 export default function Navbar() {
   const { t } = useTranslation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
+  const [isRegisterModalOpen, setIsRegisterModalOpen] = useState(false);
+
+  const openLoginModal = () => {
+    setIsRegisterModalOpen(false);
+    setIsLoginModalOpen(true);
+  };
+
+  const openRegisterModal = () => {
+    setIsLoginModalOpen(false);
+    setIsRegisterModalOpen(true);
+  };
+
+  const closeAllModals = () => {
+    setIsLoginModalOpen(false);
+    setIsRegisterModalOpen(false);
+  };
 
   return (
     <nav className="bg-primary-50 w-full py-3 fixed top-0 left-0 z-50 shadow-sm mb-5">
-      <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
+      <div className="max-w-8xl mx-auto sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <NavLink className="flex items-center gap-2" to="/">
@@ -51,13 +70,17 @@ export default function Navbar() {
           {/* Right side - Desktop */}
           <div className="hidden lg:flex items-center gap-3">
             <TransButton />
-            <NavLink
-              to="/login"
+            <button
+              onClick={openLoginModal}
               className="text-primary-700 font-bold no-underline hover:text-primary-800 transition-colors duration-200 px-2"
             >
               {t("navbar.login")}
-            </NavLink>
-            <Button label={t("navbar.joinUs")} padding="0 40px" />
+            </button>
+            <Button
+              label={t("navbar.joinUs")}
+              padding="0 40px"
+              handleClick={openRegisterModal}
+            />
           </div>
 
           {/* Mobile menu button */}
@@ -121,20 +144,42 @@ export default function Navbar() {
               </NavLink>
               <div className="flex flex-col space-y-3 pt-4 border-t border-gray-200">
                 <TransButton />
-                <NavLink
-                  to="/login"
-                  className="text-primary-700 font-bold no-underline decoration-none hover:text-primary-800 my-2"
+                <button
+                  onClick={() => {
+                    openLoginModal();
+                    setIsMenuOpen(false);
+                  }}
+                  className="text-primary-700 font-bold no-underline decoration-none hover:text-primary-800 my-2 text-left"
                   style={{ textDecoration: "none" }}
-                  onClick={() => setIsMenuOpen(false)}
                 >
                   {t("navbar.login")}
-                </NavLink>
-                <Button label={t("navbar.joinUs")} />
+                </button>
+                <Button
+                  label={t("navbar.joinUs")}
+                  handleClick={() => {
+                    openRegisterModal();
+                    setIsMenuOpen(false);
+                  }}
+                />
               </div>
             </div>
           </div>
         )}
       </div>
+
+      {/* Login Modal */}
+      <LoginModal
+        isOpen={isLoginModalOpen}
+        onClose={closeAllModals}
+        onSwitchToRegister={openRegisterModal}
+      />
+
+      {/* Register Modal */}
+      <RegisterModal
+        isOpen={isRegisterModalOpen}
+        onClose={closeAllModals}
+        onSwitchToLogin={openLoginModal}
+      />
     </nav>
   );
 }

@@ -4,35 +4,37 @@ import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import { useTranslation } from 'react-i18next';
 const Services = () => {
+    const {t} = useTranslation();
     const services = [
-        { title: 'Supply chain & Logistics', image: './images/ai.svg' },
-        { title: 'Administration', image: './images/marketing.svg' },
-        { title: 'Leadership', image: './images/embeded.svg' },
-        { title: 'Softskills', image: './images/cloud.svg' },
-        { title: 'Production', image: './images/mobile.svg' },
-        { title: 'Quality Control', image: './images/testing.svg' },
-        { title: 'Human Resources', image: './images/web.svg' },
-        { title: 'Information Technology', image: './images/ai.svg' },
-        { title: 'Food Safety', image: './images/embeded.svg' },
-        { title: 'Finance & Accounting', image: './images/cloud.svg' },
-        { title: 'Compliance', image: './images/mobile.svg' },
-        { title: 'Marketing', image: './images/testing.svg' },
-        { title: 'Sales', image: './images/web.svg' },
+        { title: t('ourServices.service1'), image: './images/ai.svg' },
+        { title: t('ourServices.service2'), image: './images/marketing.svg' },
+        { title: t('ourServices.service3'), image: './images/embeded.svg' },
+        { title: t('ourServices.service4'), image: './images/cloud.svg' },
+        { title: t('ourServices.service5'), image: './images/mobile.svg' },
+        { title: t('ourServices.service6'), image: './images/testing.svg' },
+        { title: t('ourServices.service7'), image: './images/web.svg' },
+        { title: t('ourServices.service8'), image: './images/ai.svg' },
+        { title: t('ourServices.service9'), image: './images/embeded.svg' },
+        { title: t('ourServices.service10'), image: './images/cloud.svg' },
+        { title: t('ourServices.service11'), image: './images/mobile.svg' },
+        { title: t('ourServices.service12'), image: './images/testing.svg' },
+        { title: t('ourServices.service13'), image: './images/web.svg' },
     ]
     return (
         <>
             <div className="w-full flex flex-col items-center justify-center px-6 md:px-16 lg:px-28 py-20">
 
                 <div className=' w-full min-h-[60vh] 
-       bg-primary-300 rounded-tr-3xl rounded-bl-3xl p-10
+       bg-primary-300 rounded-tr-3xl rounded-bl-3xl p-8
        
        '>
-                    <h5 className='text-center font-bold text-[2.25rem]'>Our Services </h5>
-                    <div className='w-[80%]  flex items-center justify-center  mx-auto gap-3'>
+                    <h5 className='text-center font-bold text-[2.25rem]'>{t('ourServices.title')}</h5>
+                    <div className='w-[80%]  flex items-center justify-center  mx-auto gap-2'>
                         <Swiper
                             modules={[Pagination, Autoplay, Navigation]}
-                            spaceBetween={30}
+                            spaceBetween={10}
                             slidesPerView={3}
                             loop={true}
                             pagination={{ clickable: true }}

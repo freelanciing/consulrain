@@ -10,33 +10,39 @@ export default function LearningSolutions() {
   const cards = [
     {
       image: "/images/learners.svg",
-      title: t("services.aiStrategy.title"),
-      description: t("services.aiStrategy.description"),
-      buttonText: t("services.aiStrategy.buttonText"),
+      title: t("empower.aiStrategy.title"),
+      description: t("empower.aiStrategy.description"),
+      buttonText: t("empower.aiStrategy.buttonText"),
     },
     {
       image: "/images/businesses.svg",
-      title: t("services.digitalTransformation.title"),
-      description: t("services.digitalTransformation.description"),
-      buttonText: t("services.digitalTransformation.buttonText"),
+      title: t("empower.digitalTransformation.title"),
+      description: t("empower.digitalTransformation.description"),
+      buttonText: t("empower.digitalTransformation.buttonText"),
     },
     {
       image: "/images/governments.svg",
-      title: t("services.technologySolutions.title"),
-      description: t("services.technologySolutions.description"),
-      buttonText: t("services.technologySolutions.buttonText"),
+      title: t("empower.technologySolutions.title"),
+      description: t("empower.technologySolutions.description"),
+      buttonText: t("empower.technologySolutions.buttonText"),
+    },
+    {
+      image: "/images/governments.svg",
+      title: t("empower.technologySolutions.title"),
+      description: t("empower.technologySolutions.description"),
+      buttonText: t("empower.technologySolutions.buttonText"),
     },
   ];
 
   return (
     <section className="py-16 bg-white text-center">
       <SectionHeader
-        title={t("services.title")}
-        highlightedWord={t("services.highlightedWord")}
+        title={t("empower.title")}
+        highlightedWord={t("empower.highlightedWord")}
         lineColor="#FFE047"
       />
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-10 w-75 mx-auto px-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 mt-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {cards.map((card, idx) => (
           <LearningCard key={idx} {...card} />
         ))}
