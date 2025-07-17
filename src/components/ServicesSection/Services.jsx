@@ -31,7 +31,7 @@ const Services = () => {
        
        '>
                     <h5 className='text-center font-bold text-[2.25rem]'>{t('ourServices.title')}</h5>
-                    <div className='w-[80%]  flex items-center justify-center  mx-auto gap-2'>
+                    <div className='w-[80%]  flex items-center justify-center  mx-auto gap-2 mt-[60px]'>
                         <Swiper
                             modules={[Pagination, Autoplay, Navigation]}
                             spaceBetween={10}
