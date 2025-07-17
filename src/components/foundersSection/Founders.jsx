@@ -5,7 +5,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import SectionHeader from './SectionHeader/SectionHeader'
+import SectionHeader from '../SectionHeader/SectionHeader'
 
 const Founders = () => {
     const { t, i18n } = useTranslation();
@@ -20,7 +20,7 @@ const Founders = () => {
         }
     ];
     return (
- 
+
         <div className="w-full min-h-screen flex flex-col items-center justify-center px-6 md:px-16 lg:px-28 py-20 text-pure-white">
             <div className="w-full flex flex-col items-center justify-center rounded-2xl bg-gradient-to-r from-primary-900 to-primary-700 p-10 space-y-8">
 
