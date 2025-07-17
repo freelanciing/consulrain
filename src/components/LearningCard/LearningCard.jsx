@@ -9,7 +9,7 @@ export default function LearningCard({
   return (
     <div className="flex flex-col items-center text-center h-full">
       <div
-        className="bg-gradient-to-br from-blue-600 to-cyan-400 text-white rounded-xl shadow-md w-full h-64 sm:h-80 md:h-96 lg:h-[500px] flex flex-col justify-center flex-grow"
+        className="bg-gradient-to-br from-secondary-700 to-secondary-400 text-white rounded-xl shadow-md w-full h-80 flex flex-col justify-center"
         style={{ padding: "20px" }}
       >
         <img
@@ -25,7 +25,7 @@ export default function LearningCard({
         </p>
       </div>
       <div className="learning-card-button w-full mt-4">
-         <Button
+        <Button
           label={buttonText}
           customClasses="bg-white shadow text-primary-800 border-2 border-primary-800 btn-hover-primary w-full"
           padding="12px 16px "
