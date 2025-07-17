@@ -163,14 +163,14 @@ export default function Footer() {
 
         <div className="border-b-1 border-b-gray-600"></div>
         {/* social media links */}
-        <div className="flex justify-center ">
-          <div className="w-full max-w-7xl pt-12 pb-10 px-4 sm:ps-20  flex flex-wrap gap-6 sm:gap-4 md:gap-16 lg:gap-16 xl:gap-32 items-start md:items-baseline flex-col sm:flex-row content-around justify-between">
+        <div className="flex justify-center bg-primary-50">
+          <div className=" w-full max-w-7xl pt-3 pb-10 px-4 sm:ps-20  flex flex-wrap gap-6 sm:gap-4 md:gap-16 lg:gap-16 xl:gap-32 items-start md:items-baseline flex-col sm:flex-row content-around justify-between">
             {/* Footer Logo and Icons */}
             <div>
               <img
                 loading="lazy"
                 src={logoimg}
-                className="w-40 h-12"
+                className="w-40 h-11"
                 alt="footer logo"
               />
             </div>

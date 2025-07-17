@@ -53,8 +53,8 @@ export default function StatsSection() {
   ];
 
   return (
-    <section className="stats  mx-auto py-16 bg-primary-50 text-center">
-      <div className="max-w-7xl mx-auto">
+    <section className="stats py-16 bg-primary-50 text-center">
+      <div className="max-w-8xl mx-auto  px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
           {stats.map((stat, index) => (
             <div key={index} className="flex items-center gap-6">
@@ -62,10 +62,10 @@ export default function StatsSection() {
                 {stat.icon}
               </div>
               <div className="flex flex-col">
-                <h3 className="text-5xl font-black text-gray-800 leading-tight stateNumber">
+                <h3 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold sm:font-extrabold md:font-black text-gray-800 leading-tight stateNumber">
                   {stat.number}
                 </h3>
-                <p className="text-gray-600 font-semibold text-lg statLabel">
+                <p className="text-sm sm:text-base md:text-lg lg:text-xl font-medium sm:font-semibold text-gray-600 statLabel">
                   {stat.label}
                 </p>
               </div>

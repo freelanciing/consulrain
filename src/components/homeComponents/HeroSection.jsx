@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 const HeroSection = () => {
   const { t } = useTranslation();
   return (
-    <section
+    <dev
       className="px-6 lg:px-24 xl:px-16 2xl:px-48 bg-primary-50 bg-cover w-full mt-0 lg:h-auto py-6 lg:py-5 flex lg:flex-nowrap sm:flex-wrap  flex-row sm:flex-col lg:flex-row justify-start gap-6 md:gap-12 lg:gap-36 items-center"
       style={{
         backgroundImage: "url('/assets/default/img/home/hero-background.jpg')",
@@ -92,7 +92,7 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
-    </section>
+    </dev>
   );
 };
 
