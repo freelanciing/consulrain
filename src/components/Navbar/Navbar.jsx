@@ -70,12 +70,12 @@ export default function Navbar() {
           {/* Right side - Desktop */}
           <div className="hidden lg:flex items-center gap-3">
             <TransButton />
-            <NavLink
-              to="/login"
+            <button
+              onClick={openLoginModal}
               className="text-primary-500 font-bold no-underline hover:text-primary-700 transition-colors duration-200 px-2"
             >
               {t("navbar.login")}
-            </NavLink>
+            </button>
             <Button
               label={t("navbar.joinUs")}
               padding="0 40px"
@@ -144,13 +144,16 @@ export default function Navbar() {
               </NavLink>
               <div className="flex flex-col space-y-3 pt-4 border-t border-gray-200">
                 <TransButton />
-                <NavLink
-                  to="/login"
-                  className="text-primary-500 font-bold no-underline decoration-none hover:text-primary-700 my-2"
+                <button
+                  onClick={() => {
+                    setIsMenuOpen(false);
+                    openLoginModal();
+                  }}
+                  className="text-primary-500 font-bold no-underline decoration-none hover:text-primary-700 my-2 text-left"
                   style={{ textDecoration: "none" }}
                 >
                   {t("navbar.login")}
-                </NavLink>
+                </button>
                 <Button
                   label={t("navbar.joinUs")}
                   handleClick={() => {
