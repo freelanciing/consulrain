@@ -103,17 +103,17 @@ export default function Footer() {
               </p>
               <ul className="cat-dropdown-menu">
                 {[
-                  { label: "About Us", href: "/en-eg/about" },
-                  { label: "Blog", href: "/en-eg/blog" },
+                  { label: "About Us", href: "#" },
+                  { label: "Blog", href: "#" },
                   {
                     label: "Careers",
-                    href: "https://careers.sprints.ai/jobs/Careers",
+                    href: "#",
                     target: "_blank",
                   },
-                  { label: "Terms", href: "/en-eg/pages/terms" },
+                  { label: "Terms", href: "#" },
                   {
                     label: "Privacy Policy",
-                    href: "/en-eg/pages/privacy-policy",
+                    href: "#",
                   },
                 ].map(({ label, href, target }, idx) => (
                   <li key={idx}>
@@ -145,11 +145,7 @@ export default function Footer() {
                   </a>
                 </li>
                 <li>
-                  <a
-                    href="https://maps.app.goo.gl/Hrpf8qG4fdqeGgYX7"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
+                  <a href="#" target="_blank" rel="noopener noreferrer">
                     <p className="p4 leading-4 md:w-32 text-start mx-auto md:mx-0 text-blue-100 w-full mb-3">
                       <span className="font-GilroySemiBold">Netherlands:</span>{" "}
                       Edvard Munchweg...

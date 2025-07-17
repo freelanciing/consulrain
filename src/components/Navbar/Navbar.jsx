@@ -53,7 +53,7 @@ export default function Navbar() {
             <TransButton />
             <NavLink
               to="/login"
-              className="text-primary-700 font-bold no-underline hover:text-primary-800 transition-colors duration-200 px-2"
+              className="text-primary-500 font-bold no-underline hover:text-primary-700 transition-colors duration-200 px-2"
             >
               {t("navbar.login")}
             </NavLink>
@@ -123,7 +123,7 @@ export default function Navbar() {
                 <TransButton />
                 <NavLink
                   to="/login"
-                  className="text-primary-700 font-bold no-underline decoration-none hover:text-primary-800 my-2"
+                  className="text-primary-500 font-bold no-underline decoration-none hover:text-primary-700 my-2"
                   style={{ textDecoration: "none" }}
                   onClick={() => setIsMenuOpen(false)}
                 >
