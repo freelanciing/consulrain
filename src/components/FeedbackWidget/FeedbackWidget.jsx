@@ -1,9 +1,11 @@
 // src/components/FeedbackWidget/FeedbackWidget.jsx
 import React, { useState, useRef } from "react";
 import { useTranslation } from "react-i18next";
+import { useLanguage } from "../../hooks/useLanguage";
 
 export default function FeedbackWidget() {
   const { t } = useTranslation();
+  const { language } = useLanguage();
   const [isOpen, setIsOpen] = useState(false);
   const [selectedType, setSelectedType] = useState(null); // 'idea' or 'issue'
   const [formData, setFormData] = useState({
@@ -121,7 +123,7 @@ export default function FeedbackWidget() {
           className="feedbackBtn bg-gray-700 text-white px-4 py-2 rounded-t-lg shadow-lg hover:bg-gray-800 transition-colors flex items-center gap-2"
         >
           <span>💬</span>
-          <span className="font-medium">Feedback</span>
+          <span className="font-medium">{t("feedback.button")}</span>
         </button>
       </div>
 
@@ -133,7 +135,7 @@ export default function FeedbackWidget() {
               // Type Selection Panel
               <div className="p-4">
                 <div className="flex items-center justify-between mb-4">
-                  <h3 className="font-semibold">Send feedback</h3>
+                  <h3 className="font-semibold">{t("feedback.title")}</h3>
                   <button
                     onClick={() => setIsOpen(false)}
                     className="text-gray-400 hover:text-white"
@@ -151,9 +153,11 @@ export default function FeedbackWidget() {
                       💡
                     </div>
                     <div className="text-left">
-                      <div className="font-medium">Ideas / Feature</div>
+                      <div className="font-medium">
+                        {t("feedback.idea.title")}
+                      </div>
                       <div className="text-sm text-gray-300">
-                        Share your ideas with us
+                        {t("feedback.idea.description")}
                       </div>
                     </div>
                   </button>
@@ -166,9 +170,11 @@ export default function FeedbackWidget() {
                       🐛
                     </div>
                     <div className="text-left">
-                      <div className="font-medium">Issue/Bug</div>
+                      <div className="font-medium">
+                        {t("feedback.issue.title")}
+                      </div>
                       <div className="text-sm text-gray-300">
-                        Report a problem
+                        {t("feedback.issue.description")}
                       </div>
                     </div>
                   </button>
@@ -180,12 +186,14 @@ export default function FeedbackWidget() {
                 <div className="flex items-center justify-between mb-4">
                   <button
                     onClick={() => setSelectedType(null)}
-                    className="text-gray-400 hover:text-white "
+                    className="text-gray-400 hover:text-white fs-2"
                   >
-                    ←
+                    {language === "AR" ? "→" : "←"}
                   </button>
                   <h3 className="font-semibold">
-                    {selectedType === "idea" ? "Ideas / Feature" : "Issue/Bug"}
+                    {selectedType === "idea"
+                      ? t("feedback.idea.title")
+                      : t("feedback.issue.title")}
                   </h3>
                   <button
                     onClick={() => setIsOpen(false)}
@@ -199,7 +207,7 @@ export default function FeedbackWidget() {
                   <div>
                     <input
                       type="text"
-                      placeholder="Full name"
+                      placeholder={t("feedback.form.fullName")}
                       value={formData.fullName}
                       onChange={(e) =>
                         handleInputChange("fullName", e.target.value)
@@ -211,7 +219,7 @@ export default function FeedbackWidget() {
                   <div>
                     <input
                       type="email"
-                      placeholder="Email"
+                      placeholder={t("feedback.form.email")}
                       value={formData.email}
                       onChange={(e) =>
                         handleInputChange("email", e.target.value)
@@ -223,7 +231,7 @@ export default function FeedbackWidget() {
                   <div>
                     <input
                       type="text"
-                      placeholder="Title"
+                      placeholder={t("feedback.form.title")}
                       value={formData.title}
                       onChange={(e) =>
                         handleInputChange("title", e.target.value)
@@ -234,7 +242,7 @@ export default function FeedbackWidget() {
 
                   <div>
                     <textarea
-                      placeholder="Share us more details"
+                      placeholder={t("feedback.form.details")}
                       value={formData.details}
                       onChange={(e) =>
                         handleInputChange("details", e.target.value)
@@ -251,14 +259,20 @@ export default function FeedbackWidget() {
                         onClick={handleScreenshot}
                         className="flex-1 p-2 bg-gray-700 hover:bg-gray-600 rounded transition-colors flex items-center justify-center gap-2"
                       >
-                        📷 <span className="text-sm">Screenshot</span>
+                        📷{" "}
+                        <span className="text-sm">
+                          {t("feedback.form.screenshot")}
+                        </span>
                       </button>
 
                       <button
                         onClick={() => fileInputRef.current?.click()}
                         className="flex-1 p-2 bg-gray-700 hover:bg-gray-600 rounded transition-colors flex items-center justify-center gap-2"
                       >
-                        📎 <span className="text-sm">Upload (2MB)</span>
+                        📎{" "}
+                        <span className="text-sm">
+                          {t("feedback.form.upload")}
+                        </span>
                       </button>
                     </div>
 
@@ -296,7 +310,9 @@ export default function FeedbackWidget() {
                       <div className="flex items-center justify-between p-2 bg-gray-700 rounded">
                         <div className="flex items-center gap-2">
                           <span>📷</span>
-                          <span className="text-sm">screenshot.png</span>
+                          <span className="text-sm">
+                            {t("feedback.files.screenshot")}
+                          </span>
                           <span className="text-xs text-gray-400">
                             {(screenshot.size / 1024).toFixed(1)} KB
                           </span>
@@ -315,7 +331,7 @@ export default function FeedbackWidget() {
                     onClick={handleSubmit}
                     className="w-full p-2 bg-blue-600 hover:bg-blue-700 rounded font-medium transition-colors"
                   >
-                    Submit
+                    {t("feedback.form.submit")}
                   </button>
                 </div>
               </div>
@@ -333,10 +349,10 @@ export default function FeedbackWidget() {
                 <span className="text-2xl">🖥️</span>
               </div>
               <h3 className="text-lg font-semibold text-gray-800 mb-2">
-                Allow ConsulRain.ai to see this tab?
+                {t("feedback.screenshotPermission.title")}
               </h3>
               <p className="text-sm text-gray-600">
-                The site will be able to see the contents of this tab
+                {t("feedback.screenshotPermission.description")}
               </p>
             </div>
 
@@ -345,13 +361,13 @@ export default function FeedbackWidget() {
                 onClick={cancelScreenshot}
                 className="flex-1 px-4 py-2 bg-gray-200 hover:bg-gray-300 rounded font-medium transition-colors"
               >
-                Cancel
+                {t("feedback.screenshotPermission.cancel")}
               </button>
               <button
                 onClick={allowScreenshot}
                 className="flex-1 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded font-medium transition-colors"
               >
-                Allow
+                {t("feedback.screenshotPermission.allow")}
               </button>
             </div>
           </div>

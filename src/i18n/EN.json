@@ -101,5 +101,35 @@
       "name": "Dr. Ibtessam",
       "bio": "holds a degree in Biotechnology and a PhD in Biotechnology,with a specialization in food safety and nutritional sciences. With a strong scientific foundation and applied expertise, she has guided organizations in developing food safety-focused, regulation-compliant systems that prioritize safety and efficiency. Her unique blend of academic rigor and hands-on experience makes her a highly respected consultant and trainer, trusted by both regional and international institutions seeking effective training and compliance solutions. "
     }
+  },
+  "feedback": {
+    "button": "Feedback",
+    "title": "Send feedback",
+    "idea": {
+      "title": "Ideas / Feature",
+      "description": "Share your ideas with us"
+    },
+    "issue": {
+      "title": "Issue/Bug",
+      "description": "Report a problem"
+    },
+    "form": {
+      "fullName": "Full name",
+      "email": "Email",
+      "title": "Title",
+      "details": "Share us more details",
+      "screenshot": "Screenshot",
+      "upload": "Upload (2MB)",
+      "submit": "Submit"
+    },
+    "screenshotPermission": {
+      "title": "Allow ConsulRain.ai to see this tab?",
+      "description": "The site will be able to see the contents of this tab",
+      "cancel": "Cancel",
+      "allow": "Allow"
+    },
+    "files": {
+      "screenshot": "screenshot.png"
+    }
   }
 }
