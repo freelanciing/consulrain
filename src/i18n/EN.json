@@ -22,23 +22,28 @@
   "home": {
     "pageTitle": "Welcome to the Home Page"
   },
-  "services": {
-    "title": "Our",
-    "highlightedWord": "Services",
-    "aiStrategy": {
-      "title": "AI Strategy & Consulting",
-      "description": "Comprehensive AI strategy development and implementation consulting to help organizations harness the full potential of artificial intelligence for competitive advantage.",
-      "buttonText": "Get AI Strategy"
+  "empower": {
+    "title": "WHO WE",
+    "highlightedWord": "EMPOWER?",
+    "corporates": {
+      "title": "Corporates & Enterprises",
+      "description": "We collaborate with large organizations to enhance operational excellence, develop talent capabilities, and navigate transformation through bespoke training programs and strategic consultancy.",
+      "buttonText": "Learn More"
     },
-    "digitalTransformation": {
-      "title": "Digital Transformation",
-      "description": "End-to-end digital transformation services that modernize your business processes, enhance operational efficiency, and drive innovation across your organization.",
-      "buttonText": "Transform Digitally"
-    },
-    "technologySolutions": {
-      "title": "Technology Solutions",
-      "description": "Custom technology solutions and implementation services designed to solve complex business challenges and accelerate your digital journey.",
+    "smes": {
+      "title": "SMEs & Family Businesses",
+      "description": "We empower small and mid-sized enterprises to build resilient foundations, streamline operations, and scale confidently, through tailored solutions.",
       "buttonText": "Explore Solutions"
+    },
+    "government": {
+      "title": "Government & Public Sector",
+      "description": "Partnering with government entities and public institutions, we support the development of human capital, drive performance, and implement forward-looking strategies for sustainable organizational growth.",
+      "buttonText": "Partner With Us"
+    },
+    "industry": {
+      "title": "Industry Leaders & Manufacturing Sectors",
+      "description": "From production to logistics, quality, and supply chain, our technical training and advisory services enable manufacturing departments to optimize performance and uphold the highest industry standards.",
+      "buttonText": "Optimize Now"
     }
   },
   "stats": {
@@ -46,6 +51,35 @@
     "learningHours": "Learning Hours",
     "employmentRate": "Employment Rate",
     "impactedCountries": "Impacted Countries"
+  },
+  "login": {
+    "title": "Log in to your account",
+    "google": "Google",
+    "github": "Github",
+    "linkedin": "LinkedIn",
+    "or": "or",
+    "email": "Email",
+    "emailPlaceholder": "Enter your email",
+    "password": "Password",
+    "passwordPlaceholder": "Enter your password",
+    "loginButton": "Login",
+    "forgotPassword": "Forgot your password?",
+    "noAccount": "Don't have an account?",
+    "joinUs": "Join Us"
+  },
+  "register": {
+    "title": "Join Us",
+    "google": "Google",
+    "github": "Github",
+    "linkedin": "LinkedIn",
+    "or": "or",
+    "email": "Email",
+    "emailPlaceholder": "Enter your email",
+    "agreeToTerms": "I agree to the",
+    "termsAndConditions": "terms and conditions",
+    "joinUsButton": "Join Us",
+    "alreadyHaveAccount": "Already have an account?",
+    "login": "Login"
   },
   "footer": {
     "contactUs": "Contact Us",
@@ -68,5 +102,4 @@
       "bio": "holds a degree in Biotechnology and a PhD in Biotechnology,with a specialization in food safety and nutritional sciences. With a strong scientific foundation and applied expertise, she has guided organizations in developing food safety-focused, regulation-compliant systems that prioritize safety and efficiency. Her unique blend of academic rigor and hands-on experience makes her a highly respected consultant and trainer, trusted by both regional and international institutions seeking effective training and compliance solutions. "
     }
   }
-
 }
