@@ -18,7 +18,7 @@ export default function Footer() {
           <div className="w-full max-w-7xl  px-4 sm:ps-20 pb-20 flex flex-wrap gap-6 sm:gap-4 md:gap-16 lg:gap-16 xl:gap-32 items-start md:items-baseline flex-col sm:flex-row content-around justify-between">
             {/* Journeys Section */}
             <div className="our-program-footer">
-              <p className=" text-start text-white font-bold text-lg mb-6">
+              <p className=" text-start text-white font-bold text-lg mb-6 pl-6">
                 {t("footer.training.Training")}
               </p>
               <ul className="cat-dropdown-menu">
@@ -58,7 +58,7 @@ export default function Footer() {
 
             {/* Our Services */}
             <div className="our-services-footer">
-              <p className=" text-start text-white font-bold text-lg mb-6">
+              <p className=" text-start text-white font-bold text-lg mb-6 pl-6">
                 {t("footer.ourServices.Our Services")}
               </p>
               <ul className="cat-dropdown-menu">
@@ -98,7 +98,7 @@ export default function Footer() {
 
             {/* Company */}
             <div className="our-company-footer">
-              <p className=" text-start text-white font-bold text-lg mb-6">
+              <p className=" text-start text-white font-bold text-lg mb-6 pl-6">
                 {t("footer.company.Company")}
               </p>
               <ul className="cat-dropdown-menu">
@@ -133,7 +133,7 @@ export default function Footer() {
 
             {/* Contact Us */}
             <div className="contact-us-footer">
-              <p className="text-start text-white font-bold text-lg mb-6">
+              <p className="text-start text-white font-bold text-lg mb-6 pl-6">
                 {t("footer.contactUs")}
               </p>
               <ul className="cat-dropdown-menu">
@@ -158,7 +158,7 @@ export default function Footer() {
                 </li>
               </ul>
               <div className="border-b-1 border-b-gray-600 h-2"></div>
-              <div className="border-1  border-primary-50 rounded-lg p-2 mt-4 h-8">
+              <div className="border-1  border-primary-50 rounded-lg  mt-4 ">
                 <TransButton />
               </div>
             </div>
