@@ -27,7 +27,9 @@
     scroll-behavior: smooth;
   }
 }
-
+body{
+  background-color: #E9EEF4 !important;
+}
 /* Remove default link styling for NavLink components */
 a,
 a:visited,
