@@ -107,6 +107,7 @@
     "subtitle": "ConsulRain drives business growth through expert consulting and targeted training in management, finance, and operations.",
     "cta": "Learning Journeys"
   },
+
   "feedback": {
     "button": "Feedback",
     "title": "Send feedback",
@@ -136,5 +137,23 @@
     "files": {
       "screenshot": "screenshot.png"
     }
+
+  },
+  "ourServices":{
+    "title":"Our Services",
+    "service1":"Supply chain & Logistics",
+    "service2":"Sales",
+    "service3":"Marketing",
+    "service4":"Compliance",
+    "service5":"Finance & Accounting",
+    "service6":"Food Safety",
+    "service7":"Information Technology",
+    "service8": "Human Resources",
+    "service9":"Quality Control",
+    "service10":"Production",
+    "service11":"Softskills",
+    "service12":"Leadership",
+    "service13":"Administration"
+
   }
 }

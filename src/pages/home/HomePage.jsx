@@ -1,8 +1,10 @@
 import HeroSection from "../../components/homeComponents/HeroSection";
 import React from "react";
 import { EmpowerSection, StatsSection } from "../../components";
-import OurPartners from "../../components/OurPartners";
-import Founders from "../../components/Founders";
+import Founders from "../../components/foundersSection/Founders";
+import OurPartners from "../../components/PartnersSection/OurPartners";
+import Services from "../../components/ServicesSection/Services";
+
 
 export default function HomePage() {
   return (
@@ -10,6 +12,7 @@ export default function HomePage() {
       <HeroSection />
       <StatsSection />
       <EmpowerSection />
+      <Services />
       <Founders />
       <OurPartners />
     </div>

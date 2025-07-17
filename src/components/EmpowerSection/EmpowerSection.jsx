@@ -1,5 +1,3 @@
-// src/components/EmpowerSection/EmpowerSection.jsx
-import React from "react";
 import { useTranslation } from "react-i18next";
 import LearningCard from "../LearningCard/LearningCard";
 import SectionHeader from "../SectionHeader/SectionHeader";
@@ -52,3 +50,5 @@ export default function EmpowerSection() {
     </section>
   );
 }
+
+
