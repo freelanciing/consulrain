@@ -18,7 +18,7 @@ export default function Footer() {
           <div className="w-full max-w-7xl  px-4 sm:ps-20 pb-20 flex flex-wrap gap-6 sm:gap-4 md:gap-16 lg:gap-16 xl:gap-32 items-start md:items-baseline flex-col sm:flex-row content-around justify-between">
             {/* Journeys Section */}
             <div className="our-program-footer">
-              <p className=" text-start text-white font-bold text-lg mb-6">
+              <p className=" text-start text-white font-bold text-lg mb-6 pl-6">
                 {t("footer.training.Training")}
               </p>
               <ul className="cat-dropdown-menu">
@@ -58,7 +58,7 @@ export default function Footer() {
 
             {/* Our Services */}
             <div className="our-services-footer">
-              <p className=" text-start text-white font-bold text-lg mb-6">
+              <p className=" text-start text-white font-bold text-lg mb-6 pl-6">
                 {t("footer.ourServices.Our Services")}
               </p>
               <ul className="cat-dropdown-menu">
@@ -98,22 +98,22 @@ export default function Footer() {
 
             {/* Company */}
             <div className="our-company-footer">
-              <p className=" text-start text-white font-bold text-lg mb-6">
+              <p className=" text-start text-white font-bold text-lg mb-6 pl-6">
                 {t("footer.company.Company")}
               </p>
               <ul className="cat-dropdown-menu">
                 {[
-                  { label: "About Us", href: "/en-eg/about" },
-                  { label: "Blog", href: "/en-eg/blog" },
+                  { label: "About Us", href: "#" },
+                  { label: "Blog", href: "#" },
                   {
                     label: "Careers",
-                    href: "https://careers.sprints.ai/jobs/Careers",
+                    href: "#",
                     target: "_blank",
                   },
-                  { label: "Terms", href: "/en-eg/pages/terms" },
+                  { label: "Terms", href: "#" },
                   {
                     label: "Privacy Policy",
-                    href: "/en-eg/pages/privacy-policy",
+                    href: "#",
                   },
                 ].map(({ label, href, target }, idx) => (
                   <li key={idx}>
@@ -133,7 +133,7 @@ export default function Footer() {
 
             {/* Contact Us */}
             <div className="contact-us-footer">
-              <p className="text-start text-white font-bold text-lg mb-6">
+              <p className="text-start text-white font-bold text-lg mb-6 pl-6">
                 {t("footer.contactUs")}
               </p>
               <ul className="cat-dropdown-menu">
@@ -145,11 +145,7 @@ export default function Footer() {
                   </a>
                 </li>
                 <li>
-                  <a
-                    href="https://maps.app.goo.gl/Hrpf8qG4fdqeGgYX7"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
+                  <a href="#" target="_blank" rel="noopener noreferrer">
                     <p className="p4 leading-4 md:w-32 text-start mx-auto md:mx-0 text-blue-100 w-full mb-3">
                       <span className="font-GilroySemiBold">Netherlands:</span>{" "}
                       Edvard Munchweg...
@@ -158,7 +154,7 @@ export default function Footer() {
                 </li>
               </ul>
               <div className="border-b-1 border-b-gray-600 h-2"></div>
-              <div className="border-1  border-primary-50 rounded-lg p-2 mt-4 h-8">
+              <div className="border-1  border-primary-50 rounded-lg  mt-4 ">
                 <TransButton />
               </div>
             </div>
@@ -167,14 +163,14 @@ export default function Footer() {
 
         <div className="border-b-1 border-b-gray-600"></div>
         {/* social media links */}
-        <div className="flex justify-center ">
-          <div className="w-full max-w-7xl pt-12 pb-10 px-4 sm:ps-20  flex flex-wrap gap-6 sm:gap-4 md:gap-16 lg:gap-16 xl:gap-32 items-start md:items-baseline flex-col sm:flex-row content-around justify-between">
+        <div className="flex justify-center bg-primary-50">
+          <div className=" w-full max-w-7xl pt-3 pb-10 px-4 sm:ps-20  flex flex-wrap gap-6 sm:gap-4 md:gap-16 lg:gap-16 xl:gap-32 items-start md:items-baseline flex-col sm:flex-row content-around justify-between">
             {/* Footer Logo and Icons */}
             <div>
               <img
                 loading="lazy"
                 src={logoimg}
-                className="w-40 h-12"
+                className="w-40 h-11"
                 alt="footer logo"
               />
             </div>

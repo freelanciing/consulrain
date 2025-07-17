@@ -146,30 +146,96 @@ nav > div {
 @theme {
   --font-display: "Poppins", "sans-serif";
   /* the system colors */
-  /* Primary */
-  --color-primary-50: oklch(97% 0.014 254.604);
-  --color-primary-100: oklch(93.2% 0.032 255.585);
-  --color-primary-200: oklch(88.2% 0.059 254.128);
-  --color-primary-300: oklch(80.9% 0.105 251.813);
-  --color-primary-400: oklch(70.7% 0.165 254.624);
-  --color-primary-500: oklch(62.3% 0.214 259.815);
-  --color-primary-600: oklch(54.6% 0.245 262.881);
-  --color-primary-700: #004eff; /*this is the main blue */
+  /* Primary (Purple-Tinted) */
+  /* --color-primary-50: #eae8f4;
+  --color-primary-100: #cfcbe7;
+  --color-primary-200: #b3acce;
+  --color-primary-300: #8f86b3;
+  --color-primary-400: #6b6098;
+  --color-primary-500: #3b3070; 
+  --color-primary-600: #2f265a;
+  --color-primary-700: #251f45;
+  --color-primary-800: #1b1730;
+  --color-primary-900: #100e1c; */
 
-  --color-primary-800: oklch(42.4% 0.199 265.638);
-  --color-primary-900: oklch(37.9% 0.146 265.522);
+  /* --color-primary-50: #e5f3fb;
+  --color-primary-100: #cce7f7;
+  --color-primary-200: #99cff0;
+  --color-primary-300: #66b7e8;
+  --color-primary-400: #33a0e1;
+  --color-primary-500: #0088d4; 
+  --color-primary-600: #006cb0;
+  --color-primary-700: #00518c;
+  --color-primary-800: #003568;
+  --color-primary-900: #001a44; */
 
-  /* Secondary */
-  --color-secondary-50: #fff2db;
-  --color-secondary-100: #ffdfa8;
-  --color-secondary-200: #ffcc75;
-  --color-secondary-300: #ffb941;
-  --color-secondary-400: #ffa70f;
-  --color-secondary-500: #db8b00;
-  --color-secondary-600: #a86a00;
-  --color-secondary-700: #754a00;
-  --color-secondary-800: #422a00;
-  --color-secondary-900: #0f0a00;
+  /* --color-primary-50: #f5f5f5;
+  --color-primary-100: #e0e0e0;
+  --color-primary-200: #c2c2c2;
+  --color-primary-300: #a3a3a3;
+  --color-primary-400: #858585;
+  --color-primary-500: #666666;
+  --color-primary-600: #4d4d4d;
+  --color-primary-700: #3c3c3c;
+  --color-primary-800: #2b2b2b;
+  /--color-primary-900: #1a1a1a; */
+
+  --color-primary-50: #edf2f4;
+  --color-primary-100: #d6e0e4;
+  --color-primary-200: #b4c5cc;
+  --color-primary-300: #95adb7;
+  --color-primary-400: #768fa1;
+  --color-primary-500: #4f6d7a; /* Main primary */
+  --color-primary-600: #3d5661;
+  --color-primary-700: #2c3e50;
+  --color-primary-800: #1d2a36;
+  --color-primary-900: #11181f;
+
+  /* Secondary (Vibrant Pink) */
+  /* --color-secondary-50: #ffe8fa;
+  --color-secondary-100: #fcd1f5;
+  --color-secondary-200: #f89ffa; 
+  --color-secondary-300: #e870d4;
+  --color-secondary-400: #d243b0;
+  --color-secondary-500: #b82596;
+  --color-secondary-600: #8c1a72;
+  --color-secondary-700: #600f4e;
+  --color-secondary-800: #37062e;
+  --color-secondary-900: #1a0014; */
+
+  /* Secondary (Earthy Teal - #467471) */
+  --color-secondary-50: #e6f1f0;
+  --color-secondary-100: #c5dedd;
+  --color-secondary-200: #a2c9c7;
+  --color-secondary-300: #7db3b0;
+  --color-secondary-400: #5b9f9a;
+  --color-secondary-500: #467471; /* Main secondary */
+  --color-secondary-600: #3c6462;
+  --color-secondary-700: #325554;
+  --color-secondary-800: #284645;
+  --color-secondary-900: #1d3433;
+
+  /* Neutral (Dark & Modern) */
+  --color-neutral-50: #f5f5f5;
+  --color-neutral-100: #e0e0e0;
+  --color-neutral-200: #c2c2c2;
+  --color-neutral-300: #a3a3a3;
+  --color-neutral-400: #858585;
+  --color-neutral-500: #666666;
+  --color-neutral-600: #4d4d4d;
+  --color-neutral-700: #333333;
+  --color-neutral-800: #2b2b2b; /* Deep neutral base */
+  --color-neutral-900: #1a1a1a;
+
+  /* Accent/Supporting (Blue Gray) */
+  --color-accent-100: #d3dde1;
+  --color-accent-200: #b4c5cc;
+  --color-accent-300: #95adb7;
+  --color-accent-400: #76869e;
+  --color-accent-500: #4f6d7a; /* Accent base */
+  --color-accent-600: #3d5661;
+  --color-accent-700: #2c3e50; /* Can double as a neutral or strong text */
+  --color-accent-800: #1d2a36;
 
   /* Neutral */
   --color-neutral-50: #f2f2f2;
@@ -183,15 +249,16 @@ nav > div {
   --color-neutral-800: #303030;
   --color-neutral-900: #171717;
   /* pastel */
-  --color-pastel-yellow: #ffe66c;
-  --color-pastel-blue: #7fa6ff;
-  --color-pastel-green: #33d7d1;
+  --color-pastel-yellow: #f4e3b2;
+  --color-pastel-blue: #b4c9d6;
+  --color-pastel-green: #b2d6cc;
 
   /* Pure */
   --color-pure-white: #ffffff;
   --color-pure-black: #000000;
   /* use this for the footer */
-  --color-pure-turquoise: #161925;
+  --color-pure-turquoise: #2b2b2b;
+  /* --color-pure-turquoise: #161925; */
   /* ------ */
   --ease-fluid: cubic-bezier(0.3, 0, 0, 1);
   --ease-snappy: cubic-bezier(0.2, 0, 0, 1);

@@ -5,17 +5,18 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { useTranslation } from 'react-i18next';
+import SectionHeader from '../SectionHeader/SectionHeader';
 const Services = () => {
     const {t} = useTranslation();
     const services = [
-        { title: t('ourServices.service1'), image: './images/ai.svg' },
+        { title: t('ourServices.service1'), image: './images/embeded.svg' },
         { title: t('ourServices.service2'), image: './images/marketing.svg' },
         { title: t('ourServices.service3'), image: './images/embeded.svg' },
         { title: t('ourServices.service4'), image: './images/cloud.svg' },
         { title: t('ourServices.service5'), image: './images/mobile.svg' },
         { title: t('ourServices.service6'), image: './images/testing.svg' },
         { title: t('ourServices.service7'), image: './images/web.svg' },
-        { title: t('ourServices.service8'), image: './images/ai.svg' },
+        { title: t('ourServices.service8'), image: './images/embeded.svg' },
         { title: t('ourServices.service9'), image: './images/embeded.svg' },
         { title: t('ourServices.service10'), image: './images/cloud.svg' },
         { title: t('ourServices.service11'), image: './images/mobile.svg' },
@@ -30,7 +31,10 @@ const Services = () => {
        bg-primary-300 rounded-tr-3xl rounded-bl-3xl p-8
        
        '>
-                    <h5 className='text-center font-bold text-[2.25rem]'>{t('ourServices.title')}</h5>
+        <SectionHeader 
+                        title={t("ourServices.title")}
+                        lineColor="#32d8cc"
+        />
                     <div className='w-[80%]  flex items-center justify-center  mx-auto gap-2 mt-[60px]'>
                         <Swiper
                             modules={[Pagination, Autoplay, Navigation]}

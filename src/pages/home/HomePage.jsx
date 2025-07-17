@@ -1,9 +1,9 @@
 import HeroSection from "../../components/homeComponents/HeroSection";
 import React from "react";
-import OurPartners from "../../components/PartnersSection/OurPartners";
+import { EmpowerSection, StatsSection } from "../../components";
 import Founders from "../../components/foundersSection/Founders";
+import OurPartners from "../../components/PartnersSection/OurPartners";
 import Services from "../../components/ServicesSection/Services";
-import { EmpowerSection, StatsSection, LearningSolutions } from "../../components";
 
 
 export default function HomePage() {
@@ -11,9 +11,8 @@ export default function HomePage() {
     <div>
       <HeroSection />
       <StatsSection />
-      {/* <LearningSolutions /> */}
-      <Services />
       <EmpowerSection />
+      <Services />
       <Founders />
       <OurPartners />
     </div>
