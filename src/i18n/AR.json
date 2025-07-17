@@ -155,7 +155,6 @@
     "files": {
       "screenshot": "لقطة-شاشة.png"
     }
-
   },
   "ourServices": {
     "title": "خدماتنا",
@@ -172,6 +171,5 @@
     "service11": "المهارات الشخصية",
     "service12": "القيادة",
     "service13": "الإدارة"
-
   }
 }
