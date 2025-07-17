@@ -25,7 +25,7 @@ const Founders = () => {
             <div className="w-full flex flex-col items-center justify-center rounded-2xl bg-gradient-to-r from-primary-900 to-primary-700 p-10 space-y-8">
 
                 <SectionHeader
-                    title={t("partners.title")}
+            title={t("founders.title")}
                     lineColor="#32d8cc"
                 />
                 <Swiper
