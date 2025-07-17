@@ -123,7 +123,7 @@ export default function RegisterModal({ isOpen, onClose, onSwitchToLogin }) {
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-700 focus:border-transparent outline-none transition-all"
               placeholder={t("register.emailPlaceholder")}
               required
             />
@@ -136,14 +136,14 @@ export default function RegisterModal({ isOpen, onClose, onSwitchToLogin }) {
               id="agreeToTerms"
               checked={agreeToTerms}
               onChange={(e) => setAgreeToTerms(e.target.checked)}
-              className="mt-1 w-4 h-4 text-blue-600 border border-gray-300 rounded focus:ring-blue-500"
+              className="mt-1 w-4 h-4 text-brand-blue border border-gray-300 rounded focus:ring-primary-700"
               required
             />
             <label htmlFor="agreeToTerms" className="text-sm text-gray-600">
               {t("register.agreeToTerms")}{" "}
               <a
                 href="#"
-                className="text-blue-600 hover:text-blue-700 underline"
+                className="text-brand-blue hover:text-brand-teal underline"
               >
                 {t("register.termsAndConditions")}
               </a>
@@ -152,7 +152,7 @@ export default function RegisterModal({ isOpen, onClose, onSwitchToLogin }) {
 
           <button
             type="submit"
-            className="w-full bg-blue-600 text-white py-3 px-4 rounded-lg font-semibold hover:bg-blue-700 transition-colors focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 outline-none"
+            className="w-full bg-primary-500 text-white font-bold rounded hover:bg-primary-700 py-3 px-4 transition-colors focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 outline-none"
           >
             {t("register.joinUsButton")}
           </button>
@@ -164,7 +164,7 @@ export default function RegisterModal({ isOpen, onClose, onSwitchToLogin }) {
             {t("register.alreadyHaveAccount")}{" "}
             <button
               onClick={onSwitchToLogin}
-              className="text-blue-600 hover:text-blue-700 font-semibold transition-colors"
+              className="text-brand-blue hover:text-brand-teal font-semibold transition-colors"
             >
               {t("register.login")}
             </button>
