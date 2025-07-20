@@ -329,7 +329,7 @@ export default function FeedbackWidget() {
 
                   <button
                     onClick={handleSubmit}
-                    className="w-full p-2 bg-blue-600 hover:bg-blue-700 rounded font-medium transition-colors"
+                    className="w-full p-2 bg-secondary-400 hover:bg-secondary-600 rounded font-medium transition-colors"
                   >
                     {t("feedback.form.submit")}
                   </button>

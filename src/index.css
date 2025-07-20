@@ -180,16 +180,16 @@ nav > div {
   --color-primary-800: #2b2b2b;
   /--color-primary-900: #1a1a1a; */
 
-  --color-primary-50: #edf2f4;
-  --color-primary-100: #d6e0e4;
-  --color-primary-200: #b4c5cc;
-  --color-primary-300: #95adb7;
-  --color-primary-400: #768fa1;
-  --color-primary-500: #4f6d7a; /* Main primary */
-  --color-primary-600: #3d5661;
-  --color-primary-700: #2c3e50;
-  --color-primary-800: #1d2a36;
-  --color-primary-900: #11181f;
+  --color-primary-50: #e8eef1;
+  --color-primary-100: #cfdde4;
+  --color-primary-200: #a6c1d0;
+  --color-primary-300: #7fa5bb;
+  --color-primary-400: #598aa7;
+  --color-primary-500: #284b63; /* Main primary */
+  --color-primary-600: #1f3c50;
+  --color-primary-700: #182f40;
+  --color-primary-800: #10202e;
+  --color-primary-900: #0a151f;
 
   /* Secondary (Vibrant Pink) */
   /* --color-secondary-50: #ffe8fa;
@@ -257,8 +257,9 @@ nav > div {
   --color-pure-white: #ffffff;
   --color-pure-black: #000000;
   /* use this for the footer */
-  --color-pure-turquoise: #2b2b2b;
+  /* --color-pure-turquoise: #2b2b2b; */
   /* --color-pure-turquoise: #161925; */
+  --color-pure-turquoise: #284b63;
   /* ------ */
   --ease-fluid: cubic-bezier(0.3, 0, 0, 1);
   --ease-snappy: cubic-bezier(0.2, 0, 0, 1);

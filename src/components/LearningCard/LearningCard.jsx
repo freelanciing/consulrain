@@ -9,7 +9,7 @@ export default function LearningCard({
   return (
     <div className="flex flex-col items-center text-center h-full">
       <div
-        className="bg-gradient-to-br from-secondary-700 to-secondary-400 text-white rounded-xl shadow-md w-full h-80 flex flex-col justify-center"
+        className="bg-gradient-to-br from-primary-800 to-primary-500 text-primary-100 rounded-xl shadow-md w-full h-80 flex flex-col justify-center"
         style={{ padding: "20px" }}
       >
         <img
