@@ -5,14 +5,19 @@ import {
 } from "react-router-dom";
 
 import RootLayout from "../layout/RootLayout";
-import { HomePage } from "../pages";
+import { HomePage, SplashPage } from "../pages";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="/" element={<RootLayout />}>
-      {/* Public Routes */}
-      <Route index element={<HomePage />} />
-    </Route>
+    <>
+      {/* Splash Page - No Layout */}
+      <Route path="/" element={<SplashPage />} />
+
+      {/* Main App Routes with Layout */}
+      <Route path="/home" element={<RootLayout />}>
+        <Route index element={<HomePage />} />
+      </Route>
+    </>
   )
 );
 

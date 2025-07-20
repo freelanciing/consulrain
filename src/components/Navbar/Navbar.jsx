@@ -33,7 +33,7 @@ export default function Navbar() {
       <div className="max-w-8xl mx-auto sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <NavLink className="flex items-center gap-2" to="/">
+          <NavLink className="flex items-center gap-2" to="/home">
             <img src={logo} alt="Logo" className="h-15" />
           </NavLink>
 
