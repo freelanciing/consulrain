@@ -7,33 +7,25 @@ export default function EmpowerSection() {
 
   const cards = [
     {
-      // image: "/images/Building-cuate.png",
-      image: "/images/business.svg",
-      // image: "/images/corporates.svg",
+      image: "/images/Building-pana.svg",
       title: t("empower.corporates.title"),
       description: t("empower.corporates.description"),
       buttonText: t("empower.corporates.buttonText"),
     },
     {
-      // image: "/images/At the office-cuate.png",
-      image: "/images/individual.svg",
-      // image: "/images/smes.svg",
+      image: "/images/At the office.svg",
       title: t("empower.smes.title"),
       description: t("empower.smes.description"),
       buttonText: t("empower.smes.buttonText"),
     },
     {
-      // image: "/images/Globalization-pana.png",
-      image: "/images/government (1).svg",
-      // image: "/images/government.svg",
+      image: "/images/Globalization.svg",
       title: t("empower.government.title"),
       description: t("empower.government.description"),
       buttonText: t("empower.government.buttonText"),
     },
     {
-      // image: "/images/Factory-amico.svg",
-      image: "/images/industrial.png",
-      // image: "/images/industry.svg",
+      image: "/images/Factory.svg",
       title: t("empower.industry.title"),
       description: t("empower.industry.description"),
       buttonText: t("empower.industry.buttonText"),
