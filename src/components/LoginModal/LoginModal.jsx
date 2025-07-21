@@ -119,7 +119,7 @@ export default function LoginModal({ isOpen, onClose, onSwitchToRegister }) {
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-700 focus:border-transparent outline-none transition-all"
               placeholder={t("login.emailPlaceholder")}
               required
             />
@@ -133,7 +133,7 @@ export default function LoginModal({ isOpen, onClose, onSwitchToRegister }) {
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-700 focus:border-transparent outline-none transition-all"
               placeholder={t("login.passwordPlaceholder")}
               required
             />
@@ -141,7 +141,7 @@ export default function LoginModal({ isOpen, onClose, onSwitchToRegister }) {
 
           <button
             type="submit"
-            className="w-full bg-blue-600 text-white py-3 px-4 rounded-lg font-semibold hover:bg-blue-700 transition-colors focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 outline-none"
+            className="w-full bg-primary-500 text-white font-bold rounded hover:bg-primary-700 py-3 px-4 transition-colors focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 outline-none"
           >
             {t("login.loginButton")}
           </button>
@@ -151,7 +151,7 @@ export default function LoginModal({ isOpen, onClose, onSwitchToRegister }) {
         <div className="mt-6 text-center space-y-2">
           <a
             href="#"
-            className="text-blue-600 hover:text-blue-700 text-sm transition-colors"
+            className="text-brand-blue hover:text-brand-teal text-sm transition-colors"
           >
             {t("login.forgotPassword")}
           </a>
@@ -159,7 +159,7 @@ export default function LoginModal({ isOpen, onClose, onSwitchToRegister }) {
             {t("login.noAccount")}{" "}
             <button
               onClick={onSwitchToRegister}
-              className="text-blue-600 hover:text-blue-700 font-semibold transition-colors"
+              className="text-brand-blue hover:text-brand-teal font-semibold transition-colors"
             >
               {t("login.joinUs")}
             </button>

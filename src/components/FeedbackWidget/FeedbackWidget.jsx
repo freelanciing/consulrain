@@ -117,7 +117,7 @@ export default function FeedbackWidget() {
   return (
     <>
       {/* Main Feedback Button*/}
-      <div className="fixed bottom-0 left-8 z-50 ">
+      <div className="fixed bottom-0 sm:left-8 md:left-16 z-50 ">
         <button
           onClick={() => setIsOpen(!isOpen)}
           className="feedbackBtn bg-gray-700 text-white px-4 py-2 rounded-t-lg shadow-lg hover:bg-gray-800 transition-colors flex items-center gap-2"
@@ -129,16 +129,18 @@ export default function FeedbackWidget() {
 
       {/* Feedback Panel */}
       {isOpen && (
-        <div className="fixed bottom-16 left-16 z-50">
-          <div className="bg-gray-800 text-white rounded-t-lg shadow-xl w-96 overflow-hidden">
+        <div className="fixed bottom-16 sm:left-8 md:left-16 z-50">
+          <div className="bg-primary-500 text-white rounded-t-lg shadow-xl w-96 overflow-hidden">
             {!selectedType ? (
               // Type Selection Panel
               <div className="p-4">
                 <div className="flex items-center justify-between mb-4">
-                  <h3 className="font-semibold">{t("feedback.title")}</h3>
+                  <h3 className="font-semibold text-white">
+                    {t("feedback.title")}
+                  </h3>
                   <button
                     onClick={() => setIsOpen(false)}
-                    className="text-gray-400 hover:text-white"
+                    className="text-white hover:text-gray-200"
                   >
                     ✕
                   </button>
@@ -147,7 +149,7 @@ export default function FeedbackWidget() {
                 <div className="space-y-3">
                   <button
                     onClick={() => setSelectedType("idea")}
-                    className="w-full p-3 bg-gray-700 hover:bg-gray-600 rounded-lg transition-colors flex items-center gap-3"
+                    className="w-full p-3 bg-primary-700 text-white font-bold rounded hover:bg-primary-800 transition-colors flex items-center gap-3"
                   >
                     <div className="w-8 h-8 bg-blue-500 rounded flex items-center justify-center">
                       💡
@@ -156,7 +158,7 @@ export default function FeedbackWidget() {
                       <div className="font-medium">
                         {t("feedback.idea.title")}
                       </div>
-                      <div className="text-sm text-gray-300">
+                      <div className="text-sm text-blue-100">
                         {t("feedback.idea.description")}
                       </div>
                     </div>
@@ -164,7 +166,7 @@ export default function FeedbackWidget() {
 
                   <button
                     onClick={() => setSelectedType("issue")}
-                    className="w-full p-3 bg-gray-700 hover:bg-gray-600 rounded-lg transition-colors flex items-center gap-3"
+                    className="w-full p-3 bg-primary-700 text-white font-bold rounded hover:bg-primary-800 transition-colors flex items-center gap-3"
                   >
                     <div className="w-8 h-8 bg-red-500 rounded flex items-center justify-center">
                       🐛
@@ -173,7 +175,7 @@ export default function FeedbackWidget() {
                       <div className="font-medium">
                         {t("feedback.issue.title")}
                       </div>
-                      <div className="text-sm text-gray-300">
+                      <div className="text-sm text-blue-100">
                         {t("feedback.issue.description")}
                       </div>
                     </div>
@@ -186,18 +188,18 @@ export default function FeedbackWidget() {
                 <div className="flex items-center justify-between mb-4">
                   <button
                     onClick={() => setSelectedType(null)}
-                    className="text-gray-400 hover:text-white fs-2"
+                    className="text-white hover:text-gray-200 fs-2"
                   >
                     {language === "AR" ? "→" : "←"}
                   </button>
-                  <h3 className="font-semibold">
+                  <h3 className="font-semibold text-white">
                     {selectedType === "idea"
                       ? t("feedback.idea.title")
                       : t("feedback.issue.title")}
                   </h3>
                   <button
                     onClick={() => setIsOpen(false)}
-                    className="text-gray-400 hover:text-white"
+                    className="text-white hover:text-gray-200"
                   >
                     ✕
                   </button>
@@ -212,7 +214,7 @@ export default function FeedbackWidget() {
                       onChange={(e) =>
                         handleInputChange("fullName", e.target.value)
                       }
-                      className="w-full p-2 bg-gray-700 border border-gray-600 rounded text-white placeholder-gray-400"
+                      className="w-full p-2 bg-white border border-gray-300 rounded text-gray-800 placeholder-gray-500"
                     />
                   </div>
 
@@ -224,7 +226,7 @@ export default function FeedbackWidget() {
                       onChange={(e) =>
                         handleInputChange("email", e.target.value)
                       }
-                      className="w-full p-2 bg-gray-700 border border-gray-600 rounded text-white placeholder-gray-400"
+                      className="w-full p-2 bg-white border border-gray-300 rounded text-gray-800 placeholder-gray-500"
                     />
                   </div>
 
@@ -236,7 +238,7 @@ export default function FeedbackWidget() {
                       onChange={(e) =>
                         handleInputChange("title", e.target.value)
                       }
-                      className="w-full p-2 bg-gray-700 border border-gray-600 rounded text-white placeholder-gray-400"
+                      className="w-full p-2 bg-white border border-gray-300 rounded text-gray-800 placeholder-gray-500"
                     />
                   </div>
 
@@ -248,7 +250,7 @@ export default function FeedbackWidget() {
                         handleInputChange("details", e.target.value)
                       }
                       rows={4}
-                      className="w-full p-2 bg-gray-700 border border-gray-600 rounded text-white placeholder-gray-400 resize-none"
+                      className="w-full p-2 bg-white border border-gray-300 rounded text-gray-800 placeholder-gray-500 resize-none"
                     />
                   </div>
 
@@ -257,7 +259,7 @@ export default function FeedbackWidget() {
                     <div className="flex gap-2">
                       <button
                         onClick={handleScreenshot}
-                        className="flex-1 p-2 bg-gray-700 hover:bg-gray-600 rounded transition-colors flex items-center justify-center gap-2"
+                        className="flex-1 p-2 bg-primary-700 text-white font-bold rounded hover:bg-primary-800 transition-colors flex items-center justify-center gap-2"
                       >
                         📷{" "}
                         <span className="text-sm">
@@ -267,7 +269,7 @@ export default function FeedbackWidget() {
 
                       <button
                         onClick={() => fileInputRef.current?.click()}
-                        className="flex-1 p-2 bg-gray-700 hover:bg-gray-600 rounded transition-colors flex items-center justify-center gap-2"
+                        className="flex-1 p-2 bg-primary-700 text-white font-bold rounded hover:bg-primary-800 transition-colors flex items-center justify-center gap-2"
                       >
                         📎{" "}
                         <span className="text-sm">
@@ -286,19 +288,19 @@ export default function FeedbackWidget() {
 
                     {/* Display uploaded file */}
                     {uploadedFile && (
-                      <div className="flex items-center justify-between p-2 bg-gray-700 rounded">
+                      <div className="flex items-center justify-between p-4 bg-white border border-gray-300 rounded min-h-[60px]">
                         <div className="flex items-center gap-2">
                           <span>📄</span>
-                          <span className="text-sm truncate">
+                          <span className="text-sm truncate text-gray-800">
                             {uploadedFile.name}
                           </span>
-                          <span className="text-xs text-gray-400">
+                          <span className="text-xs text-gray-600">
                             {(uploadedFile.size / 1024).toFixed(1)} KB
                           </span>
                         </div>
                         <button
                           onClick={removeFile}
-                          className="text-red-400 hover:text-red-300"
+                          className="text-red-500 hover:text-red-700"
                         >
                           ✕
                         </button>
@@ -307,19 +309,19 @@ export default function FeedbackWidget() {
 
                     {/* Display screenshot */}
                     {screenshot && (
-                      <div className="flex items-center justify-between p-2 bg-gray-700 rounded">
+                      <div className="flex items-center justify-between p-4 bg-white border border-gray-300 rounded min-h-[60px]">
                         <div className="flex items-center gap-2">
                           <span>📷</span>
-                          <span className="text-sm">
+                          <span className="text-sm text-gray-800">
                             {t("feedback.files.screenshot")}
                           </span>
-                          <span className="text-xs text-gray-400">
+                          <span className="text-xs text-gray-600">
                             {(screenshot.size / 1024).toFixed(1)} KB
                           </span>
                         </div>
                         <button
                           onClick={removeScreenshot}
-                          className="text-red-400 hover:text-red-300"
+                          className="text-red-500 hover:text-red-700"
                         >
                           ✕
                         </button>
@@ -365,7 +367,7 @@ export default function FeedbackWidget() {
               </button>
               <button
                 onClick={allowScreenshot}
-                className="flex-1 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded font-medium transition-colors"
+                className="flex-1 px-4 py-2 bg-primary-700 text-white font-bold rounded hover:bg-primary-800 transition-colors"
               >
                 {t("feedback.screenshotPermission.allow")}
               </button>
