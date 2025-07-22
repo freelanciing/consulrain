@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import logoImage from "../../assets/SpinnerLogo.png";
+import logoImage from "../../assets/spinnerLogo.png";
 import "./SplashPage.css";
 
 export default function SplashPage() {
@@ -30,8 +30,14 @@ export default function SplashPage() {
 
         {/* Company Name */}
         <div className="company-info">
-          <h1 className="company-name">ConsulRain</h1>
-          <p className="company-tagline">Transforming Vision into Reality</p>
+          <div className="company-text-container">
+            <h1 className="company-main-name">
+              <span className="consul">Consul</span>
+              <span className="rain">Rain</span>
+              <span className="co"> Co.</span>
+            </h1>
+            <p className="company-subtitle">Consulting and Training</p>
+          </div>
 
           {/* Loading Animation */}
           <div className="loading-animation">
