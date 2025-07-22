@@ -114,7 +114,7 @@
   width: 200px;
   animation: fadeIn 2.5s ease-out 1.5s both;
   margin: 0 auto;
-  margin-left: 25px;
+  margin-left: 70px;
 }
 
 .loading-bar {
@@ -267,6 +267,7 @@
 
   .loading-animation {
     width: 150px;
+    margin-left: 30px;
   }
 }
 

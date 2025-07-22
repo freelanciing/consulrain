@@ -8,6 +8,7 @@ import StatsSection from "./StatsSection/StatsSection";
 import LoginModal from "./LoginModal/LoginModal";
 import RegisterModal from "./RegisterModal/RegisterModal";
 import FeedbackWidget from "./FeedbackWidget/FeedbackWidget";
+import SEO from "./SEO/SEO";
 export {
   Navbar,
   Footer,
@@ -19,4 +20,5 @@ export {
   LoginModal,
   RegisterModal,
   FeedbackWidget,
+  SEO,
 };
