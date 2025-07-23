@@ -141,7 +141,8 @@ nav > div {
 /* Customized thems */
 
 @theme {
-  --font-display: "Noto Sans Bengali", "Hind Siliguri", "Poppins", sans-serif;
+  --font-display: "Bangla MN", "Noto Sans Bengali", "Hind Siliguri", "Poppins",
+    sans-serif;
 
   /* the system colors */
 
