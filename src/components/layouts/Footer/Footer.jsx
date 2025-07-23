@@ -1,4 +1,4 @@
-import logoimg from "../../../assets/logo.png";
+import logoimg from "../../../assets/completeLogo.png";
 import instagram from "../../../assets/Instagram.png";
 import facebook from "../../../assets/Facebook.png";
 import twitter from "../../../assets/Twitter.png";
