@@ -1,9 +1,15 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 @import "tailwindcss";
 
-:root {
-  font-family: "Poppins", ui-sans-serif, system-ui, sans-serif,
-    Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+  }
 }
 /*
   line-height: 1.5;
@@ -18,15 +24,6 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 } */
-
-@layer base {
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
-  }
-}
 
 /* Remove default link styling for NavLink components */
 a,
@@ -144,41 +141,9 @@ nav > div {
 /* Customized thems */
 
 @theme {
-  --font-display: "Poppins", "sans-serif";
+  --font-display: "Noto Sans Bengali", "Hind Siliguri", "Poppins", sans-serif;
+
   /* the system colors */
-  /* Primary (Purple-Tinted) */
-  /* --color-primary-50: #eae8f4;
-  --color-primary-100: #cfcbe7;
-  --color-primary-200: #b3acce;
-  --color-primary-300: #8f86b3;
-  --color-primary-400: #6b6098;
-  --color-primary-500: #3b3070; 
-  --color-primary-600: #2f265a;
-  --color-primary-700: #251f45;
-  --color-primary-800: #1b1730;
-  --color-primary-900: #100e1c; */
-
-  /* --color-primary-50: #e5f3fb;
-  --color-primary-100: #cce7f7;
-  --color-primary-200: #99cff0;
-  --color-primary-300: #66b7e8;
-  --color-primary-400: #33a0e1;
-  --color-primary-500: #0088d4; 
-  --color-primary-600: #006cb0;
-  --color-primary-700: #00518c;
-  --color-primary-800: #003568;
-  --color-primary-900: #001a44; */
-
-  /* --color-primary-50: #f5f5f5;
-  --color-primary-100: #e0e0e0;
-  --color-primary-200: #c2c2c2;
-  --color-primary-300: #a3a3a3;
-  --color-primary-400: #858585;
-  --color-primary-500: #666666;
-  --color-primary-600: #4d4d4d;
-  --color-primary-700: #3c3c3c;
-  --color-primary-800: #2b2b2b;
-  /--color-primary-900: #1a1a1a; */
 
   --color-primary-50: #e8eef1;
   --color-primary-100: #cfdde4;
@@ -190,18 +155,6 @@ nav > div {
   --color-primary-700: #182f40;
   --color-primary-800: #10202e;
   --color-primary-900: #0a151f;
-
-  /* Secondary (Vibrant Pink) */
-  /* --color-secondary-50: #ffe8fa;
-  --color-secondary-100: #fcd1f5;
-  --color-secondary-200: #f89ffa; 
-  --color-secondary-300: #e870d4;
-  --color-secondary-400: #d243b0;
-  --color-secondary-500: #b82596;
-  --color-secondary-600: #8c1a72;
-  --color-secondary-700: #600f4e;
-  --color-secondary-800: #37062e;
-  --color-secondary-900: #1a0014; */
 
   /* Secondary (Earthy Teal - #467471) */
   --color-secondary-50: #e6f1f0;
@@ -257,8 +210,7 @@ nav > div {
   --color-pure-white: #ffffff;
   --color-pure-black: #000000;
   /* use this for the footer */
-  /* --color-pure-turquoise: #2b2b2b; */
-  /* --color-pure-turquoise: #161925; */
+
   --color-pure-turquoise: #284b63;
   /* ------ */
   --ease-fluid: cubic-bezier(0.3, 0, 0, 1);
