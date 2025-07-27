@@ -5,7 +5,8 @@ import {
 } from "react-router-dom";
 
 import RootLayout from "../layout/RootLayout";
-import { HomePage, SplashPage } from "../pages";
+import { HomePage, SplashPage , About } from "../pages";
+
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -16,6 +17,9 @@ const router = createBrowserRouter(
       {/* Main App Routes with Layout */}
       <Route path="/home" element={<RootLayout />}>
         <Route index element={<HomePage />} />
+      </Route>
+      <Route path="/about" element={<RootLayout />} >
+        <Route index element={<About />} />
       </Route>
     </>
   )
