@@ -1,6 +1,9 @@
 import React from 'react'
+import { useTranslation } from "react-i18next";
 
 const Hero = () => {
+        const {t} = useTranslation()
+    
     return (
         <>
             <div className='relative min-h-[50vh] flex items-center justify-center '
@@ -18,7 +21,7 @@ const Hero = () => {
                     fontWeight:700,
                     color:'white'
                 }}
-                >About us </h1>
+                >{t('About.title')}</h1>
             </div>
         </>
     )

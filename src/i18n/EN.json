@@ -11,7 +11,6 @@
     "aiDataScience": "AI & Data Science",
     "cybersecurity": "Cybersecurity"
   },
-
   "navbar": {
     "learning": "Learning",
     "hireGraduates": "Hire Our Graduates",
@@ -83,9 +82,15 @@
   },
   "footer": {
     "contactUs": "Contact Us",
-    "company": { "Company": "Company" },
-    "ourServices": { "Our Services": "Our Services" },
-    "training": { "Training": "Training" }
+    "company": {
+      "Company": "Company"
+    },
+    "ourServices": {
+      "Our Services": "Our Services"
+    },
+    "training": {
+      "Training": "Training"
+    }
   },
   "partners": {
     "title": "Our Partners",
@@ -107,7 +112,6 @@
     "subtitle": "ConsulRain drives business growth through expert consulting and targeted training in management, finance, and operations.",
     "cta": "Learning Journeys"
   },
-
   "feedback": {
     "button": "Feedback",
     "title": "Send feedback",
@@ -137,23 +141,30 @@
     "files": {
       "screenshot": "screenshot.png"
     }
-
   },
-  "ourServices":{
-    "title":"Our Services",
-    "service1":"Supply chain & Logistics",
-    "service2":"Sales",
-    "service3":"Marketing",
-    "service4":"Compliance",
-    "service5":"Finance & Accounting",
-    "service6":"Food Safety",
-    "service7":"Information Technology",
+  "ourServices": {
+    "title": "Our Services",
+    "service1": "Supply chain & Logistics",
+    "service2": "Sales",
+    "service3": "Marketing",
+    "service4": "Compliance",
+    "service5": "Finance & Accounting",
+    "service6": "Food Safety",
+    "service7": "Information Technology",
     "service8": "Human Resources",
-    "service9":"Quality Control",
-    "service10":"Production",
-    "service11":"Softskills",
-    "service12":"Leadership",
-    "service13":"Administration"
-
+    "service9": "Quality Control",
+    "service10": "Production",
+    "service11": "Softskills",
+    "service12": "Leadership",
+    "service13": "Administration"
+  },
+  "About": {
+    "title": "About us",
+    "ourJourney": "Our Journey",
+    "ourJourneyContent": "Our journey as a distinguished regional consultancy and training firm began in Algeria, with our headquarters proudly established in Egypt. For over two decades, we have empowered organizations to find clarity amidst complexity, through thoughtful analysis, precise diagnosis, and bespoke solution design. We do not merely deliver services; we cultivate long-term partnerships, grounded in integrity, excellence, and a shared vision for lasting impact.",
+    "vision": "Our Vision",
+    "ourVisionContent":"To build impactful and enduring partnerships through tailored training and consulting services, empowering decision-makers across sectors to enhance value, drive growth, and foster sustainable development.",
+    "mission": "Our Mission",
+    "ourMissionContent": " Our mission goes beyond just providing training or consultation. We aim to empower organizations and maximum efficiency by integrated solutions."
   }
 }
