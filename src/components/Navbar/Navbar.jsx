@@ -110,6 +110,16 @@ const Navbar = memo(() => {
                   {t("navbar.partnership")}
                 </NavLink>
               </li>
+              <li role="none">
+                <NavLink
+                  to="/about"
+                  className="text-gray-700 hover:text-primary-700 font-bold no-underline transition-colors duration-200 text-black"
+                  role="menuitem"
+                  aria-label="Partnership opportunities"
+                >
+                  {t("navbar.about")}
+                </NavLink>
+              </li>
             </ul>
           </div>
 
