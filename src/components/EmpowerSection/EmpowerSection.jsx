@@ -32,7 +32,6 @@ export default function EmpowerSection() {
     },
   ];
 
-
   return (
     <section className="py-16 bg-white text-center">
       <SectionHeader
@@ -51,5 +50,3 @@ export default function EmpowerSection() {
     </section>
   );
 }
-
-

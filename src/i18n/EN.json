@@ -137,23 +137,62 @@
     "files": {
       "screenshot": "screenshot.png"
     }
-
   },
-  "ourServices":{
-    "title":"Our Services",
-    "service1":"Supply chain & Logistics",
-    "service2":"Sales",
-    "service3":"Marketing",
-    "service4":"Compliance",
-    "service5":"Finance & Accounting",
-    "service6":"Food Safety",
-    "service7":"Information Technology",
+  "ourServices": {
+    "title": "Our Services",
+    "service1": "Supply chain & Logistics",
+    "service2": "Sales",
+    "service3": "Marketing",
+    "service4": "Compliance",
+    "service5": "Finance & Accounting",
+    "service6": "Food Safety",
+    "service7": "Information Technology",
     "service8": "Human Resources",
-    "service9":"Quality Control",
-    "service10":"Production",
-    "service11":"Softskills",
-    "service12":"Leadership",
-    "service13":"Administration"
+    "service9": "Quality Control",
+    "service10": "Production",
+    "service11": "Softskills",
+    "service12": "Leadership",
+    "service13": "Administration"
+  },
+  "training": {
+    "heroSection": {
+      "title": "Empower Your Team Today to Lead Tomorrow",
 
+      "learningHours": "Learning Hours",
+      "professionalsTrained": "Professionals Trained",
+      "industriesServed": "Industries Served",
+      "ctaButton": "Start Now",
+      "firstNumber": "2M+",
+      "secondNumber": "60K+",
+      "thirdNumber": "30+"
+    },
+    "introSection": {
+      "title": "Training That",
+      "description": "At ConsulRain, we believe in the power of training to transform. We go beyond conventional workshops to deliver immersive learning experiences, thoughtfully aligned with your business priorities.",
+      "highlightedWord": "Transforms",
+      "text1": "We go beyond conventional workshops",
+      "text2": "Each training journey follows a meticulously crafted process"
+    },
+    "trainingProcess": {
+      "title": "Meticulously crafted process",
+      "highlightedWord": "Delivers",
+      "steps": {
+        "1": {
+          "title": "Pre-Training Diagnosis",
+          "description": "We start a comprehensive gap analysis to evaluate the current business performance, identifying skills and competences gaps.",
+          "note": "Fees could be applied"
+        },
+        "2": {
+          "title": "Customized Training Programs",
+          "description": "From leadership and soft skills to technical and industry-specific topics, we craft solutions tailored to each department’s needs. Our programs are led by experienced trainers and subject-matter experts who translate knowledge into measurable impact."
+        },
+
+        "3": {
+          "title": "Post-Training Evaluation",
+          "description": "We turn learning impact into numbers. Through tailored metrics and detailed reporting, we measure the impact of each training on performance and productivity, translating progress into trackable numbers.",
+          "note": "Fees could be applied"
+        }
+      }
+    }
   }
 }
