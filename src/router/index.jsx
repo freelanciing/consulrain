@@ -5,7 +5,11 @@ import {
 } from "react-router-dom";
 
 import RootLayout from "../layout/RootLayout";
-import { HomePage, SplashPage , About } from "../pages";
+
+
+
+import { HomePage, SplashPage , About, TrainingPage } from "../pages";
+
 
 
 const router = createBrowserRouter(
@@ -17,10 +21,16 @@ const router = createBrowserRouter(
       {/* Main App Routes with Layout */}
       <Route path="/home" element={<RootLayout />}>
         <Route index element={<HomePage />} />
+        <Route path="training" element={<TrainingPage />} />
       </Route>
+
+
+      {/* Catch-all route for 404 */}
+
       <Route path="/about" element={<RootLayout />} >
         <Route index element={<About />} />
       </Route>
+
     </>
   )
 );
