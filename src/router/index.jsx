@@ -5,7 +5,12 @@ import {
 } from "react-router-dom";
 
 import RootLayout from "../layout/RootLayout";
-import { HomePage, SplashPage, TrainingPage } from "../pages";
+
+
+
+import { HomePage, SplashPage , About, TrainingPage } from "../pages";
+
+
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -19,7 +24,13 @@ const router = createBrowserRouter(
         <Route path="training" element={<TrainingPage />} />
       </Route>
 
+
       {/* Catch-all route for 404 */}
+
+      <Route path="/about" element={<RootLayout />} >
+        <Route index element={<About />} />
+      </Route>
+
     </>
   )
 );

@@ -11,13 +11,13 @@
     "aiDataScience": "AI & Data Science",
     "cybersecurity": "Cybersecurity"
   },
-
   "navbar": {
     "learning": "Learning",
     "hireGraduates": "Hire Our Graduates",
     "partnership": "Sprints X Microsoft",
     "login": "Login",
-    "joinUs": "Join Us"
+    "joinUs": "Join Us",
+    "about":"About us"
   },
   "home": {
     "pageTitle": "Welcome to the Home Page"
@@ -83,9 +83,15 @@
   },
   "footer": {
     "contactUs": "Contact Us",
-    "company": { "Company": "Company" },
-    "ourServices": { "Our Services": "Our Services" },
-    "training": { "Training": "Training" }
+    "company": {
+      "Company": "Company"
+    },
+    "ourServices": {
+      "Our Services": "Our Services"
+    },
+    "training": {
+      "Training": "Training"
+    }
   },
   "partners": {
     "title": "Our Partners",
@@ -107,7 +113,6 @@
     "subtitle": "ConsulRain drives business growth through expert consulting and targeted training in management, finance, and operations.",
     "cta": "Learning Journeys"
   },
-
   "feedback": {
     "button": "Feedback",
     "title": "Send feedback",
@@ -154,6 +159,7 @@
     "service12": "Leadership",
     "service13": "Administration"
   },
+
   "training": {
     "heroSection": {
       "title": "Empower Your Team Today to Lead Tomorrow",
@@ -197,5 +203,15 @@
     "trainingBusinessLines": {
       "title": "Training Business Lines"
     }
+
+  "About": {
+    "title": "About us",
+    "ourJourney": "Our Journey",
+    "ourJourneyContent": "Our journey as a distinguished regional consultancy and training firm began in Algeria, with our headquarters proudly established in Egypt. For over two decades, we have empowered organizations to find clarity amidst complexity, through thoughtful analysis, precise diagnosis, and bespoke solution design. We do not merely deliver services; we cultivate long-term partnerships, grounded in integrity, excellence, and a shared vision for lasting impact.",
+    "vision": "Our Vision",
+    "ourVisionContent":"To build impactful and enduring partnerships through tailored training and consulting services, empowering decision-makers across sectors to enhance value, drive growth, and foster sustainable development.",
+    "mission": "Our Mission",
+    "ourMissionContent": " Our mission goes beyond just providing training or consultation. We aim to empower organizations and maximum efficiency by integrated solutions."
+
   }
 }
