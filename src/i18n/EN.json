@@ -193,6 +193,9 @@
           "note": "Fees could be applied"
         }
       }
+    },
+    "trainingBusinessLines": {
+      "title": "Training Business Lines"
     }
   }
 }
