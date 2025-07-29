@@ -6,11 +6,7 @@ import {
 
 import RootLayout from "../layout/RootLayout";
 
-
-
-import { HomePage, SplashPage , About, TrainingPage } from "../pages";
-
-
+import { HomePage, SplashPage, About, TrainingPage } from "../pages";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -21,16 +17,16 @@ const router = createBrowserRouter(
       {/* Main App Routes with Layout */}
       <Route path="/home" element={<RootLayout />}>
         <Route index element={<HomePage />} />
-        <Route path="training" element={<TrainingPage />} />
       </Route>
-
+      <Route path="training" element={<RootLayout />}>
+        <Route index element={<TrainingPage />} />
+      </Route>
 
       {/* Catch-all route for 404 */}
 
-      <Route path="/about" element={<RootLayout />} >
+      <Route path="/about" element={<RootLayout />}>
         <Route index element={<About />} />
       </Route>
-
     </>
   )
 );

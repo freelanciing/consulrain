@@ -120,6 +120,16 @@ const Navbar = memo(() => {
                   {t("navbar.about")}
                 </NavLink>
               </li>
+              <li role="none">
+                <NavLink
+                  to="/training"
+                  className="text-gray-700 hover:text-primary-700 font-bold no-underline transition-colors duration-200 text-black"
+                  role="menuitem"
+                  aria-label="our training"
+                >
+                  {t("navbar.trainig")}
+                </NavLink>
+              </li>
             </ul>
           </div>
 
@@ -215,6 +225,16 @@ const Navbar = memo(() => {
               >
                 {t("navbar.partnership")}
               </NavLink>
+
+              <NavLink
+                to="/training"
+                className="text-gray-700 hover:text-primary-700 font-bold no-underline transition-colors duration-200 text-black"
+                role="menuitem"
+                aria-label="our training"
+              >
+                {t("navbar.trainig")}
+              </NavLink>
+
               <div className="flex flex-col space-y-3 pt-4 border-t border-gray-200">
                 <TransButton />
                 <button
