@@ -176,34 +176,34 @@ const Navbar = memo(() => {
           >
             <div className="flex flex-col space-y-4">
               <NavLink
-                to="/learning"
+                to="/Home"
                 className="text-gray-700 hover:text-primary-700 font-bold no-underline decoration-none py-2 text-black"
                 style={{ textDecoration: "none" }}
                 onClick={() => setIsMenuOpen(false)}
                 role="menuitem"
-                aria-label="Learning programs and courses"
+                aria-label="Home"
               >
-                {t("navbar.learning")}
+                {t("navbar.Home")}
               </NavLink>
               <NavLink
-                to="/graduates"
+                to="/About"
                 className="text-gray-700 hover:text-primary-700 font-bold no-underline decoration-none py-2 text-black"
                 style={{ textDecoration: "none" }}
                 onClick={() => setIsMenuOpen(false)}
                 role="menuitem"
-                aria-label="Hire our graduates"
+                aria-label="About us"
               >
-                {t("navbar.hireGraduates")}
+                {t("navbar.aboutUs")}
               </NavLink>
               <NavLink
-                to="/partnership"
+                to="/services"
                 className="text-gray-700 hover:text-primary-700 font-bold no-underline decoration-none py-2 text-black"
                 style={{ textDecoration: "none" }}
                 onClick={() => setIsMenuOpen(false)}
                 role="menuitem"
-                aria-label="Partnership opportunities"
+                aria-label="Services"
               >
-                {t("navbar.partnership")}
+                {t("navbar.services")}
               </NavLink>
               <div className="flex flex-col space-y-3 pt-4 border-t border-gray-200">
                 <TransButton />
