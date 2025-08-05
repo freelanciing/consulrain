@@ -127,7 +127,7 @@ const Navbar = memo(() => {
                   role="menuitem"
                   aria-label="our training"
                 >
-                  {t("navbar.trainig")}
+                  {t("navbar.training")}
                 </NavLink>
               </li>
             </ul>

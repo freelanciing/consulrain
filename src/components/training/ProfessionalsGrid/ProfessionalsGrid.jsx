@@ -45,14 +45,14 @@ const ProfessionalsGrid = () => {
         <line
           x1="25%"
           y1="50%"
-          x2="45%"
-          y2="80%"
+          x2="47%"
+          y2="75%"
           stroke="white"
           strokeWidth="1"
         />
         <line
           x1="45%"
-          y1="80%"
+          y1="76%"
           x2="75%"
           y2="50%"
           stroke="white"
@@ -69,38 +69,38 @@ const ProfessionalsGrid = () => {
         <div className="bg-primary-600 rounded-xl w-full h-40 col-start-5 row-start-2"></div>
 
         {/* Person 1 (Top Left) */}
-        <div className="absolute top-[15%] left-[5%] bg-pastel-blue rounded-xl p-2">
+        <div className="absolute top-[10%] left-[2%] md:left-[5%] bg-pastel-blue rounded-xl p-1.5">
           <img
             src="/images/people1.png"
             alt="Young man in white t-shirt"
-            className="w-24 h-32 object-cover rounded"
+            className="w-16 h-20 md:w-20 md:h-28 object-cover rounded"
           />
         </div>
 
         {/* Person 2 (Center Left Woman in Hijab) */}
-        <div className="absolute top-[35%] left-[20%] bg-pastel-green rounded-xl p-2">
+        <div className="absolute top-[40%] left-[10%] md:left-[15%] bg-pastel-green rounded-xl p-1.5">
           <img
             src="/images/people2.png"
             alt="Woman in hijab, green blazer"
-            className="w-32 h-48 object-cover rounded"
+            className="w-20 h-28 md:w-24 md:h-36 object-cover rounded"
           />
         </div>
 
         {/* Person 3 (Center Right Man in Suit) */}
-        <div className="absolute top-[30%] right-[25%] bg-pastel-blue rounded-xl p-2">
+        <div className="absolute top-[35%] right-[15%] md:right-[20%] bg-pastel-blue rounded-xl p-1.5">
           <img
             src="/images/people3.png"
             alt="Man in suit"
-            className="w-36 h-52 object-cover rounded"
+            className="w-24 h-32 md:w-28 md:h-40 object-cover rounded"
           />
         </div>
 
         {/* Person 4 (Top Right Woman in Hijab with Laptop) */}
-        <div className="absolute top-[20%] right-[5%] bg-pastel-green rounded-xl p-2">
+        <div className="absolute top-[10%] right-[2%] md:right-[5%] bg-pastel-green rounded-xl p-1.5">
           <img
             src="/images/people4.png"
             alt="Woman in hijab holding a laptop"
-            className="w-24 h-32 object-cover rounded"
+            className="w-16 h-20 md:w-20 md:h-28 object-cover rounded"
           />
         </div>
       </div>
