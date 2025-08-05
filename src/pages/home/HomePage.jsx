@@ -3,7 +3,7 @@ import React from "react";
 import { EmpowerSection, StatsSection } from "../../components";
 import Founders from "../../components/foundersSection/Founders";
 import OurPartners from "../../components/PartnersSection/OurPartners";
-import Services from "../../components/ServicesSection/Services";
+import Services from "../../components/OurServices/OurServices";
 
 
 export default function HomePage() {

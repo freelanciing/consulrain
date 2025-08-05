@@ -1,10 +1,11 @@
-import React, { useState, useCallback, memo } from "react";
+import React, { useState, useCallback, memo, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { NavLink } from "react-router-dom";
 import TransButton from "../TransButton";
 import logo from "../../assets/logo.png";
 import Button from "../Button/Button";
 import "./Navbar.css";
+import "./DropdownPalette.css";
 
 // Lazy load modal components for better performance
 const LoginModal = React.lazy(() => import("../LoginModal/LoginModal"));
@@ -14,7 +15,19 @@ const RegisterModal = React.lazy(() =>
 
 const Navbar = memo(() => {
   const { t } = useTranslation();
+  // Manually initialize Bootstrap dropdowns after mount
+  useEffect(() => {
+    if (typeof window !== "undefined" && window.bootstrap) {
+      const dropdownTriggerList = [].slice.call(
+        document.querySelectorAll('[data-bs-toggle="dropdown"]')
+      );
+      dropdownTriggerList.forEach(function (dropdownTriggerEl) {
+        new window.bootstrap.Dropdown(dropdownTriggerEl);
+      });
+    }
+  }, []);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
   const [isRegisterModalOpen, setIsRegisterModalOpen] = useState(false);
 
@@ -36,6 +49,19 @@ const Navbar = memo(() => {
   const toggleMobileMenu = useCallback(() => {
     setIsMenuOpen((prev) => !prev);
   }, []);
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    if (!isDropdownOpen) return;
+    function handleClick(e) {
+      const dropdown = document.getElementById("ourServicesDropdownWrapper");
+      if (dropdown && !dropdown.contains(e.target)) {
+        setIsDropdownOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClick);
+    return () => document.removeEventListener("mousedown", handleClick);
+  }, [isDropdownOpen]);
 
   return (
     <nav
@@ -79,43 +105,86 @@ const Navbar = memo(() => {
             <ul className="flex items-center gap-8 m-0" role="menubar">
               <li role="none">
                 <NavLink
-                  to="/learning"
+                  to="/home"
                   className="text-gray-700 hover:text-primary-700 font-bold no-underline transition-colors duration-200 text-black"
                   role="menuitem"
-                  aria-label="Learning programs and courses"
+                  aria-label="home page"
                 >
-                  {t("navbar.learning")}{" "}
-                  <span className="ml-1" aria-hidden="true">
-                    ▼
-                  </span>
+                  {t("navbar.home")}
                 </NavLink>
               </li>
-              <li role="none">
-                <NavLink
-                  to="/graduates"
-                  className="text-gray-700 hover:text-primary-700 font-bold no-underline transition-colors duration-200 text-black"
-                  role="menuitem"
-                  aria-label="Hire our graduates"
+              <li
+                className="nav-item relative"
+                id="ourServicesDropdownWrapper"
+                role="none"
+              >
+                <button
+                  className={`nav-link dropdown-toggle text-gray-700 hover:text-primary-700  fw-bolder no-underline transition-colors duration-200 bg-transparent border-0 ${
+                    isDropdownOpen ? "show" : ""
+                  }`}
+                  id="ourServicesDropdown"
+                  type="button"
+                  aria-expanded={isDropdownOpen}
+                  aria-label="Our services menu"
+                  style={{ boxShadow: "none" }}
+                  onClick={() => setIsDropdownOpen((v) => !v)}
+                  onBlur={(e) => {
+                    // Only close if focus moves outside the dropdown
+                    if (!e.currentTarget.parentNode.contains(e.relatedTarget)) {
+                      setIsDropdownOpen(false);
+                    }
+                  }}
                 >
-                  {t("navbar.hireGraduates")}
-                </NavLink>
-              </li>
-              <li role="none">
-                <NavLink
-                  to="/partnership"
-                  className="text-gray-700 hover:text-primary-700 font-bold no-underline transition-colors duration-200 text-black"
-                  role="menuitem"
-                  aria-label="Partnership opportunities"
+                  {t("navbar.ourServices")}{" "}
+                </button>
+                <ul
+                  className={`custom-dropdown-menu${
+                    isDropdownOpen ? " show" : ""
+                  }`}
+                  aria-labelledby="ourServicesDropdown"
+                  style={{
+                    display: isDropdownOpen ? "block" : "none",
+                    position: "absolute",
+                    top: "100%",
+                    left: 0,
+                    zIndex: 1000,
+                  }}
                 >
-                  {t("navbar.partnership")}
-                </NavLink>
+                  <li>
+                    <NavLink
+                      className="custom-dropdown-item"
+                      to="/training"
+                      onClick={() => setIsDropdownOpen(false)}
+                    >
+                      {t("navbar.training")}
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink
+                      className="custom-dropdown-item"
+                      to="/consultation"
+                      onClick={() => setIsDropdownOpen(false)}
+                    >
+                      {t("navbar.consultation")}
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink
+                      className="custom-dropdown-item"
+                      to="/physability"
+                      onClick={() => setIsDropdownOpen(false)}
+                    >
+                      {t("navbar.physability")}{" "}
+                    </NavLink>
+                  </li>
+                </ul>
               </li>
               <li role="none">
                 <NavLink
                   to="/about"
                   className="text-gray-700 hover:text-primary-700 font-bold no-underline transition-colors duration-200 text-black"
                   role="menuitem"
-                  aria-label="Partnership opportunities"
+                  aria-label="About page"
                 >
                   {t("navbar.about")}
                 </NavLink>
@@ -196,34 +265,34 @@ const Navbar = memo(() => {
           >
             <div className="flex flex-col space-y-4">
               <NavLink
-                to="/learning"
+                to="/Home"
                 className="text-gray-700 hover:text-primary-700 font-bold no-underline decoration-none py-2 text-black"
                 style={{ textDecoration: "none" }}
                 onClick={() => setIsMenuOpen(false)}
                 role="menuitem"
-                aria-label="Learning programs and courses"
+                aria-label="Home"
               >
-                {t("navbar.learning")}
+                {t("navbar.Home")}
               </NavLink>
               <NavLink
-                to="/graduates"
+                to="/About"
                 className="text-gray-700 hover:text-primary-700 font-bold no-underline decoration-none py-2 text-black"
                 style={{ textDecoration: "none" }}
                 onClick={() => setIsMenuOpen(false)}
                 role="menuitem"
-                aria-label="Hire our graduates"
+                aria-label="About us"
               >
-                {t("navbar.hireGraduates")}
+                {t("navbar.aboutUs")}
               </NavLink>
               <NavLink
-                to="/partnership"
+                to="/services"
                 className="text-gray-700 hover:text-primary-700 font-bold no-underline decoration-none py-2 text-black"
                 style={{ textDecoration: "none" }}
                 onClick={() => setIsMenuOpen(false)}
                 role="menuitem"
-                aria-label="Partnership opportunities"
+                aria-label="Services"
               >
-                {t("navbar.partnership")}
+                {t("navbar.services")}
               </NavLink>
 
               <NavLink
