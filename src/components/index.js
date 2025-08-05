@@ -9,6 +9,10 @@ import LoginModal from "./LoginModal/LoginModal";
 import RegisterModal from "./RegisterModal/RegisterModal";
 import FeedbackWidget from "./FeedbackWidget/FeedbackWidget";
 import SEO from "./SEO/SEO";
+import Hero from "./About/Hero";
+import Vision from './About/Vision'
+import OurJourney from './About/OurJourney'
+import Mission from "./About/Mission";
 export {
   Navbar,
   Footer,
@@ -21,4 +25,8 @@ export {
   RegisterModal,
   FeedbackWidget,
   SEO,
+  Hero,
+  OurJourney,
+  Vision,
+  Mission
 };
