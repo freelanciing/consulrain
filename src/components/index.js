@@ -10,9 +10,10 @@ import RegisterModal from "./RegisterModal/RegisterModal";
 import FeedbackWidget from "./FeedbackWidget/FeedbackWidget";
 import SEO from "./SEO/SEO";
 import Hero from "./About/Hero";
-import Vision from './About/Vision'
-import OurJourney from './About/OurJourney'
+import Vision from "./About/Vision";
+import OurJourney from "./About/OurJourney";
 import Mission from "./About/Mission";
+import Services from "./OurServices/OurServices";
 export {
   Navbar,
   Footer,
@@ -28,5 +29,6 @@ export {
   Hero,
   OurJourney,
   Vision,
-  Mission
+  Mission,
+  Services,
 };

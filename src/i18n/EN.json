@@ -12,13 +12,17 @@
     "cybersecurity": "Cybersecurity"
   },
   "navbar": {
+    "home": "Home",
     "learning": "Learning",
     "hireGraduates": "Hire Our Graduates",
     "partnership": "Sprints X Microsoft",
     "login": "Login",
     "joinUs": "Join Us",
     "about": "About us",
-    "trainig": "Training"
+    "ourServices": "Our Services",
+    "training": "Training",
+    "consultation": "Consultation",
+    "physability": "Physability"
   },
   "home": {
     "pageTitle": "Welcome to the Home Page"
@@ -203,9 +207,9 @@
     },
     "trainingBusinessLines": {
       "title": "Training Business Lines"
-    },
-
-    "About": {
+    }
+  },
+  "About": {
       "title": "About us",
       "ourJourney": "Our Journey",
       "ourJourneyContent": "Our journey as a distinguished regional consultancy and training firm began in Algeria, with our headquarters proudly established in Egypt. For over two decades, we have empowered organizations to find clarity amidst complexity, through thoughtful analysis, precise diagnosis, and bespoke solution design. We do not merely deliver services; we cultivate long-term partnerships, grounded in integrity, excellence, and a shared vision for lasting impact.",
@@ -214,5 +218,4 @@
       "mission": "Our Mission",
       "ourMissionContent": " Our mission goes beyond just providing training or consultation. We aim to empower organizations and maximum efficiency by integrated solutions."
     }
-  }
 }
