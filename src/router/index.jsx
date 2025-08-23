@@ -6,7 +6,7 @@ import {
 
 import RootLayout from "../layout/RootLayout";
 
-import { HomePage, SplashPage, About, TrainingPage } from "../pages";
+import { HomePage, SplashPage, About, TrainingPage,ContactUs } from "../pages";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -27,6 +27,9 @@ const router = createBrowserRouter(
       <Route path="/about" element={<RootLayout />}>
         <Route index element={<About />} />
       </Route>
+      <Route path="/contact" element={<RootLayout />}>
+  <Route index element={<ContactUs />} />
+</Route>
     </>
   )
 );

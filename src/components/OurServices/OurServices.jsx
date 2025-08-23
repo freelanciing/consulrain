@@ -4,17 +4,19 @@ import "./OurServices.css";
 const cards = [
   {
     icon: <i className="fas fa-drafting-compass"></i>,
-    title: "Full Discipline Design",
-    front: "Comprehensive design solutions across all project phases",
-    backTitle: "Full Discipline Design",
-    back: "Providing architectural, structural, MEP, and infrastructure design solutions — from concept to detailed design — tailored to meet each project's unique needs.",
+    title: "Training",
+    front:
+      "We go beyond conventional workshops to deliver immersive learning experiences, thoughtfully aligned with your business priorities.",
+    backTitle: "meticulously crafted process",
+    back: "Pre-Training Diagnosis, Customized Training Programs, Post-Training Evaluation.",
   },
   {
     icon: <i className="fas fa-cube"></i>,
-    title: "3D Modeling",
-    front: "High-precision models reflecting real-world conditions",
-    backTitle: "Accurate 3D Modeling",
-    back: "Delivering high-precision models that reflect real-world conditions with millimeter accuracy for perfect project execution.",
+    title: "Consultation",
+    front:
+      "Our consultation is rooted in collaboration and strategic clarity. ",
+    backTitle: "Strategic Consultation Process",
+    back: "In-depth analysis, collaborative planning, and actionable recommendations to help your organization overcome obstacles and achieve long-term growth.",
   },
   {
     icon: <i className="fas fa-search-minus"></i>,
@@ -29,7 +31,7 @@ const OurServices = () => {
   return (
     <section id="offer" className="offer pt-5">
       <div className="container">
-        <div className="offer__text text-center w-50 mx-auto p-5 pb-3">
+        <div className="offer__text text-center w-50 mx-auto">
           <span
             className="fs-6 text-uppercase text--orange mb-3 fw-bold"
             role="heading"
@@ -38,19 +40,19 @@ const OurServices = () => {
             Our Services
           </span>
           <h2 className="fs-1 mb-4 fw-bold">
-            Comprehensive Business & Technology Solutions
+            Empowering Your Team Training & Consultation
           </h2>
           <p className="mb-5 fw-bold pb-0 pb-md-5">
-            We offer a diverse range of services designed to empower your
-            business—from full-discipline design and 3D modeling to advanced
-            clash detection and more. Discover how our expertise can help you
-            achieve your goals efficiently and effectively.
+            Unlock your organization’s full potential with our expert-led
+            training programs and strategic consultation services. We help you
+            build skills, foster collaboration, and develop actionable
+            strategies for sustainable growth and operational excellence.
           </p>
         </div>
         <div className="offer__cards">
           <div className="row row-cols-1 row-cols-sm-2 row-cols-lg-3 gy-4 justify-content-center">
             {cards.map((card, idx) => (
-              <div className="cols" key={idx}>
+              <div className="cols mb-16" key={idx}>
                 <div
                   className="flip-card"
                   aria-label={`${card.title} service card`}
@@ -70,7 +72,6 @@ const OurServices = () => {
                         href="#"
                         aria-label={`3D view of ${card.title}`}
                         className="btn btn-dark text-dark bg-white three-d-btn"
-
                       >
                         LEARN MORE
                       </a>

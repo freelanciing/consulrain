@@ -7,18 +7,18 @@ export default function TrainingProcessSection() {
 
   const trainingCards = [
     {
-      icon: "/images/diagnosis.svg",
+      icon: "/images/diagnosis.png",
       title: t("training.trainingProcess.steps.1.title"),
       description: t("training.trainingProcess.steps.1.description"),
       note: t("training.trainingProcess.steps.1.note"),
     },
     {
-      icon: "/images/custom-training.svg",
+      icon: "/images/custom-training.png",
       title: t("training.trainingProcess.steps.2.title"),
       description: t("training.trainingProcess.steps.2.description"),
     },
     {
-      icon: "/images/evaluation.svg",
+      icon: "/images/evaluation.png",
       title: t("training.trainingProcess.steps.3.title"),
       description: t("training.trainingProcess.steps.3.description"),
       note: t("training.trainingProcess.steps.3.note"),

@@ -188,7 +188,17 @@ const Navbar = memo(() => {
                 >
                   {t("navbar.about")}
                 </NavLink>
-              </li>     
+              </li>
+              <li role="none">
+                <NavLink
+                  to="/contact"
+                  className="text-gray-700 hover:text-primary-700 font-bold no-underline transition-colors duration-200 text-black"
+                  role="menuitem"
+                  aria-label="Contact Us page"
+                >
+                  Contact Us
+                </NavLink>
+              </li>
             </ul>
           </div>
 
@@ -262,7 +272,7 @@ const Navbar = memo(() => {
                 role="menuitem"
                 aria-label="Home"
               >
-                {t("navbar.Home")}
+                {t("navbar.home")}
               </NavLink>
               <NavLink
                 to="/About"
@@ -272,7 +282,7 @@ const Navbar = memo(() => {
                 role="menuitem"
                 aria-label="About us"
               >
-                {t("navbar.aboutUs")}
+                {t("navbar.about")}
               </NavLink>
               <NavLink
                 to="/services"
@@ -282,7 +292,7 @@ const Navbar = memo(() => {
                 role="menuitem"
                 aria-label="Services"
               >
-                {t("navbar.services")}
+                {t("navbar.ourServices")}
               </NavLink>
 
               <NavLink
@@ -291,7 +301,7 @@ const Navbar = memo(() => {
                 role="menuitem"
                 aria-label="our training"
               >
-                {t("navbar.trainig")}
+                {t("navbar.training")}
               </NavLink>
 
               <div className="flex flex-col space-y-3 pt-4 border-t border-gray-200">
