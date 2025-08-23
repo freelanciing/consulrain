@@ -151,9 +151,10 @@ nav > div {
 
 @theme {
   /* --font-display: "Glory", sans-serif; */
-  /* --font-display: "Montserrat", sans-serif; */
-  --font-display: "Bangla MN", "Noto Sans Bengali", "Hind Siliguri", "Poppins",
-    sans-serif;
+
+  --font-display: "Montserrat", sans-serif;
+  /* --font-display: "Bangla MN", "Noto Sans Bengali", "Hind Siliguri", "Poppins",
+    sans-serif; */
 
   /* the system colors */
 
