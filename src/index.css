@@ -1,8 +1,30 @@
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"); */
 @import "tailwindcss";
+@font-face {
+  font-family: 'Dimashq';
+  src: url('./assets/fonts/Dimashq.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
 
+@font-face {
+  font-family: 'Uyghur';
+  src: url('./assets/fonts/خط-حسن-الجزائر-رفيع.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+html, body {
+  font-family: 'Dimashq', sans-serif !important;
+}
+
+html[dir="rtl"], html[lang="ar"], body[dir="rtl"], body:lang(ar) {
+  font-family: 'Uyghur', sans-serif !important;
+}
 @layer base {
   * {
     margin: 0;
@@ -142,8 +164,8 @@ nav > div {
 /* Customized thems */
 
 @theme {
-  --font-display: "Bangla MN", "Noto Sans Bengali", "Hind Siliguri", "Poppins",
-    sans-serif;
+  /* --font-display: "Bangla MN", "Noto Sans Bengali", "Hind Siliguri", "Poppins",
+    sans-serif; */
 
   /* the system colors */
 
@@ -219,3 +241,5 @@ nav > div {
   --ease-snappy: cubic-bezier(0.2, 0, 0, 1);
   /* ... */
 }
+
+

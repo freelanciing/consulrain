@@ -46,6 +46,9 @@ export default {
         'gradient-brand-subtle': 'linear-gradient(135deg, #F8FAFC 0%, #E2E8F0 100%)',
       }
     },
+      fontFamily: {
+        sans: ['Dimashq', 'sans-serif'],
+      },
   },
   plugins: [],
 }
