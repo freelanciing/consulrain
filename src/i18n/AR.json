@@ -1,3 +1,4 @@
+
 {
   "header": {
     "title": "مرحبًا",
@@ -19,12 +20,11 @@
     "login": "تسجيل الدخول",
     "joinUs": "انضم إلينا",
     "about": "نبذة عنا",
-    "trainig": "التدريب",
-
-    "ourServices": "خدماتنا",
+    "contact": "اتصل بنا",
     "training": "التدريب",
+    "ourServices": "خدماتنا",
     "consultation": "الاستشارات",
-    "physability": "القدرات البدنية"
+    "feasibilityStudy": "دراسة الجدوى"
   },
   "home": {
     "pageTitle": "مرحباً بكم في الصفحة الرئيسية"
@@ -81,12 +81,15 @@
     "messagePlaceholder": "رسالتك",
     "submitButton": "إرسال",
     "successMessage": "شكرًا لتواصلك معنا! سنرد عليك في أقرب وقت ممكن.",
-    "location": "الموقع:",
-    "locationValue": "الرياض، المملكة العربية السعودية",
+    "locationEgypt": "موقع مصر:",
+    "locationEgyptValue": "ويست 11 مول - السادس من أكتوبر، الجيزة - مصر",
+    "locationAlgeria": "موقع الجزائر:",
+    "locationAlgeriaValue": "حي 500 شقة - البليدة - الجزائر",
     "email": "البريد الإلكتروني:",
     "emailValue": "info@consulrain.com",
-    "phone": "الهاتف:",
-    "phoneValue": "+966 555 123 456"
+    "phone": " :الهاتف",
+    "phoneValue": "+20 155 620 5466",
+    "clickToShowOtherLocation": "اضغط لعرض الموقع الآخر"
   },
   "stats": {
     "satisfiedUsers": "المستخدمون الراضون",

@@ -19,11 +19,11 @@
     "login": "Login",
     "joinUs": "Join Us",
     "about": "About us",
+    "contact": "Contact Us",
     "training": "Training",
     "ourServices": "Our Services",
-
     "consultation": "Consultation",
-    "physability": "Physability"
+    "feasibilityStudy": "Feasibility Study"
   },
   "home": {
     "pageTitle": "Welcome to the Home Page"
@@ -61,12 +61,15 @@
     "messagePlaceholder": "Message",
     "submitButton": "SUBMIT",
     "successMessage": "Thank you for contacting us! We will respond as soon as possible.",
-    "location": "Location:",
-    "locationValue": "Riyadh, Saudi Arabia",
+    "locationEgypt": "Egypt Location:",
+    "locationEgyptValue": "West 11 Mall - 6th October Giza-Egypt",
+    "locationAlgeria": "Algeria Location:",
+    "locationAlgeriaValue": "Cite 500 Apartment - Bilda -Algeria",
     "email": "Email:",
     "emailValue": "info@consulrain.com",
     "phone": "Phone:",
-    "phoneValue": "+966 555 123 456"
+    "phoneValue": "+20 155 620 5466",
+    "clickToShowOtherLocation": "Click to show other location"
   },
   "stats": {
     "satisfiedUsers": "Satisfied Users",

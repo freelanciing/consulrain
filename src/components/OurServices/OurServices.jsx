@@ -20,7 +20,7 @@ const cards = [
   },
   {
     icon: <i className="fas fa-search-minus"></i>,
-    title: "Clash Detection",
+    title: "Feasibility study",
     front: "Identifying design conflicts before construction",
     backTitle: "Efficient Clash Detection",
     back: "Identifying and resolving design conflicts before construction begins, saving time and reducing costly on-site modifications.",

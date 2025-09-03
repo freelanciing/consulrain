@@ -6,7 +6,15 @@ import {
 
 import RootLayout from "../layout/RootLayout";
 
-import { HomePage, SplashPage, About, TrainingPage,ContactUs } from "../pages";
+import {
+  HomePage,
+  SplashPage,
+  About,
+  TrainingPage,
+  ContactUs,
+  ConsultationPage,
+  FeasibilityStudyPage,
+} from "../pages";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -21,6 +29,12 @@ const router = createBrowserRouter(
       <Route path="training" element={<RootLayout />}>
         <Route index element={<TrainingPage />} />
       </Route>
+      <Route path="consultation" element={<RootLayout />}>
+        <Route index element={<ConsultationPage />} />
+      </Route>
+      <Route path="feasibility-study" element={<RootLayout />}>
+        <Route index element={<FeasibilityStudyPage />} />
+      </Route>
 
       {/* Catch-all route for 404 */}
 
@@ -28,8 +42,8 @@ const router = createBrowserRouter(
         <Route index element={<About />} />
       </Route>
       <Route path="/contact" element={<RootLayout />}>
-  <Route index element={<ContactUs />} />
-</Route>
+        <Route index element={<ContactUs />} />
+      </Route>
     </>
   )
 );

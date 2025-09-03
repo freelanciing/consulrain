@@ -14,7 +14,8 @@ const RegisterModal = React.lazy(() =>
 );
 
 const Navbar = memo(() => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const isRTL = i18n.dir() === "rtl";
   // Manually initialize Bootstrap dropdowns after mount
   useEffect(() => {
     if (typeof window !== "undefined" && window.bootstrap) {
@@ -89,7 +90,7 @@ const Navbar = memo(() => {
               <div className="brand-name" aria-label="ConsulRain Co.">
                 <span className="consul-nav">Consul</span>
                 <span className="rain-nav">Rain</span>
-                <span className="co-nav"> Co.</span>
+                <span className="co-nav"> Co</span>
               </div>
               <div
                 className="brand-tagline"
@@ -106,7 +107,7 @@ const Navbar = memo(() => {
               <li role="none">
                 <NavLink
                   to="/home"
-                  className="text-gray-700 hover:text-primary-700 font-bold no-underline transition-colors duration-200 text-black"
+                  className=" text-gray-700 hover:text-primary-700 font-bold no-underline transition-colors duration-200 text-black"
                   role="menuitem"
                   aria-label="home page"
                 >
@@ -171,10 +172,10 @@ const Navbar = memo(() => {
                   <li>
                     <NavLink
                       className="custom-dropdown-item"
-                      to="/physability"
+                      to="/feasibility-study"
                       onClick={() => setIsDropdownOpen(false)}
                     >
-                      {t("navbar.physability")}{" "}
+                      {t("navbar.feasibilityStudy")}{" "}
                     </NavLink>
                   </li>
                 </ul>
@@ -196,7 +197,7 @@ const Navbar = memo(() => {
                   role="menuitem"
                   aria-label="Contact Us page"
                 >
-                  Contact Us
+                  {t("navbar.contact")}
                 </NavLink>
               </li>
             </ul>
@@ -263,7 +264,7 @@ const Navbar = memo(() => {
             role="menu"
             aria-labelledby="mobile-menu-button"
           >
-            <div className="flex flex-col space-y-4">
+            <div className="flex flex-col">
               <NavLink
                 to="/Home"
                 className="text-gray-700 hover:text-primary-700 font-bold no-underline decoration-none py-2 text-black"
@@ -276,7 +277,7 @@ const Navbar = memo(() => {
               </NavLink>
               <NavLink
                 to="/About"
-                className="text-gray-700 hover:text-primary-700 font-bold no-underline decoration-none py-2 text-black"
+                className="text-gray-700 hover:text-primary-700 font-bold no-underline decoration-none text-black"
                 style={{ textDecoration: "none" }}
                 onClick={() => setIsMenuOpen(false)}
                 role="menuitem"
@@ -284,16 +285,41 @@ const Navbar = memo(() => {
               >
                 {t("navbar.about")}
               </NavLink>
-              <NavLink
-                to="/services"
-                className="text-gray-700 hover:text-primary-700 font-bold no-underline decoration-none py-2 text-black"
+              <button
+                type="button"
+                className="text-gray-700 hover:text-primary-700 font-bold no-underline decoration-none py-2 text-black text-left"
                 style={{ textDecoration: "none" }}
-                onClick={() => setIsMenuOpen(false)}
-                role="menuitem"
-                aria-label="Services"
+                onClick={() => setIsDropdownOpen((v) => !v)}
+                aria-expanded={isDropdownOpen}
+                aria-label="Our services menu"
               >
                 {t("navbar.ourServices")}
-              </NavLink>
+              </button>
+              {isDropdownOpen && (
+                <div className={`flex flex-col ${isRTL ? "mr-4" : "ml-4"}`}>
+                  <NavLink
+                    className="text-gray-700 hover:bg-primary-50 px-4 py-2 rounded text-left"
+                    to="/training"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {t("navbar.training")}
+                  </NavLink>
+                  <NavLink
+                    className="text-gray-700 hover:bg-primary-50 px-4 py-2 rounded text-left"
+                    to="/consultation"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {t("navbar.consultation")}
+                  </NavLink>
+                  <NavLink
+                    className="text-gray-700 hover:bg-primary-50 px-4 py-2 rounded text-left"
+                    to="/feasibility-study"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {t("navbar.feasibilityStudy")}
+                  </NavLink>
+                </div>
+              )}
 
               <NavLink
                 to="/training"

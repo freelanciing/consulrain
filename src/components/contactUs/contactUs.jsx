@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import headerBg from "../../assets/contact-header-bg.jpg";
+import "./contact.css";
 
 export default function ContactUs() {
   const { t } = useTranslation();
@@ -10,6 +11,7 @@ export default function ContactUs() {
     message: "",
   });
   const [submitted, setSubmitted] = useState(false);
+  const [showSecondLocation, setShowSecondLocation] = useState(false);
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -98,30 +100,103 @@ export default function ContactUs() {
               )}
             </form>
           </div>
-          {/* Right: Map */}
+          {/* Right: Map - show Egypt or Algeria based on flip card */}
           <div className="flex-1 p-0 flex items-center justify-center bg-[#e8eef1]">
-            <iframe
-              title="ConsulRain Location"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3624.9999999999995!2d46.675295315002!3d24.7135529841169!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2f038c8b8b8b8b%3A0x8b8b8b8b8b8b8b8b!2sRiyadh%2C%20Saudi%20Arabia!5e0!3m2!1sen!2ssa!4v1692199999999!5m2!1sen!2ssa"
-              width="100%"
-              height="100%"
-              style={{ border: 0 }}
-              allowFullScreen=""
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              className="rounded-none"
-            ></iframe>
+            {showSecondLocation ? (
+              <iframe
+                title="Algeria Location"
+                src="https://www.google.com/maps?q=Cite+500,+Blida,+Algeria&hl=en&z=15&output=embed"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="rounded-none"
+              ></iframe>
+            ) : (
+              <iframe
+                title="Egypt Location"
+                src="https://www.google.com/maps?q=West+11+Mall,+6th+October,+Giza,+Egypt&hl=en&z=15&output=embed"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="rounded-none"
+              ></iframe>
+            )}
           </div>
         </div>
         {/* Info row below */}
         <div className="w-full max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
-          <div className="flex flex-col items-center bg-white rounded-lg shadow p-6">
-            <span className="text-primary-500 text-3xl mb-2">
-              <i className="fas fa-map-marker-alt"></i>
-            </span>
-            <div className="font-bold mb-1">{t("contact.location")}</div>
-            <div className="text-brand-muted text-center">
-              {t("contact.locationValue")}
+          <div
+            className={`location-flip-card flex flex-col items-center bg-white rounded-lg shadow p-6 cursor-pointer perspective`}
+            onClick={() => setShowSecondLocation((v) => !v)}
+            style={{
+              minHeight: "180px",
+              minWidth: "220px",
+              position: "relative",
+            }}
+          >
+            <div
+              className={`location-flip-inner ${
+                showSecondLocation ? "rotate" : ""
+              }`}
+              style={{
+                transition: "transform 0.6s cubic-bezier(.68,-0.55,.27,1.55)",
+                transformStyle: "preserve-3d",
+                position: "relative",
+                width: "100%",
+                height: "100%",
+              }}
+            >
+              <div
+                className="location-flip-front"
+                style={{
+                  backfaceVisibility: "hidden",
+                  position: "absolute",
+                  width: "100%",
+                  height: "100%",
+                }}
+              >
+                <span className="text-primary-500 text-3xl mb-2">
+                  <i className="fas fa-map-marker-alt"></i>
+                </span>
+                <div className="font-bold mb-1">
+                  {t("contact.locationEgypt")}
+                </div>
+                <div className="text-brand-muted text-center">
+                  {t("contact.locationEgyptValue")}
+                </div>
+                <div className="mt-2 text-xs text-gray-400">
+                  {t("contact.clickToShowOtherLocation")}
+                </div>
+              </div>
+              <div
+                className="location-flip-back"
+                style={{
+                  backfaceVisibility: "hidden",
+                  position: "absolute",
+                  width: "100%",
+                  height: "100%",
+                  transform: "rotateY(180deg)",
+                }}
+              >
+                <span className="text-primary-500 text-3xl mb-2">
+                  <i className="fas fa-map-marker-alt"></i>
+                </span>
+                <div className="font-bold mb-1">
+                  {t("contact.locationAlgeria")}
+                </div>
+                <div className="text-brand-muted text-center">
+                  {t("contact.locationAlgeriaValue")}
+                </div>
+                <div className="mt-2 text-xs text-gray-400">
+                  {t("contact.clickToShowOtherLocation")}
+                </div>
+              </div>
             </div>
           </div>
           <div className="flex flex-col items-center bg-white rounded-lg shadow p-6">
@@ -137,10 +212,18 @@ export default function ContactUs() {
             <span className="text-primary-500 text-3xl mb-2">
               <i className="fas fa-phone"></i>
             </span>
-            <div className="font-bold mb-1" dir="ltr" style={{textAlign: 'left'}}>
+            <div
+              className="font-bold mb-1"
+              dir="ltr"
+              style={{ textAlign: "left" }}
+            >
               {t("contact.phone")}
             </div>
-            <div className="text-brand-muted text-center" dir="ltr" style={{textAlign: 'left'}}>
+            <div
+              className="text-brand-muted text-center"
+              dir="ltr"
+              style={{ textAlign: "left" }}
+            >
               {t("contact.phoneValue")}
             </div>
           </div>

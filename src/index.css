@@ -11,27 +11,31 @@
 <link href="https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Glory:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet"> */
 @import "tailwindcss";
 @font-face {
-  font-family: 'Dimashq';
-  src: url('./assets/fonts/Dimashq.otf') format('opentype');
+  font-family: "Dimashq";
+  src: url("./assets/fonts/Dimashq.otf") format("opentype");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Uyghur';
-  src: url('./assets/fonts/خط-حسن-الجزائر-رفيع.otf') format('opentype');
+  font-family: "Uyghur";
+  src: url("./assets/fonts/خط-حسن-الجزائر-رفيع.otf") format("opentype");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 
-html, body {
-  font-family: 'Dimashq', sans-serif !important;
+html,
+body {
+  font-family: "Dimashq", sans-serif !important;
 }
 
-html[dir="rtl"], html[lang="ar"], body[dir="rtl"], body:lang(ar) {
-  font-family: 'Uyghur', sans-serif !important;
+html[dir="rtl"],
+html[lang="ar"],
+body[dir="rtl"],
+body:lang(ar) {
+  font-family: "Uyghur", sans-serif !important;
 }
 @layer base {
   * {
@@ -118,6 +122,8 @@ nav > div {
   }
   nav > div {
     padding: 0 2rem;
+  } .hero_subtitle {
+    text-align: center !important;
   }
 }
 
@@ -252,5 +258,3 @@ nav > div {
   --ease-snappy: cubic-bezier(0.2, 0, 0, 1);
   /* ... */
 }
-
-

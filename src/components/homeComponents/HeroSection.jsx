@@ -17,7 +17,7 @@ const HeroSection = () => {
           {t("hero.title")}
         </p>
 
-        <p className="text-base md:text-lg lg:text-xl xl:text-2xl text-sky-950 font-semibold max-w-3xl">
+  <p className="hero_subtitle text-base md:text-lg lg:text-xl xl:text-2xl text-sky-950 font-semibold max-w-3xl">
           {t("hero.subtitle")}
         </p>
 

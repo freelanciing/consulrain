@@ -9,7 +9,7 @@ const HeroSection = () => {
   return (
     <div className="flex flex-col gap-14 lg:flex-row py-12 px-8 lg:p-12 justify-between items-center 2xl:h-[464px] xl:px-24 2xl:justify-center 2xl:m-auto max-w-container-xl bg-primary-500">
       <div className="flex flex-col justify-center items-center lg:items-start">
-        <p className="text-5xl font-black md:text-4xl xl:text-5xl text-primary-50 max-lg:text-center pt-10">
+        <p className="text-3xl font-black md:text-4xl xl:text-5xl text-primary-50 max-lg:text-center pt-10">
           {t("training.heroSection.title")}
         </p>
 
