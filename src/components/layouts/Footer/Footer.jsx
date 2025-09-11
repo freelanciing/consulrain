@@ -1,6 +1,7 @@
 import TransButton from "../../TransButton";
 import SocialFooter from "./SocialFooter";
 import { useTranslation } from "react-i18next";
+import logo from "../../../assets/spinnerLogo.png";
 export default function Footer() {
   const { t } = useTranslation();
   return (
@@ -10,44 +11,65 @@ export default function Footer() {
         {/* company data and links */}
         <div className="flex justify-center">
           <div className="w-full max-w-7xl  px-4 sm:ps-20 pb-20 flex flex-wrap gap-6 sm:gap-4 md:gap-16 lg:gap-16 xl:gap-32 items-start md:items-baseline flex-col sm:flex-row content-around justify-between">
-            {/* Journeys Section */}
-            <div className="our-program-footer">
-              <p className=" text-start text-white font-bold text-lg mb-6 pl-6">
-                {t("footer.training.Training")}
+            {/* Brand Section */}
+            <div className="footer-brand flex flex-col items-start justify-start min-w-[220px]">
+              <div className="flex items-center gap-3 mb-3">
+                <img src={logo} alt="ConsulRain Logo" className="w-16 h-16" />
+                <h2 className="text-white font-bold text-2xl whitespace-nowrap">
+                  {t("footer.ConsulRainCo")}
+                </h2>
+              </div>
+              <p className="text-blue-100 mb-4 max-w-xs">
+                {t("footer.brandDescription")}
               </p>
-              <ul className="cat-dropdown-menu">
-                {[
-                  "   ",
-                  "Software Testing",
-                  "Mobile Development",
-                  "Web Development",
-                  "Cloud DevOps",
-                  "AI & Data Science",
-                  "Cybersecurity",
-                  "Product Management",
-                  "Generative AI (GAIC)",
-                  "Digital Marketing",
-                  "UI/UX",
-                  "SprintUp",
-                ].map((program, index) => {
-                  const slug = program
-                    .toLowerCase()
-                    .replace(/ & /g, "-")
-                    .replace(/ /g, "-")
-                    .replace(/[()]/g, "");
-                  return (
-                    <li key={index}>
-                      <a
-                        href={`https://sprints.ai/en-eg/categories-journeys/all-programs/${slug}`}
-                      >
-                        <p className="p3 text-start text-blue-100 hover:text-white mb-3">
-                          {program}
-                        </p>
-                      </a>
-                    </li>
-                  );
-                })}
-              </ul>
+              {/* Social Media Icons */}
+              <div className="flex gap-2 mt-2">
+                <a
+                  href="https://facebook.com/consulrain"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Facebook"
+                  className="w-8 h-8 flex items-center justify-center rounded-full bg-[#467471] hover:bg-[#182f40] transition-colors duration-200"
+                >
+                  <i className="fab fa-facebook-f text-white hover:text-white text-lg"></i>
+                </a>
+                <a
+                  href="https://snapchat.com/add/consulrain"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Snapchat"
+                  className="w-8 h-8 flex items-center justify-center rounded-full bg-[#467471] hover:bg-[#182f40] transition-colors duration-200"
+                >
+                  <i className="fab fa-snapchat-ghost text-white hover:text-white text-lg"></i>
+                </a>
+                <a
+                  href="https://linkedin.com/company/consulrain"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn"
+                  className="w-8 h-8 flex items-center justify-center rounded-full bg-[#467471] hover:bg-[#182f40] transition-colors duration-200"
+                >
+                  <i className="fab fa-linkedin-in text-white hover:text-white text-lg"></i>
+                </a>
+                <a
+                  href="https://tiktok.com/@consulrain"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="TikTok"
+                  className="w-8 h-8 flex items-center justify-center rounded-full bg-[#467471] hover:bg-[#182f40] transition-colors duration-200"
+                >
+                  <i className="fab fa-tiktok text-white hover:text-white text-lg"></i>
+                </a>
+                <a
+                  href="https://instagram.com/consulrain"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram"
+                  className="w-8 h-8 flex items-center justify-center rounded-full bg-[#467471] hover:bg-[#182f40] transition-colors duration-200"
+                >
+                  <i className="fab fa-instagram text-white hover:text-white text-lg"></i>
+                </a>
+              </div>
             </div>
 
             {/* Our Services */}
@@ -57,34 +79,14 @@ export default function Footer() {
               </p>
               <ul className="cat-dropdown-menu">
                 {[
-                  {
-                    label: "For Learners",
-                    href: "https://sprints.ai/en-eg/categories-journeys/all-programs",
-                  },
-                  {
-                    label: "For Businesses",
-                    href: "https://sprints.ai/en-eg/enterprise",
-                  },
-                  {
-                    label: "For Governments",
-                    href: "https://sprints.ai/en-eg/government",
-                  },
-                  {
-                    label: "HiRemoters",
-                    href: "https://hiremoters.ai",
-                    target: "_blank",
-                  },
-                ].map(({ label, href, target }, index) => (
+                  { label: "Training" },
+                  { label: "Consultation" },
+                  { label: "Feasibility Study" },
+                ].map(({ label }, index) => (
                   <li key={index}>
-                    <a
-                      href={href}
-                      target={target || "_self"}
-                      rel="noopener noreferrer"
-                    >
-                      <p className="p3 text-start text-blue-100 hover:text-white mb-3">
-                        {label}
-                      </p>
-                    </a>
+                    <p className="p3 text-start text-blue-100 hover:text-white mb-3">
+                      {label}
+                    </p>
                   </li>
                 ))}
               </ul>
@@ -107,7 +109,7 @@ export default function Footer() {
                   { label: "Terms", href: "#" },
                   {
                     label: "Privacy Policy",
-                    href: "#",
+                    href: "/privacy-policy",
                   },
                 ].map(({ label, href, target }, idx) => (
                   <li key={idx}>

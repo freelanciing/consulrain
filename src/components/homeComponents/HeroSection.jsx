@@ -43,7 +43,7 @@ const HeroSection = () => {
               width="180"
               height="180"
               loading="lazy"
-              src="/images/people1.png"
+              src="/images/hero/people1.png"
               alt="person-1"
             />
           </div>
@@ -54,7 +54,7 @@ const HeroSection = () => {
               width="180"
               height="180"
               loading="lazy"
-              src="/images/people2.png"
+              src="/images/hero/people2.png"
               alt="person-2"
             />
           </div>
@@ -67,7 +67,7 @@ const HeroSection = () => {
               width="180"
               height="180"
               loading="lazy"
-              src="/images/people3.png"
+              src="/images/hero/people3.png"
               alt="person-3"
             />
           </div>
@@ -84,7 +84,7 @@ const HeroSection = () => {
               width="180"
               height="180"
               loading="lazy"
-              src="/images/people4.png"
+              src="/images/hero/people4.png"
               alt="person-4"
             />
           </div>

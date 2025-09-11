@@ -8,7 +8,7 @@ import "./Navbar.css";
 import "./DropdownPalette.css";
 
 // Lazy load modal components for better performance
-const LoginModal = React.lazy(() => import("../LoginModal/LoginModal"));
+// const LoginModal = React.lazy(() => import("../LoginModal/LoginModal"));
 const RegisterModal = React.lazy(() =>
   import("../RegisterModal/RegisterModal")
 );
@@ -29,21 +29,21 @@ const Navbar = memo(() => {
   }, []);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
+  // const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
   const [isRegisterModalOpen, setIsRegisterModalOpen] = useState(false);
 
-  const openLoginModal = useCallback(() => {
-    setIsRegisterModalOpen(false);
-    setIsLoginModalOpen(true);
-  }, []);
+  // const openLoginModal = useCallback(() => {
+  //   setIsRegisterModalOpen(false);
+  //   setIsLoginModalOpen(true);
+  // }, []);
 
   const openRegisterModal = useCallback(() => {
-    setIsLoginModalOpen(false);
+    // setIsLoginModalOpen(false);
     setIsRegisterModalOpen(true);
   }, []);
 
   const closeAllModals = useCallback(() => {
-    setIsLoginModalOpen(false);
+    // setIsLoginModalOpen(false);
     setIsRegisterModalOpen(false);
   }, []);
 
@@ -96,7 +96,7 @@ const Navbar = memo(() => {
                 className="brand-tagline"
                 aria-label="Consulting and Training services"
               >
-                Consulting and Training
+                {t("consultingAndTraining")}
               </div>
             </div>
           </NavLink>
@@ -175,7 +175,7 @@ const Navbar = memo(() => {
                       to="/feasibility-study"
                       onClick={() => setIsDropdownOpen(false)}
                     >
-                      {t("navbar.feasibilityStudy")}{" "}
+                      {t("navbar.feasibilityStudies")}{" "}
                     </NavLink>
                   </li>
                 </ul>
@@ -206,12 +206,12 @@ const Navbar = memo(() => {
           {/* Right side - Desktop */}
           <div className="hidden lg:flex items-center gap-3">
             <TransButton />
-            <button
+            {/* <button
               onClick={openLoginModal}
               className="text-primary-500 font-bold no-underline hover:text-primary-700 transition-colors duration-200 px-2"
             >
               {t("navbar.login")}
-            </button>
+            </button> */}
             <Button
               label={t("navbar.joinUs")}
               padding="0 40px"
@@ -332,7 +332,7 @@ const Navbar = memo(() => {
 
               <div className="flex flex-col space-y-3 pt-4 border-t border-gray-200">
                 <TransButton />
-                <button
+                {/* <button
                   onClick={() => {
                     setIsMenuOpen(false);
                     openLoginModal();
@@ -343,7 +343,7 @@ const Navbar = memo(() => {
                   aria-label="Login to your account"
                 >
                   {t("navbar.login")}
-                </button>
+                </button> */}
                 <Button
                   label={t("navbar.joinUs")}
                   handleClick={() => {
@@ -361,17 +361,17 @@ const Navbar = memo(() => {
       {/* Modal Components with Suspense for lazy loading */}
       <React.Suspense fallback={<div aria-hidden="true">Loading...</div>}>
         {/* Login Modal */}
-        <LoginModal
+        {/* <LoginModal
           isOpen={isLoginModalOpen}
           onClose={closeAllModals}
           onSwitchToRegister={openRegisterModal}
-        />
+        /> */}
 
         {/* Register Modal */}
         <RegisterModal
           isOpen={isRegisterModalOpen}
           onClose={closeAllModals}
-          onSwitchToLogin={openLoginModal}
+          // onSwitchToLogin={openLoginModal}
         />
       </React.Suspense>
     </nav>

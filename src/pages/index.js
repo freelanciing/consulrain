@@ -4,7 +4,7 @@ import TrainingPage from "./training/TrainingPage";
 import About from "./about/About";
 import ContactUs from "../components/contactUs/contactUs";
 import ConsultationPage from "./consultation";
-import FeasibilityStudyPage from "./feasibility-study";
+import FeasibilityStudies from "./FeasibilityStudies/FeasibilityStudies";
 export {
   HomePage,
   SplashPage,
@@ -12,5 +12,5 @@ export {
   TrainingPage,
   ContactUs,
   ConsultationPage,
-  FeasibilityStudyPage,
+  FeasibilityStudies,
 };

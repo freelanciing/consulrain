@@ -14,6 +14,7 @@ import Vision from "./About/Vision";
 import OurJourney from "./About/OurJourney";
 import Mission from "./About/Mission";
 import Services from "./OurServices/OurServices";
+import Topbar from "./Topbar/Topbar";
 export {
   Navbar,
   Footer,
@@ -31,4 +32,5 @@ export {
   Vision,
   Mission,
   Services,
+  Topbar,
 };

@@ -20,10 +20,16 @@ const cards = [
   },
   {
     icon: <i className="fas fa-search-minus"></i>,
-    title: "Feasibility study",
-    front: "Identifying design conflicts before construction",
-    backTitle: "Efficient Clash Detection",
-    back: "Identifying and resolving design conflicts before construction begins, saving time and reducing costly on-site modifications.",
+    title: "Feasibility Studies",
+    front:
+      "Comprehensive studies to help you make well-informed business decisions. We evaluate project viability, market, financial, and technical aspects for strategic clarity and risk management.",
+    backTitle: "Key Services Offered",
+    back: (
+      <ul style={{ textAlign: "left", paddingLeft: "1.2em", marginBottom: 0 }}>
+        <li>Market, Technical, Financial, Legal, Organizational Feasibility</li>
+        <li>Risk Assessment & Mitigation</li>
+      </ul>
+    ),
   },
 ];
 

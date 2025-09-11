@@ -23,7 +23,7 @@
     "training": "Training",
     "ourServices": "Our Services",
     "consultation": "Consultation",
-    "feasibilityStudy": "Feasibility Study"
+    "feasibilityStudies": "Feasibility Studies"
   },
   "home": {
     "pageTitle": "Welcome to the Home Page"
@@ -94,17 +94,41 @@
   },
   "register": {
     "title": "Join Us",
-    "google": "Google",
-    "github": "Github",
-    "linkedin": "LinkedIn",
-    "or": "or",
     "email": "Email",
     "emailPlaceholder": "Enter your email",
     "agreeToTerms": "I agree to the",
     "termsAndConditions": "terms and conditions",
     "joinUsButton": "Join Us",
-    "alreadyHaveAccount": "Already have an account?",
-    "login": "Login"
+    "phone": "Phone",
+    "name": "Name",
+    "namePlaceholder": "Enter your full name",
+    "phonePlaceholder": "Enter your phone number"
+  },
+  "privacyPolicy": {
+    "title": "Privacy Policy & Intellectual Property Notice",
+    "policy": "Privacy Policy",
+    "intro": "At ConsulRain Company, we are committed to safeguarding the privacy of our website visitors and clients. This policy outlines our practices regarding the collection, utilization, and protection of your personal information.",
+    "infoCollection": "Information Collection",
+    "infoCollectionDesc": "We may collect personal data, including your name and email address, when you interact with our website. This information is primarily utilized to enhance the user experience, respond to inquiries, and optimize our services.",
+    "dataUtilization": "Data Utilization",
+    "dataUtilizationDesc": "Your personal information will not be disseminated, shared, or disclosed to third parties except in accordance with legal requirements or with your explicit consent.",
+    "cookies": "Cookies",
+    "cookiesDesc": "Our website may employ cookies to enhance functionality and user experience. If you prefer not to share this data, you may disable cookies through your browser settings.",
+    "dataSecurity": "Data Security",
+    "dataSecurityDesc": "We implement industry-standard security protocols to safeguard your information from unauthorized access, modification, or disclosure.",
+    "ipNotice": "Intellectual Property Notice",
+    "ipNoticeDesc": "All content on this website, including text, graphics, logos, icons, images, and design elements, is the exclusive property of ConsulRain Company. This content is protected under applicable copyright, trademark, and intellectual property laws.",
+    "prohibitedUse": "Prohibited Use",
+    "prohibitedUseList": [
+      "You are strictly prohibited from copying, quoting, reproducing, distributing, or using any part of this website’s content, logo, or branding materials without prior written authorization from ConsulRain Company.",
+      "Unauthorized use of our intellectual property may result in legal action."
+    ],
+    "requestPermission": "Request for Permission",
+    "requestPermissionDesc": "To request permission for use of any content or branding, please contact us at:",
+    "legalDisclaimer": "Legal Disclaimer",
+    "legalDisclaimerDesc": "By accessing this website, you acknowledge and agree to comply with all terms and conditions outlined in this policy. ConsulRain Company retains the authority to update or modify this policy at any time, without prior notice.",
+    "email": "info@consulrain.com",
+    "phone": "+20 155 620 5466"
   },
   "footer": {
     "contactUs": "Contact Us",
@@ -116,7 +140,9 @@
     },
     "training": {
       "Training": "Training"
-    }
+    },
+    "ConsulRainCo": "ConsulRain Co",
+    "brandDescription": "Empowering organizations and individuals with innovative training, expert consultation, and actionable feasibility studies to drive success and growth."
   },
   "partners": {
     "title": "Our Partners",
@@ -237,5 +263,86 @@
     "ourVisionContent": "To build impactful and enduring partnerships through tailored training and consulting services, empowering decision-makers across sectors to enhance value, drive growth, and foster sustainable development.",
     "mission": "Our Mission",
     "ourMissionContent": " Our mission goes beyond just providing training or consultation. We aim to empower organizations and maximum efficiency by integrated solutions."
+  },
+  "feasibility": {
+    "title": "Feasibility Studies",
+    "intro": "We are dedicated to providing comprehensive feasibility studies that empower businesses, investors, and entrepreneurs to make well-informed decisions. Our studies comprehensively evaluate the viability of projects across diverse sectors, seamlessly integrating market intelligence, financial analysis, and technical assessments to ensure strategic clarity and effective risk management.\nWhether you are embarking on a new venture, expanding your operations, or exploring investment opportunities, our feasibility studies furnish the invaluable insights required to proceed with confidence and assurance.",
+    "showIntro": "Show More",
+    "hideIntro": "Show Less",
+    "services": {
+      "market": {
+        "title": "Market Feasibility",
+        "items": [
+          "Market demand analysis",
+          "Competitive landscape evaluation",
+          "Customer segmentation and behavior analysis",
+          "Pricing strategy recommendations"
+        ]
+      },
+      "technical": {
+        "title": "Technical Feasibility",
+        "items": [
+          "Site and location analysis",
+          "Technology and infrastructure requirements assessment",
+          "Operational workflow design evaluation",
+          "Resource availability and logistics assessment"
+        ]
+      },
+      "financial": {
+        "title": "Financial Feasibility",
+        "items": [
+          "Capital investment estimation",
+          "Revenue and cost projections",
+          "Break-even analysis",
+          "ROI and NPV calculations"
+        ]
+      },
+      "legal": {
+        "title": "Legal and Regulatory Feasibility",
+        "items": [
+          "Compliance with local and international regulations",
+          "Licensing and permit requirements assessment",
+          "Environmental impact assessments"
+        ]
+      },
+      "organizational": {
+        "title": "Organizational Feasibility",
+        "items": [
+          "Human resource planning",
+          "Management structure evaluation",
+          "Strategic alignment with business goals"
+        ]
+      },
+      "risk": {
+        "title": "Risk Assessment and Mitigation",
+        "items": [
+          "SWOT analysis",
+          "Risk identification and prioritization",
+          "Contingency planning"
+        ]
+      }
+    }
+  },
+  "consultation": {
+    "title": "Consultation",
+    "intro": "Our consultation is rooted in collaboration and strategic clarity. We partner closely with leadership teams to navigate complex business challenges, resolve operational challenges, and shape forward-thinking strategies that drive sustainable success.",
+    "showIntro": "Read More",
+    "hideIntro": "Close",
+    "scopeTitle": "Scope of Services",
+    "services": {
+      "0": "Supply chain & Logistics",
+      "1": "Administration",
+      "2": "Leadership",
+      "3": "Softskills",
+      "4": "Production",
+      "5": "Quality Control",
+      "6": "Human Resources",
+      "7": "Sales",
+      "8": "Marketing",
+      "9": "Compliance",
+      "10": "Finance & Accounting",
+      "11": "Food Safety",
+      "12": "Information Technology"
+    }
   }
 }

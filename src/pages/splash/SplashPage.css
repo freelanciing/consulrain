@@ -112,8 +112,6 @@
 .loading-animation {
   width: 200px;
   animation: fadeIn 2.5s ease-out 1.5s both;
-  margin: 0 auto;
-  margin-left: 70px;
 }
 
 .loading-bar {
@@ -278,7 +276,6 @@
 
   .company-main-name {
     font-size: 1.8rem;
-    flex-direction: column;
     align-items: center;
   }
 

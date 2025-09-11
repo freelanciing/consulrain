@@ -13,8 +13,10 @@ import {
   TrainingPage,
   ContactUs,
   ConsultationPage,
-  FeasibilityStudyPage,
+  FeasibilityStudies,
 } from "../pages";
+import PrivacyPolicy from "../components/PrivacyPolicy/PrivacyPolicy";
+import Consultation from "../pages/Consultation/Consultation";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -30,10 +32,10 @@ const router = createBrowserRouter(
         <Route index element={<TrainingPage />} />
       </Route>
       <Route path="consultation" element={<RootLayout />}>
-        <Route index element={<ConsultationPage />} />
+        <Route index element={<Consultation />} />
       </Route>
       <Route path="feasibility-study" element={<RootLayout />}>
-        <Route index element={<FeasibilityStudyPage />} />
+        <Route index element={<FeasibilityStudies />} />
       </Route>
 
       {/* Catch-all route for 404 */}
@@ -43,6 +45,9 @@ const router = createBrowserRouter(
       </Route>
       <Route path="/contact" element={<RootLayout />}>
         <Route index element={<ContactUs />} />
+      </Route>
+      <Route path="/privacy-policy" element={<RootLayout />}>
+        <Route index element={<PrivacyPolicy />} />
       </Route>
     </>
   )

@@ -69,7 +69,7 @@
   top: 100%;
   min-width: 12rem;
   z-index: 1000;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
   background: white;
   border-radius: 0.5rem;
   padding: 0.5rem 0;
@@ -83,7 +83,7 @@
 .custom-dropdown-item {
   display: block;
   width: 100%;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 0.5rem !important;
   background: transparent;
   border: none;
   cursor: pointer;
@@ -108,12 +108,14 @@
   margin-left: 0;
   margin-right: 1rem;
 }
-
+nav {
+  margin-top: 48px;
+}
 /* Navbar Brand Animation Styles */
 .logo {
   transition: transform 0.3s ease;
 }
-.menubar{
+.menubar {
   margin-bottom: 0 !important;
 }
 
@@ -255,5 +257,8 @@
 @media (max-width: 640px) {
   .company-brand {
     display: none;
+  }
+  nav{
+    margin-top: 35px;
   }
 }

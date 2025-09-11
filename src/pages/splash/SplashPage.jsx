@@ -1,10 +1,12 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import logoImage from "../../assets/spinnerLogo.png";
+import { useTranslation } from "react-i18next";
 import "./SplashPage.css";
 
 export default function SplashPage() {
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   useEffect(() => {
     // Redirect to home page after 4 seconds
@@ -29,19 +31,27 @@ export default function SplashPage() {
         </div>
 
         {/* Company Name */}
-        <div className="company-info">
+        <div className="company-info ">
           <div className="company-text-container">
-            <h1 className="company-main-name">
+            <h1
+              className="company-main-name"
+              style={{
+                direction: "ltr",
+                unicodeBidi: "plaintext",
+                whiteSpace: "nowrap",
+              }}
+            >
               <span className="consul">Consul</span>
-              <span className="rain">Rain</span>
-              <span className="co"> Co.</span>
+              <span className="rain">
+                Rain<span className="co"> Co</span>
+              </span>
             </h1>
-            <p className="company-subtitle">Consulting and Training</p>
+            <p className="company-subtitle">{t("consultingAndTraining")}</p>
           </div>
 
           {/* Loading Animation */}
-          <div className="loading-animation">
-            <div className="loading-bar">
+          <div className="loading-animation m-auto" >
+            <div className="loading-bar" >
               <div className="loading-progress"></div>
             </div>
           </div>

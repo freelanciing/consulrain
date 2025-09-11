@@ -2,7 +2,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 /* glory font family */
-@import url("https://fonts.googleapis.com/css2?family=Glory:ital,wght@0,100..800;1,100..800&display=swap");
 /*  */
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
@@ -18,24 +17,12 @@
   font-display: swap;
 }
 
-@font-face {
-  font-family: "Uyghur";
-  src: url("./assets/fonts/خط-حسن-الجزائر-رفيع.otf") format("opentype");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
 
-html,
-body {
-  font-family: "Dimashq", sans-serif !important;
+html[lang="en"], body[lang="en"] {
+  font-family: 'Montserrat', sans-serif !important;
 }
-
-html[dir="rtl"],
-html[lang="ar"],
-body[dir="rtl"],
-body:lang(ar) {
-  font-family: "Uyghur", sans-serif !important;
+html[lang="ar"], body[lang="ar"], html[dir="rtl"], body[dir="rtl"] {
+  font-family: 'Dimashq', sans-serif !important;
 }
 @layer base {
   * {
