@@ -18,6 +18,9 @@
     flex-direction: column;
     gap: 1.2rem;
   }
+  .consultation-contact-dark-title {
+  width: 90% !important;
+}
 }
 @media (max-width: 1024px) {
   .consultation-intro-features {
@@ -64,6 +67,14 @@
   .consultation-intro-img-overlay {
     flex-direction: column !important;
   }
+  .consultation-contact-dark-title {
+  text-align: center;
+  font-size: 2rem !important;
+  font-weight: 800;
+  margin-bottom: 2rem;
+  width: 70% !important;
+  margin: auto;
+}
 }
 /* Two-column intro/features section */
 
@@ -230,9 +241,11 @@
 }
 .consultation-contact-dark-title {
   text-align: center;
-  font-size: 2.2rem;
+  font-size: 3.2rem;
   font-weight: 800;
-  margin-bottom: 2rem;
+  width: 50%;
+  margin: auto;
+  margin-bottom: 15px;
 }
 .consultation-contact-dark-highlight {
   color: #4fd1c5;
