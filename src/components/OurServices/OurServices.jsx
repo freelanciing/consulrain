@@ -6,23 +6,24 @@ const cards = [
     icon: <i className="fas fa-drafting-compass"></i>,
     title: "Training",
     front:
-      "We go beyond conventional workshops to deliver immersive learning experiences, thoughtfully aligned with your business priorities.",
+      "We go beyond conventional workshops to deliver immersive learning experiences, thoughtfully aligned with your business priorities",
     backTitle: "meticulously crafted process",
     back: "Pre-Training Diagnosis, Customized Training Programs, Post-Training Evaluation.",
+    path: "/training",
   },
   {
     icon: <i className="fas fa-cube"></i>,
     title: "Consultation",
-    front:
-      "Our consultation is rooted in collaboration and strategic clarity. ",
+    front: "Our consultation is rooted in collaboration and strategic clarity",
     backTitle: "Strategic Consultation Process",
     back: "In-depth analysis, collaborative planning, and actionable recommendations to help your organization overcome obstacles and achieve long-term growth.",
+    path: "/consultation",
   },
   {
     icon: <i className="fas fa-search-minus"></i>,
     title: "Feasibility Studies",
     front:
-      "Comprehensive studies to help you make well-informed business decisions. We evaluate project viability, market, financial, and technical aspects for strategic clarity and risk management.",
+      "Comprehensive studies to help you make well-informed business decisions",
     backTitle: "Key Services Offered",
     back: (
       <ul style={{ textAlign: "left", paddingLeft: "1.2em", marginBottom: 0 }}>
@@ -30,6 +31,7 @@ const cards = [
         <li>Risk Assessment & Mitigation</li>
       </ul>
     ),
+    path: "/feasibility-studies",
   },
 ];
 
@@ -75,7 +77,8 @@ const OurServices = () => {
                       <h3>{card.backTitle}</h3>
                       <p>{card.back}</p>
                       <a
-                        href="#"
+                        href={card.path}
+                        target="_blank"
                         aria-label={`3D view of ${card.title}`}
                         className="btn btn-dark text-dark bg-white three-d-btn"
                       >
