@@ -105,6 +105,7 @@
     "phonePlaceholder": "Enter your phone number"
   },
   "privacyPolicy": {
+    "privacyPolicy": "Privacy Policy",
     "title": "Privacy Policy & Intellectual Property Notice",
     "policy": "Privacy Policy",
     "intro": "At ConsulRain Company, we are committed to safeguarding the privacy of our website visitors and clients. This policy outlines our practices regarding the collection, utilization, and protection of your personal information.",

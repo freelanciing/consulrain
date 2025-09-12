@@ -17,7 +17,7 @@ export default function Footer() {
           <div
             className={`w-full max-w-7xl px-4 ${
               isArabic ? "sm:pe-20" : "sm:ps-20"
-            } pb-20 flex flex-wrap gap-6 sm:gap-4 md:gap-16 lg:gap-16 xl:gap-32 items-start md:items-baseline flex-col sm:flex-row content-around justify-between`}
+            } pb-20 flex gap-6 sm:gap-4 md:gap-16 lg:gap-16 xl:gap-32 items-start md:items-baseline flex-col sm:flex-row content-around justify-between`}
           >
             {/* Brand Section */}
             <div
@@ -112,7 +112,7 @@ export default function Footer() {
                     path: "/feasibility-study",
                   },
                 ].map(({ label, path }, index) => (
-                  <li key={index} className="text-white">
+                  <li key={index} className="footer-li text-white">
                     <NavLink
                       to={path}
                       className="p3 hover:text-white mb-3 block text-blue-100"
@@ -139,10 +139,13 @@ export default function Footer() {
               </p>
               <ul className="cat-dropdown-menu">
                 {[
-                  { label: "About Us", href: "/about" },
-                  { label: "Privacy Policy", href: "/privacy-policy" },
+                  { label: `${t("navbar.about")}`, href: "/about" },
+                  {
+                    label: `${t("privacyPolicy.privacyPolicy")}`,
+                    href: "/privacy-policy",
+                  },
                 ].map(({ label, href, target }, idx) => (
-                  <li key={idx}>
+                  <li key={idx} className="footer-li text-white">
                     <a href={href} target={target || "_self"} rel="noreferrer">
                       <p className="p3 hover:text-white mb-3 text-blue-100">
                         {label}
@@ -168,7 +171,7 @@ export default function Footer() {
               </p>
               <ul className="cat-dropdown-menu">
                 <li>
-                  <p className="p4 leading-4 md:w-44 text-blue-100 w-full mb-3">
+                  <p className="p4 leading-4 md:w-32 text-blue-100 w-full mb-3">
                     <span className="font-GilroySemiBold">
                       {t("contact.email")}
                     </span>{" "}
