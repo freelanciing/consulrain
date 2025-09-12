@@ -126,6 +126,26 @@ nav > div {
 html[lang="ar"] .footer-li:hover {
   transform: translateX(-10px);
 }
+.swiper-pagination-bullets {
+  bottom: -5px !important; 
+}
+
+.swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  margin: 0 6px !important;
+  opacity: 0.6;
+  background-color: #888cb7; 
+}
+
+.swiper-pagination-bullet-active {
+  width: 20px !important;
+  height: 10px !important;
+  border-radius: 5px !important;
+  background-color: var(--color-sky-900) !important;
+  opacity: 1;
+  transition: all 0.3s ease;
+}
 
 /* Responsive Styles - Mobile First */
 @media (max-width: 639px) {

@@ -22,7 +22,7 @@ const OurPartners = () => {
   ];
   return (
     <>
-      <div className="w-full  flex flex-col items-center justify-center  px-4 md:px-12 lg:px-24 py-8">
+      {/* <div className="w-full  flex flex-col items-center justify-center  px-4 md:px-12 lg:px-24 py-8">
         <SectionHeader title={t("partners.title")} lineColor="#ffc107" />
         <div className="section-container flex flex-col items-center justify-center mt-4 mb-8">
           <p
@@ -45,6 +45,56 @@ const OurPartners = () => {
             }}
             loop={true}
             spaceBetween={40}
+            breakpoints={{
+              0: { slidesPerView: 2, spaceBetween: 20 },
+              640: { slidesPerView: 3, spaceBetween: 32 },
+              1024: { slidesPerView: 4, spaceBetween: 40 },
+            }}
+            className="mb-12"
+          >
+            {swiperContent.map((content, index) => (
+              <SwiperSlide
+                key={index}
+                className="flex items-center justify-center mb-0"
+              >
+                <div className="flex items-center justify-center h-[7rem] w-full">
+                  <img
+                    src={content}
+                    alt={`Slide ${index}`}
+                    className="h-12 mx-auto"
+                  />
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
+      </div> */}
+      <div
+        className="w-full flex flex-col items-center justify-center px-4 md:px-12 lg:px-24 py-8 bg-cover bg-center relative mb-20"
+        style={{ backgroundImage: "url('/images/map.png')" }}
+      >
+        <SectionHeader title={t("partners.title")} lineColor="#ffc107" />
+
+        <div className="section-container flex flex-col items-center justify-center mt-4 mb-8">
+          <p
+            className="section-paragraph text-center w-[70%] text-[#888cb7] 
+        text-[1.125rem] leading-[1.22rem]
+        font-family-[Gilroy-Regular] font-[400]"
+          >
+            {t("partners.description")}
+          </p>
+        </div>
+
+        <div className="w-[80%] px-4 md:px-12 lg:px-24 py-8 flex items-center justify-center">
+          <Swiper
+            modules={[Pagination, Autoplay]}
+            pagination={{ clickable: true }}
+            autoplay={{
+              delay: 2500,
+              disableOnInteraction: false,
+            }}
+            loop={true}
+            spaceBetween={0}
             breakpoints={{
               0: { slidesPerView: 2, spaceBetween: 20 },
               640: { slidesPerView: 3, spaceBetween: 32 },
