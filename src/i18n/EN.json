@@ -329,20 +329,61 @@
     "showIntro": "Read More",
     "hideIntro": "Close",
     "scopeTitle": "Scope of Services",
-    "services": {
-      "0": "Supply chain & Logistics",
-      "1": "Administration",
-      "2": "Leadership",
-      "3": "Softskills",
-      "4": "Production",
-      "5": "Quality Control",
-      "6": "Human Resources",
-      "7": "Sales",
-      "8": "Marketing",
-      "9": "Compliance",
-      "10": "Finance & Accounting",
-      "11": "Food Safety",
-      "12": "Information Technology"
-    }
+    "features": {
+      "0": {
+        "title": "Professional Experts",
+        "desc": "All projects led by highly experienced consultants and teams passionate about delivering high-quality solutions."
+      },
+      "1": {
+        "title": "24/7 Premium Support",
+        "desc": "On-site coordination and model-based supervision to ensure successful project execution."
+      }
+    },
+    "experience": "Years of Experience",
+    "experiencePoints": {
+      "0": "Cutting-Edge Expertise",
+      "1": "Holistic Solutions Approach",
+      "2": "Client-Centric Collaboration"
+    },
+    "contact": {
+      "title": "The best",
+      "subtitle": "you can take",
+      "connect": "Connect with us",
+      "addressTitle": "Address",
+      "address": {
+        "0": "West 11 Mall - 6th October Giza, Egypt",
+        "1": "Cite 500 Apartment - Bilda, Algeria"
+      },
+      "workingHours": "Sunday → Thursday 9am to 5pm"
+    },
+    "form": {
+      "nameLabel": "Hello, my name is:",
+      "namePlaceholder": "Name",
+      "emailLabel": "Here is my email:",
+      "emailPlaceholder": "Email",
+      "projectLabel": "Tell us about your project",
+      "projectOptions": {
+        "0": "Social media marketing",
+        "1": "Business strategy",
+        "2": "Operations improvement",
+        "3": "Other"
+      },
+      "referralLabel": "How did you hear about ConsulRain?",
+      "referralOptions": {
+        "0": "Google",
+        "1": "Facebook",
+        "2": "LinkedIn",
+        "3": "SnapChat",
+        "4": "Instagram",
+        "5": "TikTok",
+        "6": "Other"
+      },
+      "descLabel": "About project:",
+      "descPlaceholder": "Your project description",
+      "sendBtn": "Send"
+    },
+  "empower": {
+    "title": "Empower Your Business"
+  }
   }
 }

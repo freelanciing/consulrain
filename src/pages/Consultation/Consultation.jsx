@@ -1,4 +1,4 @@
-import React from "react";
+
 import ConsultationHeroImg from "../../../public/images/Consultation.jpg";
 import { useTranslation } from "react-i18next";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -17,6 +17,7 @@ export default function Consultation() {
   const { t } = useTranslation();
   return (
     <>
+      {/* Hero Section */}
       <div className="consultation-hero-img-section">
         <div className="consultation-hero-img-wrapper">
           <img
@@ -32,18 +33,20 @@ export default function Consultation() {
           </div>
         </div>
       </div>
-      {/* Modern Sectioned Redesign Below Hero */}
-      {/* Two-column intro/features section */}
+
+      {/* Intro + Features Section */}
       <div className="consultation-intro-features-wrapper">
         <div className="consultation-intro-features">
           <div className="consultation-intro-left">
             <h2 className="consultation-intro-highlight">
-              {t("empower.title")}
+              {t("consultation.empower.title")}
             </h2>
             <h1 className="consultation-intro-title">
               {t("consultation.title")}
             </h1>
-            <p className="consultation-intro-desc">{t("consultation.intro")}</p>
+            <p className="consultation-intro-desc">
+              {t("consultation.intro")}
+            </p>
             <div className="consultation-feature-list">
               <div className="consultation-feature-item">
                 <FontAwesomeIcon
@@ -52,11 +55,10 @@ export default function Consultation() {
                 />
                 <div>
                   <h3 className="consultation-feature-title">
-                    Professional Experts
+                    {t("consultation.features.0.title")}
                   </h3>
                   <p className="consultation-feature-desc">
-                    All projects led by highly experienced consultants and teams
-                    passionate about delivering high-quality solutions.
+                    {t("consultation.features.0.desc")}
                   </p>
                 </div>
               </div>
@@ -67,16 +69,17 @@ export default function Consultation() {
                 />
                 <div>
                   <h3 className="consultation-feature-title">
-                    24/7 Premium Support
+                    {t("consultation.features.1.title")}
                   </h3>
                   <p className="consultation-feature-desc">
-                    On-site coordination and model-based supervision to ensure
-                    successful project execution.
+                    {t("consultation.features.1.desc")}
                   </p>
                 </div>
               </div>
             </div>
           </div>
+
+          {/* Right Side Image */}
           <div className="consultation-intro-right">
             <div className="consultation-intro-imgbox">
               <img
@@ -88,22 +91,22 @@ export default function Consultation() {
                 <div className="consultation-intro-experience">
                   <span className="consultation-intro-years">10+</span>
                   <span className="consultation-intro-years-label">
-                    Years of Experience
+                    {t("consultation.experience")}
                   </span>
                 </div>
                 <div className="consultation-intro-experience-divider"></div>
                 <ul className="consultation-intro-experience-list">
                   <li>
-                    <FontAwesomeIcon icon={faCheckCircle} /> Cutting-Edge
-                    Expertise
+                    <FontAwesomeIcon icon={faCheckCircle} />{" "}
+                    {t("consultation.experiencePoints.0")}
                   </li>
                   <li>
-                    <FontAwesomeIcon icon={faCheckCircle} /> Holistic Solutions
-                    Approach
+                    <FontAwesomeIcon icon={faCheckCircle} />{" "}
+                    {t("consultation.experiencePoints.1")}
                   </li>
                   <li>
-                    <FontAwesomeIcon icon={faCheckCircle} /> Client-Centric
-                    Collaboration
+                    <FontAwesomeIcon icon={faCheckCircle} />{" "}
+                    {t("consultation.experiencePoints.2")}
                   </li>
                 </ul>
               </div>
@@ -112,92 +115,109 @@ export default function Consultation() {
         </div>
       </div>
 
-      {/* Dark contact section with form and info */}
+      {/* Dark Contact Section */}
       <div className="consultation-contact-dark-wrapper">
         <h2 className="consultation-contact-dark-title">
-          The best{" "}
+          {t("consultation.contact.title")}{" "}
           <span className="consultation-contact-dark-highlight">
-            consultation
+            {t("consultation.title")}
           </span>{" "}
-          you can take
+          {t("consultation.contact.subtitle")}
         </h2>
         <div className="consultation-contact-dark-content">
           <form className="consultation-contact-form">
             <div className="consultation-contact-form-row">
               <div className="consultation-contact-form-group">
-                <label htmlFor="name">Hello, my name is:</label>
-                <input type="text" id="name" name="name" placeholder="Name" />
+                <label htmlFor="name">{t("consultation.form.nameLabel")}</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder={t("consultation.form.namePlaceholder")}
+                />
               </div>
               <div className="consultation-contact-form-group">
-                <label htmlFor="email">Here is my email:</label>
+                <label htmlFor="email">
+                  {t("consultation.form.emailLabel")}
+                </label>
                 <input
                   type="email"
                   id="email"
                   name="email"
-                  placeholder="Email"
+                  placeholder={t("consultation.form.emailPlaceholder")}
                 />
               </div>
             </div>
             <div className="consultation-contact-form-row">
               <div className="consultation-contact-form-group">
-                <label htmlFor="projectType">Tell us about your project</label>
+                <label htmlFor="projectType">
+                  {t("consultation.form.projectLabel")}
+                </label>
                 <select id="projectType" name="projectType">
-                  <option>Social media marketing.</option>
-                  <option>Business strategy.</option>
-                  <option>Operations improvement.</option>
-                  <option>Other</option>
+                  <option>{t("consultation.form.projectOptions.0")}</option>
+                  <option>{t("consultation.form.projectOptions.1")}</option>
+                  <option>{t("consultation.form.projectOptions.2")}</option>
+                  <option>{t("consultation.form.projectOptions.3")}</option>
                 </select>
               </div>
               <div className="consultation-contact-form-group">
                 <label htmlFor="referral">
-                  How did you hear about ConsulRain?
+                  {t("consultation.form.referralLabel")}
                 </label>
                 <select id="referral" name="referral">
-                  <option>Google</option>
-                  <option>Facebook</option>
-                  <option>LinkedIn</option>
-                  <option>SnapChat</option>
-                  <option>Instagram</option>
-                  <option>TikTok</option>
-                  <option>Other</option>
+                  <option>{t("consultation.form.referralOptions.0")}</option>
+                  <option>{t("consultation.form.referralOptions.1")}</option>
+                  <option>{t("consultation.form.referralOptions.2")}</option>
+                  <option>{t("consultation.form.referralOptions.3")}</option>
+                  <option>{t("consultation.form.referralOptions.4")}</option>
+                  <option>{t("consultation.form.referralOptions.5")}</option>
+                  <option>{t("consultation.form.referralOptions.6")}</option>
                 </select>
               </div>
             </div>
             <div className="consultation-contact-form-group-full">
-              <label htmlFor="description">About project:</label>
+              <label htmlFor="description">
+                {t("consultation.form.descLabel")}
+              </label>
               <textarea
                 id="description"
                 name="description"
-                placeholder="Your project description"
+                placeholder={t("consultation.form.descPlaceholder")}
                 rows={3}
               />
             </div>
             <button type="submit" className="consultation-contact-form-btn">
-              Send
+              {t("consultation.form.sendBtn")}
             </button>
           </form>
+
+          {/* Contact Info */}
           <div className="consultation-contact-info">
-            <h3>Connect with us</h3>
+            <h3>{t("consultation.contact.connect")}</h3>
             <ul>
               <li>
                 <FontAwesomeIcon icon={faEnvelope} /> info@consulrain.com
               </li>
               <li>
-                <FontAwesomeIcon icon={faPhone} /> +20 155 620 5466
+                <FontAwesomeIcon icon={faPhone} />{" "}
+                <span dir="ltr" style={{ textAlign: "left" }}>
+                  +20 155 620 5466
+                </span>
               </li>
             </ul>
-            <h3>Address</h3>
+            <h3>{t("consultation.contact.addressTitle")}</h3>
             <ul>
               <li>
-                <FontAwesomeIcon icon={faGlobe} /> West 11 Mall - 6th October
-                Giza-Egypt
+                <FontAwesomeIcon icon={faGlobe} />{" "}
+                {t("consultation.contact.address.0")}
               </li>
               <li>
-                <FontAwesomeIcon icon={faGlobe} /> Cite 500 Apartment - Bilda -
-                Algeria
+                <FontAwesomeIcon icon={faGlobe} />{" "}
+                {t("consultation.contact.address.1")}
               </li>
               <li>
-                <FontAwesomeIcon icon={faClock} /> Sunday → Thursday 9am to 5pm
+                <FontAwesomeIcon icon={faClock} />{" "}
+                {t("consultation.contact.workingHours")}
               </li>
             </ul>
           </div>

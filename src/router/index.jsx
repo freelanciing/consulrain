@@ -16,7 +16,6 @@ import {
   FeasibilityStudies,
 } from "../pages";
 import PrivacyPolicy from "../components/PrivacyPolicy/PrivacyPolicy";
-import Consultation from "../pages/Consultation/Consultation";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -32,7 +31,7 @@ const router = createBrowserRouter(
         <Route index element={<TrainingPage />} />
       </Route>
       <Route path="consultation" element={<RootLayout />}>
-        <Route index element={<Consultation />} />
+        <Route index element={<ConsultationPage />} />
       </Route>
       <Route path="feasibility-study" element={<RootLayout />}>
         <Route index element={<FeasibilityStudies />} />
