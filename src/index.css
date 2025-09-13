@@ -22,9 +22,7 @@ body[lang="en"] {
   font-family: "Montserrat", sans-serif !important;
 }
 html[lang="ar"],
-body[lang="ar"],
-html[dir="rtl"],
-body[dir="rtl"] {
+body[lang="ar"] {
   font-family: "Dimashq", sans-serif !important;
 }
 @layer base {
@@ -127,7 +125,7 @@ html[lang="ar"] .footer-li:hover {
   transform: translateX(-10px);
 }
 .swiper-pagination-bullets {
-  bottom: -5px !important; 
+  bottom: -5px !important;
 }
 
 .swiper-pagination-bullet {
@@ -135,7 +133,7 @@ html[lang="ar"] .footer-li:hover {
   height: 12px;
   margin: 0 6px !important;
   opacity: 0.6;
-  background-color: #888cb7; 
+  background-color: #888cb7;
 }
 
 .swiper-pagination-bullet-active {

@@ -1,4 +1,3 @@
-
 import ConsultationHeroImg from "../../../public/images/Consultation.jpg";
 import { useTranslation } from "react-i18next";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -44,9 +43,7 @@ export default function Consultation() {
             <h1 className="consultation-intro-title">
               {t("consultation.title")}
             </h1>
-            <p className="consultation-intro-desc">
-              {t("consultation.intro")}
-            </p>
+            <p className="consultation-intro-desc">{t("consultation.intro")}</p>
             <div className="consultation-feature-list">
               <div className="consultation-feature-item">
                 <FontAwesomeIcon
@@ -199,7 +196,7 @@ export default function Consultation() {
                 <FontAwesomeIcon icon={faEnvelope} /> info@consulrain.com
               </li>
               <li>
-                <FontAwesomeIcon icon={faPhone} />{" "}
+                <FontAwesomeIcon icon={faPhone} />
                 <span dir="ltr" style={{ textAlign: "left" }}>
                   +20 155 620 5466
                 </span>
@@ -208,15 +205,15 @@ export default function Consultation() {
             <h3>{t("consultation.contact.addressTitle")}</h3>
             <ul>
               <li>
-                <FontAwesomeIcon icon={faGlobe} />{" "}
+                <FontAwesomeIcon icon={faGlobe} />
                 {t("consultation.contact.address.0")}
               </li>
               <li>
-                <FontAwesomeIcon icon={faGlobe} />{" "}
+                <FontAwesomeIcon icon={faGlobe} />
                 {t("consultation.contact.address.1")}
               </li>
               <li>
-                <FontAwesomeIcon icon={faClock} />{" "}
+                <FontAwesomeIcon icon={faClock} />
                 {t("consultation.contact.workingHours")}
               </li>
             </ul>

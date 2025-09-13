@@ -75,7 +75,7 @@ const OurServices = () => {
                     </div>
                     <div className="flip-card-back">
                       <h3>{card.backTitle}</h3>
-                      <p>{card.back}</p>
+                      <div>{card.back}</div>
                       <a
                         href={card.path}
                         target="_blank"
