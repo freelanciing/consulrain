@@ -383,8 +383,37 @@
       "descPlaceholder": "Your project description",
       "sendBtn": "Send"
     },
-  "empower": {
-    "title": "Empower Your Business"
-  }
+    "empower": {
+      "title": "Empower Your Business"
+    }
+  },
+  "ourServicesSection": {
+    "title": "Our Services",
+    "subtitle": "Empowering Your Team Training & Consultation",
+    "description": "Unlock your organization’s full potential with our expert-led training programs and strategic consultation services. We help you build skills, foster collaboration, and develop actionable strategies for sustainable growth and operational excellence.",
+    "cards": {
+      "training": {
+        "title": "Training",
+        "front": "We go beyond conventional workshops to deliver immersive learning experiences, thoughtfully aligned with your business priorities",
+        "backTitle": "meticulously crafted process",
+        "back": "Pre-Training Diagnosis, Customized Training Programs, Post-Training Evaluation."
+      },
+      "consultation": {
+        "title": "Consultation",
+        "front": "Our consultation is rooted in collaboration and strategic clarity",
+        "backTitle": "Strategic Consultation Process",
+        "back": "In-depth analysis, collaborative planning, and actionable recommendations to help your organization overcome obstacles and achieve long-term growth."
+      },
+      "feasibilityStudies": {
+        "title": "Feasibility Studies",
+        "front": "Comprehensive studies to help you make well-informed business decisions",
+        "backTitle": "Key Services Offered",
+        "back": {
+          "item1": "Market, Technical, Financial, Legal, Organizational Feasibility",
+          "item2": "Risk Assessment & Mitigation"
+        }
+      }
+    },
+    "learnMore": "LEARN MORE"
   }
 }

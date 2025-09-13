@@ -1,43 +1,46 @@
 import React from "react";
 import "./OurServices.css";
-
-const cards = [
-  {
-    icon: <i className="fas fa-drafting-compass"></i>,
-    title: "Training",
-    front:
-      "We go beyond conventional workshops to deliver immersive learning experiences, thoughtfully aligned with your business priorities",
-    backTitle: "meticulously crafted process",
-    back: "Pre-Training Diagnosis, Customized Training Programs, Post-Training Evaluation.",
-    path: "/training",
-  },
-  {
-    icon: <i className="fas fa-cube"></i>,
-    title: "Consultation",
-    front: "Our consultation is rooted in collaboration and strategic clarity",
-    backTitle: "Strategic Consultation Process",
-    back: "In-depth analysis, collaborative planning, and actionable recommendations to help your organization overcome obstacles and achieve long-term growth.",
-    path: "/consultation",
-  },
-  {
-    icon: <i className="fas fa-search-minus"></i>,
-    title: "Feasibility Studies",
-    front:
-      "Comprehensive studies to help you make well-informed business decisions",
-    backTitle: "Key Services Offered",
-    back: (
-      <ul style={{ textAlign: "left", paddingLeft: "1.2em", marginBottom: 0 }}>
-        <li>Market, Technical, Financial, Legal, Organizational Feasibility</li>
-        <li>Risk Assessment & Mitigation</li>
-      </ul>
-    ),
-    path: "/feasibility-studies",
-  },
-];
+import { useTranslation } from "react-i18next";
 
 const OurServices = () => {
+  const { t } = useTranslation();
+
+  const cards = [
+    {
+      icon: <i className="fas fa-drafting-compass"></i>,
+      title: t("ourServicesSection.cards.training.title"),
+      front: t("ourServicesSection.cards.training.front"),
+      backTitle: t("ourServicesSection.cards.training.backTitle"),
+      back: t("ourServicesSection.cards.training.back"),
+      path: "/training",
+    },
+    {
+      icon: <i className="fas fa-cube"></i>,
+      title: t("ourServicesSection.cards.consultation.title"),
+      front: t("ourServicesSection.cards.consultation.front"),
+      backTitle: t("ourServicesSection.cards.consultation.backTitle"),
+      back: t("ourServicesSection.cards.consultation.back"),
+      path: "/consultation",
+    },
+    {
+      icon: <i className="fas fa-search-minus"></i>,
+      title: t("ourServicesSection.cards.feasibilityStudies.title"),
+      front: t("ourServicesSection.cards.feasibilityStudies.front"),
+      backTitle: t("ourServicesSection.cards.feasibilityStudies.backTitle"),
+      back: (
+        <ul
+          style={{ textAlign: "left", paddingLeft: "1.2em", marginBottom: 0 }}
+        >
+          <li>{t("ourServicesSection.cards.feasibilityStudies.back.item1")}</li>
+          <li>{t("ourServicesSection.cards.feasibilityStudies.back.item2")}</li>
+        </ul>
+      ),
+      path: "/feasibility-studies",
+    },
+  ];
+
   return (
-    <section id="offer" className="offer pt-5">
+    <section id="offer" className="offer pt-5 mx-0">
       <div className="container">
         <div className="offer__text text-center w-50 mx-auto">
           <span
@@ -45,16 +48,13 @@ const OurServices = () => {
             role="heading"
             aria-level="2"
           >
-            Our Services
+            {t("ourServicesSection.title")}
           </span>
           <h2 className="fs-1 mb-4 fw-bold">
-            Empowering Your Team Training & Consultation
+            {t("ourServicesSection.subtitle")}
           </h2>
           <p className="mb-5 fw-bold pb-0 pb-md-5">
-            Unlock your organization’s full potential with our expert-led
-            training programs and strategic consultation services. We help you
-            build skills, foster collaboration, and develop actionable
-            strategies for sustainable growth and operational excellence.
+            {t("ourServicesSection.description")}
           </p>
         </div>
         <div className="offer__cards">
@@ -71,18 +71,18 @@ const OurServices = () => {
                         {card.icon}
                       </div>
                       <h3>{card.title}</h3>
-                      <p>{card.front}</p>
+                      <div className="front-text">{card.front}</div>
                     </div>
                     <div className="flip-card-back">
                       <h3>{card.backTitle}</h3>
-                      <div>{card.back}</div>
+                      <div className="back-text">{card.back}</div>
                       <a
                         href={card.path}
                         target="_blank"
                         aria-label={`3D view of ${card.title}`}
                         className="btn btn-dark text-dark bg-white three-d-btn"
                       >
-                        LEARN MORE
+                        {t("ourServicesSection.learnMore")}
                       </a>
                     </div>
                   </div>

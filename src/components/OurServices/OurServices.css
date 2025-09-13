@@ -32,15 +32,36 @@
   box-shadow: 0 1.5px 4px rgba(30, 41, 59, 0.18), 0 0.5px 0 #1e293b;
   transform: translateZ(55px) scale(0.95);
 }
-/* Make section heading and description readable on light background */
-.offer__text {
-  color: #1e293b;
-}
 .offer {
-  background: #7fa5bb;
+  position: relative;
+  background-image: url("/images/bgService.jpg");
+  background-size: cover;
+  background-position: center;
   margin-top: 90px;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
 }
 
+.offer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(44, 95, 122, 0.85); /* #2C5F7A with opacity */
+  z-index: 1;
+}
+
+.offer .container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Make section heading and description readable on dark overlay */
+.offer__text {
+  color: #ffffff;
+}
 .offer .flip-card {
   background-color: transparent;
   width: 100%;
@@ -90,7 +111,8 @@
 }
 
 .offer .flip-card-inner h3,
-.offer .flip-card-inner p,
+.offer .flip-card-inner .front-text,
+.offer .flip-card-inner .back-text,
 .offer .flip-card-inner button {
   text-align: center;
   transform: translateZ(60px);
