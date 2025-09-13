@@ -6,12 +6,13 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import SectionHeader from "../SectionHeader/SectionHeader";
+import "./Founders.css";
 
 import sherinImg from "/images/hero/people1.png";
 import husseinImg from "/images/HusseinAfifi.png";
 
 const Founders = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const founders = [
     {
       name: t("founders.founder1.name"),
@@ -25,7 +26,7 @@ const Founders = () => {
     },
   ];
   return (
-    <div className="w-full min-h-screen flex flex-col items-center justify-center px-6 md:px-16 lg:px-28 py-20 text-pure-white">
+    <div className="founders-section w-full min-h-screen flex flex-col items-center justify-center px-6 md:px-16 lg:px-28 py-20 text-pure-white">
       <div
         className="w-full flex flex-col items-center justify-center rounded-2xl bg-gradient-to-r from-primary-500 to-primary-400 p-10 space-y-8"
         role="region"
@@ -37,6 +38,7 @@ const Founders = () => {
           titleId="founders-heading"
         />
         <Swiper
+          key={i18n.language}
           modules={[Pagination, Autoplay, Navigation]}
           navigation
           pagination={{ clickable: true }}

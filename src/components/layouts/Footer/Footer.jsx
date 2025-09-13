@@ -1,7 +1,7 @@
 import TransButton from "../../TransButton";
 import SocialFooter from "./SocialFooter";
 import { useTranslation } from "react-i18next";
-import logo from "../../../assets/spinnerLogo.png";
+import logo from "/public/images/spinnerLogo.png";
 import { NavLink } from "react-router-dom";
 
 export default function Footer() {
@@ -145,7 +145,7 @@ export default function Footer() {
                   <li key={index} className="footer-li text-white">
                     <NavLink
                       to={path}
-                      className="p3 hover:text-white mb-3 block text-blue-100"
+                      className="p3 hover:text-white mb-3 block text-white"
                     >
                       {label}
                     </NavLink>

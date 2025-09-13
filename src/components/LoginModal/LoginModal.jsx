@@ -51,13 +51,11 @@ export default function LoginModal({ isOpen, onClose, onSwitchToRegister }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     // Handle login logic here
-    console.log("Login attempt:", { email, password });
     onClose();
   };
 
-  const handleSocialLogin = (provider) => {
+  const handleSocialLogin = () => {
     // Handle social login logic here
-    console.log("Social login with:", provider);
     onClose();
   };
 

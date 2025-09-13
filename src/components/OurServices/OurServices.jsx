@@ -7,7 +7,7 @@ const OurServices = () => {
 
   const cards = [
     {
-      icon: <i className="fas fa-drafting-compass" aria-hidden="true"></i>,
+      icon: <i className="fas fa-chalkboard-teacher" aria-hidden="true"></i>,
       title: t("ourServicesSection.cards.training.title"),
       front: t("ourServicesSection.cards.training.front"),
       backTitle: t("ourServicesSection.cards.training.backTitle"),
@@ -15,7 +15,7 @@ const OurServices = () => {
       path: "/training",
     },
     {
-      icon: <i className="fas fa-cube" aria-hidden="true"></i>,
+      icon: <i className="fas fa-users-cog" aria-hidden="true"></i>,
       title: t("ourServicesSection.cards.consultation.title"),
       front: t("ourServicesSection.cards.consultation.front"),
       backTitle: t("ourServicesSection.cards.consultation.backTitle"),
@@ -23,7 +23,7 @@ const OurServices = () => {
       path: "/consultation",
     },
     {
-      icon: <i className="fas fa-search-minus" aria-hidden="true"></i>,
+      icon: <i className="fas fa-file-signature" aria-hidden="true"></i>,
       title: t("ourServicesSection.cards.feasibilityStudies.title"),
       front: t("ourServicesSection.cards.feasibilityStudies.front"),
       backTitle: t("ourServicesSection.cards.feasibilityStudies.backTitle"),

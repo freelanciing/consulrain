@@ -59,9 +59,13 @@
     "namePlaceholder": "Full name",
     "emailPlaceholder": "Your email",
     "messagePlaceholder": "Message",
-    "submitButton": "SUBMIT",
-    "successMessage": "Thank you for contacting us! We will respond as soon as possible.",
-    "locationEgypt": "Egypt Location:",
+    "submitButton": "Send Message",
+    "successMessage": "Your message has been sent successfully!",
+    "successTitle": "Message Sent!",
+    "submitting": "Submitting...",
+    "errorMessageTitle": "Error",
+    "errorMessageText": "Something went wrong. Please try again later.",
+    "locationEgypt": "Egypt Office:",
     "locationEgyptValue": "West 11 Mall - 6th October Giza-Egypt",
     "locationAlgeria": "Algeria Location:",
     "locationAlgeriaValue": "Cite 500 Apartment - Bilda -Algeria",
@@ -96,11 +100,14 @@
   },
   "register": {
     "title": "Join Us",
+    "errorTitle": "Oops...",
+    "successTitle": "Success!",
     "email": "Email",
     "emailPlaceholder": "Enter your email",
     "agreeToTerms": "I agree to the",
     "termsAndConditions": "terms and conditions",
     "joinUsButton": "Join Us",
+    "submitting": "Submitting...",
     "phone": "Phone",
     "name": "Name",
     "namePlaceholder": "Enter your full name",
@@ -194,9 +201,16 @@
       "title": "Title",
       "details": "Share us more details",
       "screenshot": "Screenshot",
-      "upload": "Upload (2MB)",
-      "submit": "Submit"
+      "upload": "Upload (500KB)",
+      "submit": "Submit",
+      "submitting": "Submitting..."
     },
+    "successTitle": "Feedback Sent",
+    "successMessage": "Thank you for your feedback!",
+    "errorTitle": "Submission Failed",
+    "errorMessage": "Could not send feedback. Please try again.",
+    "fileTooLargeTitle": "File Too Large",
+    "fileTooLargeText": "File size must be less than 500KB",
     "screenshotPermission": {
       "title": "Allow ConsulRain.ai to see this tab?",
       "description": "The site will be able to see the contents of this tab",
@@ -395,12 +409,21 @@
         "6": "Other"
       },
       "descLabel": "About project:",
-      "descPlaceholder": "Your project description",
-      "sendBtn": "Send"
+      "descPlaceholder": "Briefly describe your project or question...",
+      "sendBtn": "Send Request",
+      "submitting": "Submitting...",
+      "connect": "Connect with us",
+      "addressTitle": "Our Address",
+      "address": {
+        "0": "West 11 Mall - 6th October Giza, Egypt",
+        "1": "Cite 500 Apartment - Bilda, Algeria"
+      },
+      "workingHours": "Saturday - Thursday: 9am - 6pm"
     },
-    "empower": {
-      "title": "Empower Your Business"
-    }
+    "successTitle": "Request Sent!",
+    "successMessage": "Your consultation request has been sent successfully. We will get back to you shortly.",
+    "errorMessageTitle": "Submission Failed",
+    "errorMessageText": "There was an error sending your request. Please try again."
   },
   "ourServicesSection": {
     "title": "Our Services",
@@ -471,5 +494,26 @@
   },
   "copyright": {
     "text": "ConsulRain. All Rights Reserved."
-  }
+  },
+  "scopeOfServices": {
+    "title": "SCOPE OF SERVICES",
+    "subtitle": "Ready to Empower",
+    "description": "With a deep understanding of today’s business dynamics we deliver targeted solutions across key areas:",
+    "services": {
+      "supplyChain": "Supply chain & Logistics",
+      "administration": "Administration",
+      "leadership": "Leadership",
+      "softskills": "Softskills",
+      "production": "Production",
+      "qualityControl": "Quality Control",
+      "humanResources": "Human Resources",
+      "sales": "Sales",
+      "marketing": "Marketing",
+      "compliance": "Compliance",
+      "financeAccounting": "Finance & Accounting",
+      "foodSafety": "Food Safety",
+      "informationTechnology": "Information Technology"
+    }
+  },
+  "consultingAndTraining": "Consulting & Training"
 }

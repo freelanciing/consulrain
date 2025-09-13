@@ -1,3 +1,4 @@
+import MySwal from "../../swalConfig";
 import ScopeOfServices from "../../components/ScopeOfServices/ScopeOfServices";
 import ConsultationHeroImg from "../../../public/images/Consultation.jpg";
 import { useTranslation } from "react-i18next";
@@ -11,10 +12,82 @@ import {
   faGlobe,
   faClock,
 } from "@fortawesome/free-solid-svg-icons";
+import { useState } from "react";
+import emailjs from "@emailjs/browser";
+import { createEmailTemplate } from "../../components/EmailTemplate/emailTemplate";
+import {
+  EMAILJS_SERVICE_ID,
+  EMAILJS_TEMPLATE_ID,
+  EMAILJS_USER_ID,
+} from "../../emailjsConfig";
 import "./Consultation.css";
 
 export default function Consultation() {
   const { t } = useTranslation();
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    projectType: "",
+    referral: "",
+    description: "",
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    const templateParams = {
+      formType: "Consultation Request",
+      ...form,
+    };
+
+    const emailBody = createEmailTemplate(templateParams);
+
+    const finalTemplateParams = {
+      ...templateParams,
+      html_message: emailBody,
+    };
+
+    emailjs
+      .send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        finalTemplateParams,
+        EMAILJS_USER_ID
+      )
+      .then(
+        () => {
+          MySwal.fire({
+            icon: "success",
+            title: t("consultation.successTitle"),
+            text: t("consultation.successMessage"),
+          });
+          setForm({
+            name: "",
+            email: "",
+            projectType: "",
+            referral: "",
+            description: "",
+          });
+        },
+        () => {
+          MySwal.fire({
+            icon: "error",
+            title: t("consultation.errorMessageTitle"),
+            text: t("consultation.errorMessageText"),
+          });
+        }
+      )
+      .finally(() => {
+        setIsSubmitting(false);
+      });
+  };
+
   return (
     <>
       {/* Hero Section */}
@@ -125,7 +198,7 @@ export default function Consultation() {
           {t("consultation.contact.subtitle")}
         </h2>
         <div className="consultation-contact-dark-content">
-          <form className="consultation-contact-form">
+          <form onSubmit={handleSubmit} className="consultation-contact-form">
             <div className="consultation-contact-form-row">
               <div className="consultation-contact-form-group">
                 <label htmlFor="name">{t("consultation.form.nameLabel")}</label>
@@ -134,6 +207,9 @@ export default function Consultation() {
                   id="name"
                   name="name"
                   placeholder={t("consultation.form.namePlaceholder")}
+                  value={form.name}
+                  onChange={handleChange}
+                  required
                 />
               </div>
               <div className="consultation-contact-form-group">
@@ -145,6 +221,9 @@ export default function Consultation() {
                   id="email"
                   name="email"
                   placeholder={t("consultation.form.emailPlaceholder")}
+                  value={form.email}
+                  onChange={handleChange}
+                  required
                 />
               </div>
             </div>
@@ -153,8 +232,16 @@ export default function Consultation() {
                 <label htmlFor="projectType">
                   {t("consultation.form.projectLabel")}
                 </label>
-                <select id="projectType" name="projectType">
-                  <option>{t("consultation.form.projectOptions.0")}</option>
+                <select
+                  id="projectType"
+                  name="projectType"
+                  value={form.projectType}
+                  onChange={handleChange}
+                  required
+                >
+                  <option value="" disabled>
+                    {t("consultation.form.projectOptions.0")}
+                  </option>
                   <option>{t("consultation.form.projectOptions.1")}</option>
                   <option>{t("consultation.form.projectOptions.2")}</option>
                   <option>{t("consultation.form.projectOptions.3")}</option>
@@ -164,8 +251,16 @@ export default function Consultation() {
                 <label htmlFor="referral">
                   {t("consultation.form.referralLabel")}
                 </label>
-                <select id="referral" name="referral">
-                  <option>{t("consultation.form.referralOptions.0")}</option>
+                <select
+                  id="referral"
+                  name="referral"
+                  value={form.referral}
+                  onChange={handleChange}
+                  required
+                >
+                  <option value="" disabled>
+                    {t("consultation.form.referralOptions.0")}
+                  </option>
                   <option>{t("consultation.form.referralOptions.1")}</option>
                   <option>{t("consultation.form.referralOptions.2")}</option>
                   <option>{t("consultation.form.referralOptions.3")}</option>
@@ -184,10 +279,19 @@ export default function Consultation() {
                 name="description"
                 placeholder={t("consultation.form.descPlaceholder")}
                 rows={3}
+                value={form.description}
+                onChange={handleChange}
+                required
               />
             </div>
-            <button type="submit" className="consultation-contact-form-btn">
-              {t("consultation.form.sendBtn")}
+            <button
+              type="submit"
+              disabled={isSubmitting}
+              className="consultation-contact-form-btn"
+            >
+              {isSubmitting
+                ? t("consultation.form.submitting")
+                : t("consultation.form.sendBtn")}
             </button>
           </form>
 

@@ -52,7 +52,7 @@ const OurPartners = () => {
               delay: 2500,
               disableOnInteraction: false,
             }}
-            loop={false}
+            loop={true}
             spaceBetween={0}
             breakpoints={{
               0: { slidesPerView: 2, spaceBetween: 20 },

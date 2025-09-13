@@ -65,6 +65,8 @@
   line-height: 1.6;
   margin-bottom: 2rem;
   flex-grow: 1; /* Allow paragraph to grow */
+  text-align: justify;
+  hyphens: auto;
 }
 
 .learn-more-btn {

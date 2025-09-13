@@ -1,5 +1,5 @@
 {
-  "consultingAndTraining": "الاستشارات والتدريب",
+  "consultingAndTraining": "Consulting & Training",
   "header": {
     "title": "مرحبًا",
     "learning": "التعلم",
@@ -75,12 +75,16 @@
   "contact": {
     "header": "اتصل بنا",
     "formTitle": "اتصل بنا",
-    "formSubtitle": "تواصل معنا لأي استفسار",
+    "formSubtitle": "املأ النموذج أدناه وسنعاود الاتصال بك في أقرب وقت ممكن.",
     "namePlaceholder": "الاسم الكامل",
     "emailPlaceholder": "بريدك الإلكتروني",
     "messagePlaceholder": "رسالتك",
-    "submitButton": "إرسال",
-    "successMessage": "شكرًا لتواصلك معنا! سنرد عليك في أقرب وقت ممكن.",
+    "submitButton": "إرسال الرسالة",
+    "successMessage": "تم إرسال رسالتك بنجاح!",
+    "successTitle": "تم إرسال الرسالة!",
+    "submitting": "جارٍ الإرسال...",
+    "errorMessageTitle": "خطأ",
+    "errorMessageText": "حدث خطأ ما. يرجى المحاولة مرة أخرى في وقت لاحق.",
     "locationEgypt": "موقع مصر:",
     "locationEgyptValue": "ويست 11 مول - السادس من أكتوبر، الجيزة - مصر",
     "locationAlgeria": "موقع الجزائر:",
@@ -114,11 +118,14 @@
   },
   "register": {
     "title": "انضم إلينا",
+    "errorTitle": "عفوًا...",
+    "successTitle": "نجاح!",
     "email": "البريد الإلكتروني",
     "emailPlaceholder": "أدخل بريدك الإلكتروني",
     "agreeToTerms": "أوافق على",
     "termsAndConditions": "الشروط والأحكام",
     "joinUsButton": "انضم إلينا",
+    "submitting": "جارٍ الإرسال...",
     "phone": "الهاتف",
     "name": "الاسم",
     "namePlaceholder": "أدخل اسمك الكامل",
@@ -203,9 +210,16 @@
       "title": "العنوان",
       "details": "شاركنا تفاصيل أكثر",
       "screenshot": "لقطة شاشة",
-      "upload": "رفع ملف (2 ميجا)",
-      "submit": "إرسال"
+      "upload": "رفع ملف (500 كيلوبايت)",
+      "submit": "إرسال",
+      "submitting": "جارٍ الإرسال..."
     },
+    "successTitle": "تم إرسال الملاحظات",
+    "successMessage": "شكرا لملاحظاتك!",
+    "errorTitle": "فشل الإرسال",
+    "errorMessage": "تعذر إرسال الملاحظات. يرجى المحاولة مرة أخرى.",
+    "fileTooLargeTitle": "حجم الملف كبير جدًا",
+    "fileTooLargeText": "يجب أن يكون حجم الملف أقل من 500 كيلوبايت",
     "screenshotPermission": {
       "title": "السماح لـ ConsulRain.ai برؤية هذا التبويب؟",
       "description": "سيكون بإمكان الموقع رؤية محتويات هذا التبويب",
@@ -390,13 +404,22 @@
         "5": "تيك توك",
         "6": "أخرى"
       },
-      "descLabel": "عن المشروع:",
-      "descPlaceholder": "وصف مشروعك",
-      "sendBtn": "إرسال"
+      "descLabel": "وصف المشروع",
+      "descPlaceholder": "صف بإيجاز مشروعك أو سؤالك ...",
+      "sendBtn": "إرسال الطلب",
+      "submitting": "جارٍ الإرسال...",
+      "connect": "تواصل معنا",
+      "addressTitle": "عنواننا",
+      "address": {
+        "0": "مول ويست 11 - 6 أكتوبر - الجيزة - مصر",
+        "1": "حي 500 - شقة - البليدة - الجزائر"
+      },
+      "workingHours": "السبت - الخميس: 9 صباحًا - 6 مساءً"
     },
-    "empower": {
-      "title": "نمِ عملك"
-    }
+    "successTitle": "تم إرسال الطلب!",
+    "successMessage": "تم إرسال طلب الاستشارة الخاص بك بنجاح. سوف نعود اليك قريبا.",
+    "errorMessageTitle": "فشل الإرسال",
+    "errorMessageText": "حدث خطأ أثناء إرسال طلبك. حاول مرة اخرى."
   },
   "ourServicesSection": {
     "title": "خدماتنا",
@@ -465,5 +488,25 @@
   },
   "copyright": {
     "text": "كونسلرين. كل الحقوق محفوظة."
+  },
+  "scopeOfServices": {
+    "title": "نطاق الخدمات",
+    "subtitle": "جاهزون للتمكين",
+    "description": "بفهم عميق لديناميكيات الأعمال اليوم، نقدم حلولاً مستهدفة عبر المجالات الرئيسية:",
+    "services": {
+      "supplyChain": "سلسلة التوريد والخدمات اللوجستية",
+      "administration": "الإدارة",
+      "leadership": "القيادة",
+      "softskills": "المهارات الشخصية",
+      "production": "الإنتاج",
+      "qualityControl": "مراقبة الجودة",
+      "humanResources": "الموارد البشرية",
+      "sales": "المبيعات",
+      "marketing": "التسويق",
+      "compliance": "الامتثال",
+      "financeAccounting": "المالية والمحاسبة",
+      "foodSafety": "سلامة الغذاء",
+      "informationTechnology": "تكنولوجيا المعلومات"
+    }
   }
 }

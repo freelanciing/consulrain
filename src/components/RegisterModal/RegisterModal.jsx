@@ -1,6 +1,8 @@
+import MySwal from "../../swalConfig";
 import "./RegisterModal.css";
 import React, { useState, useEffect, useRef } from "react";
-import emailjs from "emailjs-com";
+import emailjs from "@emailjs/browser";
+import { createEmailTemplate } from "../EmailTemplate/emailTemplate";
 import {
   EMAILJS_SERVICE_ID,
   EMAILJS_TEMPLATE_ID,
@@ -14,6 +16,7 @@ export default function RegisterModal({ isOpen, onClose }) {
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [agreeToTerms, setAgreeToTerms] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState("");
   const modalRef = useRef(null);
   const triggerRef = useRef(null);
@@ -60,28 +63,61 @@ export default function RegisterModal({ isOpen, onClose }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!agreeToTerms) {
-      setError(t("register.agreeToTermsError"));
+      MySwal.fire({
+        icon: "error",
+        title: t("register.errorTitle"),
+        text: t("register.agreeToTermsError"),
+      });
       return;
     }
     setError("");
+    setIsSubmitting(true);
+
+    const templateParams = {
+      formType: "Join Us Submission",
+      name,
+      email,
+      phone,
+    };
+
+    const emailBody = createEmailTemplate(templateParams);
+
+    const finalTemplateParams = {
+      ...templateParams,
+      html_message: emailBody,
+    };
 
     emailjs
       .send(
         EMAILJS_SERVICE_ID,
         EMAILJS_TEMPLATE_ID,
-        { name, email, phone },
+        finalTemplateParams,
         EMAILJS_USER_ID
       )
-      .then(() => {
-        alert(t("register.successMessage"));
-        setName("");
-        setEmail("");
-        setPhone("");
-        setAgreeToTerms(false);
-        onClose();
-      })
-      .catch(() => {
-        alert(t("register.errorMessage"));
+      .then(
+        () => {
+          MySwal.fire({
+            icon: "success",
+            title: t("register.successTitle"),
+            text: t("register.successMessage"),
+          });
+          setName("");
+          setEmail("");
+          setPhone("");
+          setAgreeToTerms(false);
+          onClose();
+        },
+        (err) => {
+          console.error("EmailJS error:", err);
+          MySwal.fire({
+            icon: "error",
+            title: t("register.errorTitle"),
+            text: t("register.errorMessage"),
+          });
+        }
+      )
+      .finally(() => {
+        setIsSubmitting(false);
       });
   };
 
@@ -199,12 +235,14 @@ export default function RegisterModal({ isOpen, onClose }) {
           )}
           <button
             type="submit"
-            className="w-full bg-primary-500 text-white py-3 rounded-lg hover:bg-primary-600 transition-colors font-bold"
+            disabled={isSubmitting}
+            className="w-full bg-primary-500 text-white py-3 rounded-lg hover:bg-primary-600 transition-colors font-bold disabled:bg-gray-400 disabled:cursor-not-allowed"
           >
-            {t("register.joinUsButton")}
+            {isSubmitting
+              ? t("register.submitting")
+              : t("register.joinUsButton")}
           </button>
         </form>
-        
       </div>
     </div>
   );

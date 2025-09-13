@@ -2,6 +2,14 @@
 import React, { useState, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import { useLanguage } from "../../hooks/useLanguage";
+import MySwal from "../../swalConfig";
+import emailjs from "@emailjs/browser";
+import { createEmailTemplate } from "../EmailTemplate/emailTemplate";
+import {
+  EMAILJS_SERVICE_ID,
+  EMAILJS_TEMPLATE_ID,
+  EMAILJS_USER_ID,
+} from "../../emailjsConfig";
 
 export default function FeedbackWidget() {
   const { t } = useTranslation();
@@ -16,6 +24,7 @@ export default function FeedbackWidget() {
   });
   const [uploadedFile, setUploadedFile] = useState(null);
   const [screenshot, setScreenshot] = useState(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [showScreenshotPermission, setShowScreenshotPermission] =
     useState(false);
   const fileInputRef = useRef(null);
@@ -30,9 +39,13 @@ export default function FeedbackWidget() {
   const handleFileUpload = (event) => {
     const file = event.target.files[0];
     if (file) {
-      if (file.size > 2 * 1024 * 1024) {
-        // 2MB limit
-        alert("File size must be less than 2MB");
+      if (file.size > 500 * 1024) {
+        // Reduced limit to 500KB
+        MySwal.fire({
+          icon: "error",
+          title: t("feedback.fileTooLargeTitle"),
+          text: t("feedback.fileTooLargeText"),
+        });
         return;
       }
       setUploadedFile(file);
@@ -81,26 +94,85 @@ export default function FeedbackWidget() {
     setShowScreenshotPermission(false);
   };
 
-  const handleSubmit = () => {
-    // Handle form submission
-    console.log("Form submitted:", {
-      type: selectedType,
-      ...formData,
-      file: uploadedFile,
-      screenshot: screenshot,
-    });
+  const handleSubmit = async () => {
+    setIsSubmitting(true);
+    let imageUrl = "";
 
-    // Reset form
-    setFormData({
-      fullName: "",
-      email: "",
-      title: "",
-      details: "",
-    });
-    setUploadedFile(null);
-    setScreenshot(null);
-    setSelectedType(null);
-    setIsOpen(false);
+    try {
+      const file =
+        uploadedFile ||
+        (screenshot
+          ? new File([screenshot], "screenshot.png", { type: "image/png" })
+          : null);
+
+      if (file) {
+        const formData = new FormData();
+        formData.append("image", file);
+
+        const response = await fetch(
+          "https://api.imgbb.com/1/upload?key=ef4ec1a8840a59660ce042ce387686f8",
+          {
+            method: "POST",
+            body: formData,
+          }
+        );
+
+        const result = await response.json();
+
+        if (result.success) {
+          imageUrl = result.data.url;
+        } else {
+          throw new Error(result.error.message || "Image upload failed");
+        }
+      }
+
+      const templateParams = {
+        formType: `Feedback: ${selectedType}`,
+        ...formData,
+        imageUrl,
+      };
+
+      const emailBody = createEmailTemplate(templateParams);
+
+      const finalTemplateParams = {
+        ...templateParams,
+        html_message: emailBody,
+      };
+
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        finalTemplateParams,
+        EMAILJS_USER_ID
+      );
+
+      MySwal.fire({
+        icon: "success",
+        title: t("feedback.successTitle"),
+        text: t("feedback.successMessage"),
+      });
+
+      // Reset form on success
+      setFormData({
+        fullName: "",
+        email: "",
+        title: "",
+        details: "",
+      });
+      setUploadedFile(null);
+      setScreenshot(null);
+      setSelectedType(null);
+      setIsOpen(false);
+    } catch (error) {
+      console.error("Submission error:", error);
+      MySwal.fire({
+        icon: "error",
+        title: t("feedback.errorTitle"),
+        text: t("feedback.errorMessage"),
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const removeFile = () => {
@@ -329,9 +401,12 @@ export default function FeedbackWidget() {
 
                   <button
                     onClick={handleSubmit}
-                    className="w-full p-2 bg-blue-600 hover:bg-blue-700 rounded font-medium transition-colors"
+                    disabled={isSubmitting}
+                    className="w-full p-2 bg-blue-600 hover:bg-blue-700 rounded font-medium transition-colors disabled:bg-gray-500 disabled:cursor-not-allowed"
                   >
-                    {t("feedback.form.submit")}
+                    {isSubmitting
+                      ? t("feedback.form.submitting")
+                      : t("feedback.form.submit")}
                   </button>
                 </div>
               </div>

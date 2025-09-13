@@ -1,5 +1,13 @@
+import MySwal from "../../swalConfig";
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
+import emailjs from "@emailjs/browser";
+import { createEmailTemplate } from "../EmailTemplate/emailTemplate";
+import {
+  EMAILJS_SERVICE_ID,
+  EMAILJS_TEMPLATE_ID,
+  EMAILJS_USER_ID,
+} from "../../emailjsConfig";
 import headerBg from "../../assets/contact-header-bg.jpg";
 import "./contact.css";
 
@@ -10,7 +18,7 @@ export default function ContactUs() {
     email: "",
     message: "",
   });
-  const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [showSecondLocation, setShowSecondLocation] = useState(false);
 
   const handleChange = (e) => {
@@ -19,7 +27,51 @@ export default function ContactUs() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setSubmitted(true);
+    setIsSubmitting(true);
+
+    const templateParams = {
+      formType: "Contact Us Submission",
+      name: form.name,
+      email: form.email,
+      message: form.message,
+    };
+
+    const emailBody = createEmailTemplate(templateParams);
+
+    const finalTemplateParams = {
+      ...templateParams,
+      html_message: emailBody, // Send the generated HTML
+    };
+
+    // --- To Send a Real Email (uncomment when ready) ---
+
+    emailjs
+      .send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        finalTemplateParams,
+        EMAILJS_USER_ID
+      )
+      .then(
+        () => {
+          MySwal.fire({
+            icon: "success",
+            title: t("contact.successTitle"),
+            text: t("contact.successMessage"),
+          });
+          setForm({ name: "", email: "", message: "" });
+        },
+        () => {
+          MySwal.fire({
+            icon: "error",
+            title: t("contact.errorMessageTitle"),
+            text: t("contact.errorMessageText"),
+          });
+        }
+      )
+      .finally(() => {
+        setIsSubmitting(false);
+      });
   };
 
   return (
@@ -89,15 +141,13 @@ export default function ContactUs() {
               />
               <button
                 type="submit"
-                className="w-full py-3 rounded-lg font-bold text-white bg-primary-500 hover:bg-primary-700 transition shadow text-lg"
+                disabled={isSubmitting}
+                className="w-full py-3 rounded-lg font-bold text-white bg-primary-500 hover:bg-primary-700 transition shadow text-lg disabled:bg-gray-400 disabled:cursor-not-allowed"
               >
-                {t("contact.submitButton")}
+                {isSubmitting
+                  ? t("contact.submitting")
+                  : t("contact.submitButton")}
               </button>
-              {submitted && (
-                <div className="text-green-600 text-center font-bold py-2">
-                  {t("contact.successMessage")}
-                </div>
-              )}
             </form>
           </div>
           {/* Right: Map - show Egypt or Algeria based on flip card */}
