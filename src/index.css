@@ -11,7 +11,7 @@
 @import "tailwindcss";
 @font-face {
   font-family: "Dimashq";
-  src: url("./assets/fonts/Dimashq.otf") format("opentype");
+  src: url("./assets/fonts/alfont_com_خط-الإيغور.ttf") format("opentype");
   font-weight: normal;
   font-style: normal;
   font-display: swap;

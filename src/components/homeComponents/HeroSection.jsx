@@ -17,7 +17,7 @@ const HeroSection = () => {
       <div className="flex flex-col items-center lg:items-start sm:text-center lg:text-start gap-3 3xl:ms-auto">
         <h1
           id="hero-title"
-          className="text-lg md:text-2xl lg:text-4xl xl:text-5xl !text-primary-500 !font-extrabold"
+          className="text-center md:!text-start text-lg md:text-2xl lg:text-4xl xl:text-5xl !text-primary-500 !font-extrabold"
         >
           {t("hero.title")}
         </h1>
@@ -28,7 +28,7 @@ const HeroSection = () => {
 
         <div className="mt-4 flex flex-wrap justify-center lg:justify-start md:text-cente gap-2">
           <a
-            href="#learningSolutions"
+            href="#offer"
             className="bg-primary-500 text-white px-10 py-3 rounded hover:bg-primary-700 transition font-semibold"
           >
             {t("hero.cta")}

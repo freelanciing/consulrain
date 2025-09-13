@@ -1,3 +1,4 @@
+import ScopeOfServices from "../../components/ScopeOfServices/ScopeOfServices";
 import ConsultationHeroImg from "../../../public/images/Consultation.jpg";
 import { useTranslation } from "react-i18next";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -33,7 +34,6 @@ export default function Consultation() {
           </div>
         </div>
       </div>
-
       {/* Intro + Features Section */}
       <div className="consultation-intro-features-wrapper">
         <div className="consultation-intro-features">
@@ -113,6 +113,7 @@ export default function Consultation() {
           </div>
         </div>
       </div>
+      <ScopeOfServices />
 
       {/* Dark Contact Section */}
       <div className="consultation-contact-dark-wrapper">

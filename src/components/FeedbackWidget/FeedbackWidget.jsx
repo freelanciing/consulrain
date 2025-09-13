@@ -1,5 +1,5 @@
 // src/components/FeedbackWidget/FeedbackWidget.jsx
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import { useLanguage } from "../../hooks/useLanguage";
 
@@ -18,47 +18,7 @@ export default function FeedbackWidget() {
   const [screenshot, setScreenshot] = useState(null);
   const [showScreenshotPermission, setShowScreenshotPermission] =
     useState(false);
-  const [error, setError] = useState("");
   const fileInputRef = useRef(null);
-  const widgetRef = useRef(null);
-  const triggerRef = useRef(null);
-
-  useEffect(() => {
-    if (isOpen) {
-      triggerRef.current = document.activeElement;
-      const focusableElements = widgetRef.current.querySelectorAll(
-        'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
-      );
-      const firstElement = focusableElements[0];
-      const lastElement = focusableElements[focusableElements.length - 1];
-
-      firstElement?.focus();
-
-      const handleKeyDown = (e) => {
-        if (e.key !== "Tab") return;
-
-        if (e.shiftKey) {
-          if (document.activeElement === firstElement) {
-            lastElement.focus();
-            e.preventDefault();
-          }
-        } else {
-          if (document.activeElement === lastElement) {
-            firstElement.focus();
-            e.preventDefault();
-          }
-        }
-      };
-
-      const widget = widgetRef.current;
-      widget.addEventListener("keydown", handleKeyDown);
-
-      return () => {
-        widget.removeEventListener("keydown", handleKeyDown);
-        triggerRef.current?.focus();
-      };
-    }
-  }, [isOpen]);
 
   const handleInputChange = (field, value) => {
     setFormData((prev) => ({
@@ -72,10 +32,9 @@ export default function FeedbackWidget() {
     if (file) {
       if (file.size > 2 * 1024 * 1024) {
         // 2MB limit
-        setError(t("feedback.fileSizeError"));
+        alert("File size must be less than 2MB");
         return;
       }
-      setError("");
       setUploadedFile(file);
     }
   };
@@ -86,24 +45,29 @@ export default function FeedbackWidget() {
 
   const allowScreenshot = async () => {
     try {
+      // Request screen capture
       const stream = await navigator.mediaDevices.getDisplayMedia({
         video: { mediaSource: "screen" },
       });
 
+      // Create video element to capture frame
       const video = document.createElement("video");
       video.srcObject = stream;
       video.play();
 
       video.addEventListener("loadedmetadata", () => {
+        // Create canvas to capture screenshot
         const canvas = document.createElement("canvas");
         canvas.width = video.videoWidth;
         canvas.height = video.videoHeight;
         const ctx = canvas.getContext("2d");
         ctx.drawImage(video, 0, 0);
 
+        // Convert to blob
         canvas.toBlob((blob) => {
           setScreenshot(blob);
           setShowScreenshotPermission(false);
+          // Stop the stream
           stream.getTracks().forEach((track) => track.stop());
         }, "image/png");
       });
@@ -118,6 +82,7 @@ export default function FeedbackWidget() {
   };
 
   const handleSubmit = () => {
+    // Handle form submission
     console.log("Form submitted:", {
       type: selectedType,
       ...formData,
@@ -125,6 +90,7 @@ export default function FeedbackWidget() {
       screenshot: screenshot,
     });
 
+    // Reset form
     setFormData({
       fullName: "",
       email: "",
@@ -137,266 +103,269 @@ export default function FeedbackWidget() {
     setIsOpen(false);
   };
 
-  const openWidget = (type) => {
-    setSelectedType(type);
-    setIsOpen(true);
+  const removeFile = () => {
+    setUploadedFile(null);
+    if (fileInputRef.current) {
+      fileInputRef.current.value = "";
+    }
   };
 
-  const handleBack = () => {
-    setSelectedType(null);
+  const removeScreenshot = () => {
+    setScreenshot(null);
   };
 
   return (
-    <div
-      className={`fixed bottom-5 ${
-        language === "ar" ? "left-5" : "left-5"
-      } z-50`}
-    >
-      {!isOpen && (
+    <>
+      {/* Main Feedback Button*/}
+      <div className="fixed bottom-0 left-8 z-50 ">
         <button
-          onClick={() => setIsOpen(true)}
-          className="bg-gray-800 text-white px-4 py-2 rounded-lg shadow-lg flex items-center space-x-2 hover:bg-gray-700 transition-colors"
-          aria-haspopup="dialog"
-          aria-expanded={isOpen}
-          aria-label={t("feedback.button", "Feedback")}
+          onClick={() => setIsOpen(!isOpen)}
+          className="feedbackBtn bg-gray-700 text-white px-4 py-2 rounded-t-lg shadow-lg hover:bg-gray-800 transition-colors flex items-center gap-2"
         >
-          <svg
-            className="w-5 h-5"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"
-            ></path>
-          </svg>
-          <span>{t("feedback.button", "Feedback")}</span>
+          <span>💬</span>
+          <span className="font-medium">{t("feedback.button")}</span>
         </button>
-      )}
+      </div>
 
+      {/* Feedback Panel */}
       {isOpen && (
-        <div
-          ref={widgetRef}
-          className="bg-white rounded-lg shadow-2xl w-96"
-          role="dialog"
-          aria-modal="true"
-          aria-labelledby="feedback-widget-title"
-        >
-          <div className="p-4">
-            <div className="flex justify-between items-center mb-4">
-              <div className="flex items-center space-x-4">
-                {selectedType && (
-                  <button
-                    onClick={handleBack}
-                    className="text-gray-400 hover:text-gray-600"
-                    aria-label={t("feedback.back", "Back")}
-                  >
-                    <i className="fas fa-arrow-left text-lg"></i>
-                  </button>
-                )}
-                <h3 id="feedback-widget-title" className="text-lg font-bold">
-                  {selectedType
-                    ? t("feedback.sendFeedback", "Send feedback")
-                    : t("feedback.title", "Feedback")}
-                </h3>
-              </div>
-              <button
-                onClick={() => setIsOpen(false)}
-                className="text-gray-400 hover:text-gray-600"
-                aria-label={t("feedback.close")}
-              >
-                <i className="fas fa-times text-lg"></i>
-              </button>
-            </div>
-
+        <div className="fixed bottom-16 left-1 z-50">
+          <div className="bg-gray-800 text-white rounded-t-lg shadow-xl w-96 overflow-hidden">
             {!selectedType ? (
-              <div className="space-y-3 p-2">
-                <button
-                  onClick={() => openWidget("idea")}
-                  className="w-full text-left p-3 rounded-lg border hover:bg-gray-50"
-                  aria-pressed={selectedType === "idea"}
-                >
-                  <p className="font-semibold">{t("feedback.idea.title")}</p>
-                  <p className="text-sm text-gray-500">
-                    {t("feedback.idea.description")}
-                  </p>
-                </button>
-                <button
-                  onClick={() => openWidget("issue")}
-                  className="w-full text-left p-3 rounded-lg border hover:bg-gray-50"
-                  aria-pressed={selectedType === "issue"}
-                >
-                  <p className="font-semibold">{t("feedback.issue.title")}</p>
-                  <p className="text-sm text-gray-500">
-                    {t("feedback.issue.description")}
-                  </p>
-                </button>
+              // Type Selection Panel
+              <div className="p-4">
+                <div className="flex items-center justify-between mb-4">
+                  <h3 className="font-semibold">{t("feedback.title")}</h3>
+                  <button
+                    onClick={() => setIsOpen(false)}
+                    className="text-gray-400 hover:text-white"
+                  >
+                    ✕
+                  </button>
+                </div>
+
+                <div className="space-y-3">
+                  <button
+                    onClick={() => setSelectedType("idea")}
+                    className="w-full p-3 bg-gray-700 hover:bg-gray-600 rounded-lg transition-colors flex items-center gap-3"
+                  >
+                    <div className="w-8 h-8 bg-blue-500 rounded flex items-center justify-center">
+                      💡
+                    </div>
+                    <div className="text-left">
+                      <div className="font-medium">
+                        {t("feedback.idea.title")}
+                      </div>
+                      <div className="text-sm text-gray-300">
+                        {t("feedback.idea.description")}
+                      </div>
+                    </div>
+                  </button>
+
+                  <button
+                    onClick={() => setSelectedType("issue")}
+                    className="w-full p-3 bg-gray-700 hover:bg-gray-600 rounded-lg transition-colors flex items-center gap-3"
+                  >
+                    <div className="w-8 h-8 bg-red-500 rounded flex items-center justify-center">
+                      🐛
+                    </div>
+                    <div className="text-left">
+                      <div className="font-medium">
+                        {t("feedback.issue.title")}
+                      </div>
+                      <div className="text-sm text-gray-300">
+                        {t("feedback.issue.description")}
+                      </div>
+                    </div>
+                  </button>
+                </div>
               </div>
             ) : (
-              <form onSubmit={(e) => e.preventDefault()} className="space-y-3">
-                <div>
-                  <label
-                    htmlFor="fullName"
-                    className="block text-sm font-medium text-gray-700"
-                  >
-                    {t("feedback.form.fullName", "Full name")}
-                  </label>
-                  <input
-                    type="text"
-                    id="fullName"
-                    value={formData.fullName}
-                    onChange={(e) =>
-                      handleInputChange("fullName", e.target.value)
-                    }
-                    className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500"
-                    required
-                  />
-                </div>
-                <div>
-                  <label
-                    htmlFor="email"
-                    className="block text-sm font-medium text-gray-700"
-                  >
-                    {t("feedback.form.email", "Email")}
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    value={formData.email}
-                    onChange={(e) => handleInputChange("email", e.target.value)}
-                    className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500"
-                    required
-                  />
-                </div>
-                <div>
-                  <label
-                    htmlFor="title"
-                    className="block text-sm font-medium text-gray-700"
-                  >
-                    {t("feedback.form.title", "Title")}
-                  </label>
-                  <input
-                    type="text"
-                    id="title"
-                    value={formData.title}
-                    onChange={(e) => handleInputChange("title", e.target.value)}
-                    className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500"
-                    required
-                  />
-                </div>
-                <div>
-                  <label
-                    htmlFor="details"
-                    className="block text-sm font-medium text-gray-700"
-                  >
-                    {t(
-                      "feedback.form.details",
-                      "Share us more details"
-                    )}
-                  </label>
-                  <textarea
-                    id="details"
-                    rows="3"
-                    value={formData.details}
-                    onChange={(e) =>
-                      handleInputChange("details", e.target.value)
-                    }
-                    className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500"
-                    required
-                  ></textarea>
-                </div>
-                <div>
-                  <label
-                    htmlFor="file-upload"
-                    className="block text-sm font-medium text-gray-700"
-                  >
-                    {t("feedback.form.screenshot", "Screenshot")}
-                  </label>
-                  <div className="mt-1 flex items-center space-x-2">
-                    <button
-                      type="button"
-                      onClick={() => fileInputRef.current.click()}
-                      className="bg-gray-200 px-3 py-2 rounded-md text-sm hover:bg-gray-300 flex items-center space-x-2"
-                    >
-                      <span>
-                        {t("feedback.form.upload", "Upload (2MB)")}
-                      </span>
-                    </button>
-                    <input
-                      id="file-upload"
-                      ref={fileInputRef}
-                      type="file"
-                      className="hidden"
-                      onChange={handleFileUpload}
-                      accept="image/*"
-                    />
-                    <button
-                      type="button"
-                      onClick={handleScreenshot}
-                      className="bg-gray-200 px-3 py-2 rounded-md text-sm hover:bg-gray-300"
-                    >
-                      <i className="fas fa-camera"></i>
-                    </button>
-                  </div>
-                  {uploadedFile && (
-                    <p className="text-sm text-gray-500 mt-1">
-                      {uploadedFile.name}
-                    </p>
-                  )}
-                  {screenshot && (
-                    <p className="text-sm text-gray-500 mt-1">
-                      {t("feedback.screenshotAttached")}
-                    </p>
-                  )}
-                  {error && (
-                    <p className="text-red-500 text-sm mt-1" role="alert">
-                      {error}
-                    </p>
-                  )}
-                </div>
-                <div className="flex justify-end pt-2">
+              // Form Panel
+              <div className="p-4">
+                <div className="flex items-center justify-between mb-4">
                   <button
-                    type="button"
-                    onClick={handleSubmit}
-                    className="bg-gray-800 text-white px-5 py-2 rounded-md hover:bg-gray-700"
+                    onClick={() => setSelectedType(null)}
+                    className="text-gray-400 hover:text-white fs-2"
                   >
-                    {t("feedback.form.submit", "Submit")}
+                    {language === "AR" ? "→" : "←"}
+                  </button>
+                  <h3 className="font-semibold">
+                    {selectedType === "idea"
+                      ? t("feedback.idea.title")
+                      : t("feedback.issue.title")}
+                  </h3>
+                  <button
+                    onClick={() => setIsOpen(false)}
+                    className="text-gray-400 hover:text-white"
+                  >
+                    ✕
                   </button>
                 </div>
-              </form>
+
+                <div className="space-y-4">
+                  <div>
+                    <input
+                      type="text"
+                      placeholder={t("feedback.form.fullName")}
+                      value={formData.fullName}
+                      onChange={(e) =>
+                        handleInputChange("fullName", e.target.value)
+                      }
+                      className="w-full p-2 bg-gray-700 border border-gray-600 rounded text-white placeholder-gray-400"
+                    />
+                  </div>
+
+                  <div>
+                    <input
+                      type="email"
+                      placeholder={t("feedback.form.email")}
+                      value={formData.email}
+                      onChange={(e) =>
+                        handleInputChange("email", e.target.value)
+                      }
+                      className="w-full p-2 bg-gray-700 border border-gray-600 rounded text-white placeholder-gray-400"
+                    />
+                  </div>
+
+                  <div>
+                    <input
+                      type="text"
+                      placeholder={t("feedback.form.title")}
+                      value={formData.title}
+                      onChange={(e) =>
+                        handleInputChange("title", e.target.value)
+                      }
+                      className="w-full p-2 bg-gray-700 border border-gray-600 rounded text-white placeholder-gray-400"
+                    />
+                  </div>
+
+                  <div>
+                    <textarea
+                      placeholder={t("feedback.form.details")}
+                      value={formData.details}
+                      onChange={(e) =>
+                        handleInputChange("details", e.target.value)
+                      }
+                      rows={4}
+                      className="w-full p-2 bg-gray-700 border border-gray-600 rounded text-white placeholder-gray-400 resize-none"
+                    />
+                  </div>
+
+                  {/* File Upload Section */}
+                  <div className="space-y-2">
+                    <div className="flex gap-2">
+                      <button
+                        onClick={handleScreenshot}
+                        className="flex-1 p-2 bg-gray-700 hover:bg-gray-600 rounded transition-colors flex items-center justify-center gap-2"
+                      >
+                        📷{" "}
+                        <span className="text-sm">
+                          {t("feedback.form.screenshot")}
+                        </span>
+                      </button>
+
+                      <button
+                        onClick={() => fileInputRef.current?.click()}
+                        className="flex-1 p-2 bg-gray-700 hover:bg-gray-600 rounded transition-colors flex items-center justify-center gap-2"
+                      >
+                        📎{" "}
+                        <span className="text-sm">
+                          {t("feedback.form.upload")}
+                        </span>
+                      </button>
+                    </div>
+
+                    <input
+                      ref={fileInputRef}
+                      type="file"
+                      onChange={handleFileUpload}
+                      accept="image/*,.pdf,.doc,.docx,.txt"
+                      className="hidden"
+                    />
+
+                    {/* Display uploaded file */}
+                    {uploadedFile && (
+                      <div className="flex items-center justify-between p-2 bg-gray-700 rounded">
+                        <div className="flex items-center gap-2">
+                          <span>📄</span>
+                          <span className="text-sm truncate">
+                            {uploadedFile.name}
+                          </span>
+                          <span className="text-xs text-gray-400">
+                            {(uploadedFile.size / 1024).toFixed(1)} KB
+                          </span>
+                        </div>
+                        <button
+                          onClick={removeFile}
+                          className="text-red-400 hover:text-red-300"
+                        >
+                          ✕
+                        </button>
+                      </div>
+                    )}
+
+                    {/* Display screenshot */}
+                    {screenshot && (
+                      <div className="flex items-center justify-between p-2 bg-gray-700 rounded">
+                        <div className="flex items-center gap-2">
+                          <span>📷</span>
+                          <span className="text-sm">
+                            {t("feedback.files.screenshot")}
+                          </span>
+                          <span className="text-xs text-gray-400">
+                            {(screenshot.size / 1024).toFixed(1)} KB
+                          </span>
+                        </div>
+                        <button
+                          onClick={removeScreenshot}
+                          className="text-red-400 hover:text-red-300"
+                        >
+                          ✕
+                        </button>
+                      </div>
+                    )}
+                  </div>
+
+                  <button
+                    onClick={handleSubmit}
+                    className="w-full p-2 bg-blue-600 hover:bg-blue-700 rounded font-medium transition-colors"
+                  >
+                    {t("feedback.form.submit")}
+                  </button>
+                </div>
+              </div>
             )}
           </div>
         </div>
       )}
 
+      {/* Screenshot Permission Modal */}
       {showScreenshotPermission && (
-        <div
-          className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
-          role="alertdialog"
-          aria-modal="true"
-          aria-labelledby="screenshot-permission-title"
-        >
-          <div className="bg-white rounded-lg p-6">
-            <h4 id="screenshot-permission-title" className="text-lg font-bold">
-              {t("feedback.screenshotPermission.title")}
-            </h4>
-            <p className="text-sm text-gray-600 mt-2">
-              {t("feedback.screenshotPermission.description")}
-            </p>
-            <div className="flex justify-end space-x-4 mt-4">
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-[60]">
+          <div className="bg-white rounded-lg p-6 max-w-md mx-4">
+            <div className="text-center mb-4">
+              <div className="w-16 h-16 mx-auto mb-4 bg-blue-100 rounded-full flex items-center justify-center">
+                <span className="text-2xl">🖥️</span>
+              </div>
+              <h3 className="text-lg font-semibold text-gray-800 mb-2">
+                {t("feedback.screenshotPermission.title")}
+              </h3>
+              <p className="text-sm text-gray-600">
+                {t("feedback.screenshotPermission.description")}
+              </p>
+            </div>
+
+            <div className="flex gap-3">
               <button
                 onClick={cancelScreenshot}
-                className="px-4 py-2 rounded-md"
+                className="flex-1 px-4 py-2 bg-gray-200 hover:bg-gray-300 rounded font-medium transition-colors"
               >
                 {t("feedback.screenshotPermission.cancel")}
               </button>
               <button
                 onClick={allowScreenshot}
-                className="bg-primary-500 text-white px-4 py-2 rounded-md"
+                className="flex-1 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded font-medium transition-colors"
               >
                 {t("feedback.screenshotPermission.allow")}
               </button>
@@ -404,6 +373,6 @@ export default function FeedbackWidget() {
           </div>
         </div>
       )}
-    </div>
+    </>
   );
 }

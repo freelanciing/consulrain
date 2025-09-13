@@ -35,7 +35,7 @@ const OurServices = () => {
           <li>{t("ourServicesSection.cards.feasibilityStudies.back.item2")}</li>
         </ul>
       ),
-      path: "/feasibility-studies",
+      path: "/feasibility-study",
     },
   ];
 

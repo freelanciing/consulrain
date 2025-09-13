@@ -39,7 +39,12 @@ const VisionMission = () => {
               aria-labelledby={`vision-mission-card-title-${index}`}
             >
               <div className="card-content">
-                <h3 id={`vision-mission-card-title-${index}`}>{card.title}</h3>
+                <h3
+                  id={`vision-mission-card-title-${index}`}
+                  className="!font-extrabold border-b border-solid border-[#b9abab] pb-1"
+                >
+                  {card.title}
+                </h3>
                 <p>{card.subtitle}</p>
                 <Link to="/about" className="learn-more-btn">
                   {t("visionMission.learnMore")}{" "}
