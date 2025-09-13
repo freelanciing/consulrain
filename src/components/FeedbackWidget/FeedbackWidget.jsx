@@ -101,14 +101,11 @@ export default function FeedbackWidget() {
         const ctx = canvas.getContext("2d");
         ctx.drawImage(video, 0, 0);
 
-        canvas.toBlob(
-          (blob) => {
-            setScreenshot(blob);
-            setShowScreenshotPermission(false);
-            stream.getTracks().forEach((track) => track.stop());
-          },
-          "image/png"
-        );
+        canvas.toBlob((blob) => {
+          setScreenshot(blob);
+          setShowScreenshotPermission(false);
+          stream.getTracks().forEach((track) => track.stop());
+        }, "image/png");
       });
     } catch (err) {
       console.error("Error capturing screenshot:", err);
@@ -145,21 +142,39 @@ export default function FeedbackWidget() {
     setIsOpen(true);
   };
 
+  const handleBack = () => {
+    setSelectedType(null);
+  };
+
   return (
     <div
       className={`fixed bottom-5 ${
-        language === "ar" ? "left-5" : "right-5"
+        language === "ar" ? "left-5" : "left-5"
       } z-50`}
     >
       {!isOpen && (
         <button
           onClick={() => setIsOpen(true)}
-          className="bg-primary-500 text-white rounded-full w-16 h-16 flex items-center justify-center shadow-lg hover:bg-primary-600 transition-transform transform hover:scale-110"
+          className="bg-gray-800 text-white px-4 py-2 rounded-lg shadow-lg flex items-center space-x-2 hover:bg-gray-700 transition-colors"
           aria-haspopup="dialog"
           aria-expanded={isOpen}
-          aria-label={t("feedback.button")}
+          aria-label={t("feedback.button", "Feedback")}
         >
-          <i className="fas fa-comment-dots text-2xl"></i>
+          <svg
+            className="w-5 h-5"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"
+            ></path>
+          </svg>
+          <span>{t("feedback.button", "Feedback")}</span>
         </button>
       )}
 
@@ -171,51 +186,64 @@ export default function FeedbackWidget() {
           aria-modal="true"
           aria-labelledby="feedback-widget-title"
         >
-          <div className="p-6">
+          <div className="p-4">
             <div className="flex justify-between items-center mb-4">
-              <h3 id="feedback-widget-title" className="text-xl font-bold">
-                {t("feedback.title")}
-              </h3>
+              <div className="flex items-center space-x-4">
+                {selectedType && (
+                  <button
+                    onClick={handleBack}
+                    className="text-gray-400 hover:text-gray-600"
+                    aria-label={t("feedback.back", "Back")}
+                  >
+                    <i className="fas fa-arrow-left text-lg"></i>
+                  </button>
+                )}
+                <h3 id="feedback-widget-title" className="text-lg font-bold">
+                  {selectedType
+                    ? t("feedback.sendFeedback", "Send feedback")
+                    : t("feedback.title", "Feedback")}
+                </h3>
+              </div>
               <button
                 onClick={() => setIsOpen(false)}
                 className="text-gray-400 hover:text-gray-600"
                 aria-label={t("feedback.close")}
               >
-                <i className="fas fa-times text-xl"></i>
+                <i className="fas fa-times text-lg"></i>
               </button>
             </div>
 
             {!selectedType ? (
-              <div className="space-y-4">
+              <div className="space-y-3 p-2">
                 <button
                   onClick={() => openWidget("idea")}
-                  className="w-full text-left p-4 rounded-lg border hover:bg-gray-50"
+                  className="w-full text-left p-3 rounded-lg border hover:bg-gray-50"
                   aria-pressed={selectedType === "idea"}
                 >
-                  <p className="font-bold">{t("feedback.idea.title")}</p>
+                  <p className="font-semibold">{t("feedback.idea.title")}</p>
                   <p className="text-sm text-gray-500">
                     {t("feedback.idea.description")}
                   </p>
                 </button>
                 <button
                   onClick={() => openWidget("issue")}
-                  className="w-full text-left p-4 rounded-lg border hover:bg-gray-50"
+                  className="w-full text-left p-3 rounded-lg border hover:bg-gray-50"
                   aria-pressed={selectedType === "issue"}
                 >
-                  <p className="font-bold">{t("feedback.issue.title")}</p>
+                  <p className="font-semibold">{t("feedback.issue.title")}</p>
                   <p className="text-sm text-gray-500">
                     {t("feedback.issue.description")}
                   </p>
                 </button>
               </div>
             ) : (
-              <form onSubmit={(e) => e.preventDefault()} className="space-y-4">
+              <form onSubmit={(e) => e.preventDefault()} className="space-y-3">
                 <div>
                   <label
                     htmlFor="fullName"
                     className="block text-sm font-medium text-gray-700"
                   >
-                    {t("feedback.form.fullName")}
+                    {t("feedback.form.fullName", "Full name")}
                   </label>
                   <input
                     type="text"
@@ -233,7 +261,7 @@ export default function FeedbackWidget() {
                     htmlFor="email"
                     className="block text-sm font-medium text-gray-700"
                   >
-                    {t("feedback.form.email")}
+                    {t("feedback.form.email", "Email")}
                   </label>
                   <input
                     type="email"
@@ -249,7 +277,7 @@ export default function FeedbackWidget() {
                     htmlFor="title"
                     className="block text-sm font-medium text-gray-700"
                   >
-                    {t("feedback.form.title")}
+                    {t("feedback.form.title", "Title")}
                   </label>
                   <input
                     type="text"
@@ -265,11 +293,14 @@ export default function FeedbackWidget() {
                     htmlFor="details"
                     className="block text-sm font-medium text-gray-700"
                   >
-                    {t("feedback.form.details")}
+                    {t(
+                      "feedback.form.details",
+                      "Share us more details"
+                    )}
                   </label>
                   <textarea
                     id="details"
-                    rows="4"
+                    rows="3"
                     value={formData.details}
                     onChange={(e) =>
                       handleInputChange("details", e.target.value)
@@ -283,15 +314,17 @@ export default function FeedbackWidget() {
                     htmlFor="file-upload"
                     className="block text-sm font-medium text-gray-700"
                   >
-                    {t("feedback.form.screenshot")}
+                    {t("feedback.form.screenshot", "Screenshot")}
                   </label>
-                  <div className="mt-1 flex items-center space-x-4">
+                  <div className="mt-1 flex items-center space-x-2">
                     <button
                       type="button"
                       onClick={() => fileInputRef.current.click()}
-                      className="bg-gray-200 px-4 py-2 rounded-md text-sm hover:bg-gray-300"
+                      className="bg-gray-200 px-3 py-2 rounded-md text-sm hover:bg-gray-300 flex items-center space-x-2"
                     >
-                      {t("feedback.form.upload")}
+                      <span>
+                        {t("feedback.form.upload", "Upload (2MB)")}
+                      </span>
                     </button>
                     <input
                       id="file-upload"
@@ -304,34 +337,34 @@ export default function FeedbackWidget() {
                     <button
                       type="button"
                       onClick={handleScreenshot}
-                      className="bg-gray-200 px-4 py-2 rounded-md text-sm hover:bg-gray-300"
+                      className="bg-gray-200 px-3 py-2 rounded-md text-sm hover:bg-gray-300"
                     >
                       <i className="fas fa-camera"></i>
                     </button>
                   </div>
                   {uploadedFile && (
-                    <p className="text-sm text-gray-500 mt-2">
+                    <p className="text-sm text-gray-500 mt-1">
                       {uploadedFile.name}
                     </p>
                   )}
                   {screenshot && (
-                    <p className="text-sm text-gray-500 mt-2">
+                    <p className="text-sm text-gray-500 mt-1">
                       {t("feedback.screenshotAttached")}
                     </p>
                   )}
                   {error && (
-                    <p className="text-red-500 text-sm mt-2" role="alert">
+                    <p className="text-red-500 text-sm mt-1" role="alert">
                       {error}
                     </p>
                   )}
                 </div>
-                <div className="flex justify-end">
+                <div className="flex justify-end pt-2">
                   <button
                     type="button"
                     onClick={handleSubmit}
-                    className="bg-primary-500 text-white px-6 py-2 rounded-md hover:bg-primary-600"
+                    className="bg-gray-800 text-white px-5 py-2 rounded-md hover:bg-gray-700"
                   >
-                    {t("feedback.form.submit")}
+                    {t("feedback.form.submit", "Submit")}
                   </button>
                 </div>
               </form>
@@ -348,10 +381,7 @@ export default function FeedbackWidget() {
           aria-labelledby="screenshot-permission-title"
         >
           <div className="bg-white rounded-lg p-6">
-            <h4
-              id="screenshot-permission-title"
-              className="text-lg font-bold"
-            >
+            <h4 id="screenshot-permission-title" className="text-lg font-bold">
               {t("feedback.screenshotPermission.title")}
             </h4>
             <p className="text-sm text-gray-600 mt-2">

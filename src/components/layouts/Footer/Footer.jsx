@@ -10,13 +10,19 @@ export default function Footer() {
 
   return (
     <div>
-      <footer className="bg-pure-turquoise" role="contentinfo" aria-labelledby="footer-heading">
-        <h2 id="footer-heading" className="sr-only">Footer</h2>
+      <footer
+        className="bg-pure-turquoise"
+        role="contentinfo"
+        aria-labelledby="footer-heading"
+      >
+        <h2 id="footer-heading" className="sr-only">
+          Footer
+        </h2>
         <div className="h-7"></div>
         {/* company data and links */}
         <div className="flex justify-center">
           <div
-            className={`w-full max-w-7xl px-4 ${
+            className={`w-full max-w-7xl px-4 sm:px-6 lg:!px-0 ${
               isArabic ? "sm:pe-20" : "sm:ps-20"
             } pb-20 flex gap-6 sm:gap-4 md:gap-16 lg:gap-16 xl:gap-32 items-start md:items-baseline flex-col sm:flex-row content-around justify-between`}
           >
@@ -27,7 +33,12 @@ export default function Footer() {
               } justify-start min-w-[220px]`}
             >
               <div className="flex items-center gap-3 mb-3">
-                <img src={logo} alt="ConsulRain Logo" className="w-16 h-16" loading="lazy" />
+                <img
+                  src={logo}
+                  alt="ConsulRain Logo"
+                  className="w-16 h-16"
+                  loading="lazy"
+                />
                 <h2 className="text-white font-bold text-2xl whitespace-nowrap">
                   {t("footer.ConsulRainCo")}
                 </h2>
@@ -49,7 +60,10 @@ export default function Footer() {
                     aria-label="Facebook"
                     className="w-8 h-8 flex items-center justify-center rounded-full bg-[#467471] hover:bg-[#182f40] transition-colors duration-200"
                   >
-                    <i className="fab fa-facebook-f text-white hover:text-white text-lg" aria-hidden="true"></i>
+                    <i
+                      className="fab fa-facebook-f text-white hover:text-white text-lg"
+                      aria-hidden="true"
+                    ></i>
                   </a>
                   <a
                     href="https://snapchat.com/add/consulrain"
@@ -58,7 +72,10 @@ export default function Footer() {
                     aria-label="Snapchat"
                     className="w-8 h-8 flex items-center justify-center rounded-full bg-[#467471] hover:bg-[#182f40] transition-colors duration-200"
                   >
-                    <i className="fab fa-snapchat-ghost text-white hover:text-white text-lg" aria-hidden="true"></i>
+                    <i
+                      className="fab fa-snapchat-ghost text-white hover:text-white text-lg"
+                      aria-hidden="true"
+                    ></i>
                   </a>
                   <a
                     href="https://linkedin.com/company/consulrain"
@@ -67,7 +84,10 @@ export default function Footer() {
                     aria-label="LinkedIn"
                     className="w-8 h-8 flex items-center justify-center rounded-full bg-[#467471] hover:bg-[#182f40] transition-colors duration-200"
                   >
-                    <i className="fab fa-linkedin-in text-white hover:text-white text-lg" aria-hidden="true"></i>
+                    <i
+                      className="fab fa-linkedin-in text-white hover:text-white text-lg"
+                      aria-hidden="true"
+                    ></i>
                   </a>
                   <a
                     href="https://tiktok.com/@consulrain"
@@ -76,7 +96,10 @@ export default function Footer() {
                     aria-label="TikTok"
                     className="w-8 h-8 flex items-center justify-center rounded-full bg-[#467471] hover:bg-[#182f40] transition-colors duration-200"
                   >
-                    <i className="fab fa-tiktok text-white hover:text-white text-lg" aria-hidden="true"></i>
+                    <i
+                      className="fab fa-tiktok text-white hover:text-white text-lg"
+                      aria-hidden="true"
+                    ></i>
                   </a>
                   <a
                     href="https://instagram.com/consulrain"
@@ -85,7 +108,10 @@ export default function Footer() {
                     aria-label="Instagram"
                     className="w-8 h-8 flex items-center justify-center rounded-full bg-[#467471] hover:bg-[#182f40] transition-colors duration-200"
                   >
-                    <i className="fab fa-instagram text-white hover:text-white text-lg" aria-hidden="true"></i>
+                    <i
+                      className="fab fa-instagram text-white hover:text-white text-lg"
+                      aria-hidden="true"
+                    ></i>
                   </a>
                 </div>
               </div>
@@ -182,7 +208,12 @@ export default function Footer() {
                     <span className="font-GilroySemiBold">
                       {t("contact.email")}
                     </span>{" "}
-                    <a href={`mailto:${t("contact.emailValue")}`}>{t("contact.emailValue")}</a>
+                    <a
+                      className="footer-link"
+                      href={`mailto:${t("contact.emailValue")}`}
+                    >
+                      {t("contact.emailValue")}
+                    </a>
                   </p>
                 </li>
 
@@ -191,7 +222,12 @@ export default function Footer() {
                     <span className="font-GilroySemiBold block">
                       {t("contact.phone")}
                     </span>
-                    <a href={`tel:${t("contact.phoneValue")}`} dir="ltr" style={{ textAlign: "left" }}>
+                    <a
+                      className="footer-link"
+                      href={`tel:${t("contact.phoneValue")}`}
+                      dir="ltr"
+                      style={{ textAlign: "left" }}
+                    >
                       {t("contact.phoneValue")}
                     </a>
                   </p>
@@ -199,7 +235,7 @@ export default function Footer() {
               </ul>
               <div className="border-b-1 border-b-gray-600 h-2"></div>
               <div className="border-1 border-primary-50 rounded-lg mt-4">
-                <TransButton />
+                <TransButton color="white" />
               </div>
             </address>
           </div>

@@ -57,7 +57,7 @@ const AnimatedLogo = ({ sectionRefs }) => {
           top,
           left,
           // Keep current spin angle
-          transform: `translate(-50%, -50%) rotate(${spin}deg)`
+          transform: `translate(-50%, -50%) rotate(${spin}deg)`,
         }));
         lastSectionIdx = sectionIdx;
       }
@@ -77,7 +77,7 @@ const AnimatedLogo = ({ sectionRefs }) => {
   useEffect(() => {
     setLogoStyle((prev) => ({
       ...prev,
-      transform: `translate(-50%, -50%) rotate(${spin}deg)`
+      transform: `translate(-50%, -50%) rotate(${spin}deg)`,
     }));
   }, [spin]);
 

@@ -108,8 +108,7 @@
     "close": "Close",
     "agreeToTermsError": "Please agree to the terms and conditions",
     "successMessage": "Registration sent successfully!",
-    "errorMessage": "Failed to send registration. Please try again.",
-    "alreadyHaveAccount": "Already have an account?"
+    "errorMessage": "Failed to send registration. Please try again."
   },
   "privacyPolicy": {
     "privacyPolicy": "Privacy Policy",
@@ -205,14 +204,14 @@
       "allow": "Allow"
     },
     "topbar": {
-    "social": {
-      "facebook": "Follow us on Facebook",
-      "snapchat": "Follow us on Snapchat",
-      "linkedin": "Follow us on LinkedIn",
-      "tiktok": "Follow us on TikTok",
-      "instagram": "Follow us on Instagram"
-    }
-  },
+      "social": {
+        "facebook": "Follow us on Facebook",
+        "snapchat": "Follow us on Snapchat",
+        "linkedin": "Follow us on LinkedIn",
+        "tiktok": "Follow us on TikTok",
+        "instagram": "Follow us on Instagram"
+      }
+    },
     "files": {
       "screenshot": "screenshot.png"
     }

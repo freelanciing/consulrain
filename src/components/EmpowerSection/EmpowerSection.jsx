@@ -33,7 +33,11 @@ export default function EmpowerSection() {
   ];
 
   return (
-    <section className="py-16 bg-white text-center" role="region" aria-labelledby="empower-heading">
+    <section
+      className="py-16 bg-white text-center"
+      role="region"
+      aria-labelledby="empower-heading"
+    >
       <SectionHeader
         title={t("empower.title")}
         highlightedWord={t("empower.highlightedWord")}
@@ -43,7 +47,12 @@ export default function EmpowerSection() {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 mt-10 max-w-8xl py-5 mx-auto px-4 sm:px-6 lg:px-8">
         {cards.map((card, idx) => (
-          <div key={idx} className="h-full" role="group" aria-labelledby={`empower-card-title-${idx}`}>
+          <div
+            key={idx}
+            className="h-full"
+            role="group"
+            aria-labelledby={`empower-card-title-${idx}`}
+          >
             <LearningCard {...card} cardId={`empower-card-title-${idx}`} />
           </div>
         ))}

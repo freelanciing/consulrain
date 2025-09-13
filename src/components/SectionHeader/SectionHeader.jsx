@@ -10,7 +10,10 @@ export default function SectionHeader({
   return (
     <div className={`text-center ${className}`}>
       <div className="relative inline-block">
-        <h2 id={titleId} className="text-4xl font-bold text-gray-800 mb-4 relative z-10">
+        <h2
+          id={titleId}
+          className="text-4xl font-bold text-gray-800 mb-4 relative z-10"
+        >
           {title} {highlightedWord}
         </h2>
         <div

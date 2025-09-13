@@ -132,7 +132,9 @@ export default function LoginModal({ isOpen, onClose, onSwitchToRegister }) {
         {/* Divider */}
         <div className="flex items-center my-6">
           <hr className="flex-grow border-gray-300" />
-          <span className="mx-4 text-gray-500 font-medium">{t("login.or")}</span>
+          <span className="mx-4 text-gray-500 font-medium">
+            {t("login.or")}
+          </span>
           <hr className="flex-grow border-gray-300" />
         </div>
 

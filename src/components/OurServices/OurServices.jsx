@@ -61,7 +61,7 @@ const OurServices = () => {
           </p>
         </div>
         <div className="offer__cards">
-          <ul className="row row-cols-1 row-cols-sm-2 row-cols-lg-3 gy-4 justify-content-center">
+          <ul className="row row-cols-1 row-cols-sm-2 row-cols-lg-3 gy-4 justify-content-center px-0">
             {cards.map((card, idx) => (
               <li className="cols mb-16" key={idx}>
                 <div

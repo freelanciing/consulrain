@@ -10,7 +10,7 @@ export default function Button(props) {
   }
   return (
     <button
-      onClick={props.handleClick}
+      onClick={props.onClick}
       style={customStyles}
       className={`${
         props.customClasses

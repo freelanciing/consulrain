@@ -8,7 +8,7 @@ import {
 } from "../../emailjsConfig";
 import { useTranslation } from "react-i18next";
 
-export default function RegisterModal({ isOpen, onClose, onSwitchToLogin }) {
+export default function RegisterModal({ isOpen, onClose }) {
   const { t } = useTranslation();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -204,15 +204,7 @@ export default function RegisterModal({ isOpen, onClose, onSwitchToLogin }) {
             {t("register.joinUsButton")}
           </button>
         </form>
-        <p className="text-center text-sm text-gray-600 mt-4">
-          {t("register.alreadyHaveAccount")}{" "}
-          <button
-            onClick={onSwitchToLogin}
-            className="text-primary-600 hover:underline font-medium"
-          >
-            {t("login.loginButton")}
-          </button>
-        </p>
+        
       </div>
     </div>
   );

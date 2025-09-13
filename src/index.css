@@ -48,6 +48,24 @@ body[lang="ar"] {
   -moz-osx-font-smoothing: grayscale;
 } */
 
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #009c90;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #007a70;
+}
+
 /* Remove default link styling for NavLink components */
 a,
 a:visited,
@@ -144,7 +162,15 @@ html[lang="ar"] .footer-li:hover {
   opacity: 1;
   transition: all 0.3s ease;
 }
-
+.footer-link {
+  color: #b6b4b4b6;
+  transition: color 0.3s ease;
+}
+.footer-link:hover {
+  color: #fff;
+  text-decoration: underline !important;
+  transition: color 0.3s ease;
+}
 /* Responsive Styles - Mobile First */
 @media (max-width: 639px) {
   section {

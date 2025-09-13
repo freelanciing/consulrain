@@ -174,3 +174,6 @@
 .offer .flip-card:hover .flip-card-inner {
   transform: rotateY(180deg);
 }
+.learn-more-btn{
+  color: var(--color-cyan-950);
+}

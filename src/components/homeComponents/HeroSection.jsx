@@ -15,11 +15,14 @@ const HeroSection = () => {
     >
       {/* Left Text Section */}
       <div className="flex flex-col items-center lg:items-start sm:text-center lg:text-start gap-3 3xl:ms-auto">
-        <h1 id="hero-title" className="text-lg md:text-2xl lg:text-4xl xl:text-5xl text-pure-turquoise font-bold">
+        <h1
+          id="hero-title"
+          className="text-lg md:text-2xl lg:text-4xl xl:text-5xl !text-primary-500 !font-extrabold"
+        >
           {t("hero.title")}
         </h1>
 
-        <h2 className="hero_subtitle text-base md:text-lg lg:text-xl xl:text-2xl text-sky-950 font-semibold max-w-3xl">
+        <h2 className="hero_subtitle text-base md:text-lg lg:text-xl xl:text-2xl !text-gray-700 font-semibold max-w-3xl">
           {t("hero.subtitle")}
         </h2>
 

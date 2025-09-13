@@ -51,8 +51,8 @@ export default function SplashPage() {
           </div>
 
           {/* Loading Animation */}
-          <div className="loading-animation m-auto" >
-            <div className="loading-bar" >
+          <div className="loading-animation m-auto">
+            <div className="loading-bar">
               <div className="loading-progress"></div>
             </div>
           </div>

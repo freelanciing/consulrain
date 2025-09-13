@@ -57,10 +57,7 @@ export default function PrivacyPolicy() {
           <h3 id="prohibited-use-heading" className="privacy-subheading">
             {privacy.prohibitedUse}
           </h3>
-          <ul
-            className="privacy-list"
-            aria-labelledby="prohibited-use-heading"
-          >
+          <ul className="privacy-list" aria-labelledby="prohibited-use-heading">
             {privacy.prohibitedUseList &&
               privacy.prohibitedUseList.map((item, idx) => (
                 <li key={idx}>{item}</li>

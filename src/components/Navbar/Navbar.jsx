@@ -1,6 +1,7 @@
 import React, { useState, useCallback, memo, useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import { NavLink } from "react-router-dom";
+import { Menu } from "@headlessui/react";
 import TransButton from "../TransButton";
 import logo from "../../assets/logo.png";
 import Button from "../Button/Button";
@@ -15,7 +16,6 @@ const RegisterModal = React.lazy(() =>
 const Navbar = memo(() => {
   const { t } = useTranslation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isRegisterModalOpen, setIsRegisterModalOpen] = useState(false);
 
   const menuButtonRef = useRef(null);
@@ -33,32 +33,18 @@ const Navbar = memo(() => {
     setIsMenuOpen((prev) => !prev);
   }, []);
 
-  // Close dropdown when clicking outside
-  useEffect(() => {
-    if (!isDropdownOpen) return;
-    function handleClick(e) {
-      const dropdown = document.getElementById("ourServicesDropdownWrapper");
-      if (dropdown && !dropdown.contains(e.target)) {
-        setIsDropdownOpen(false);
-      }
-    }
-    document.addEventListener("mousedown", handleClick);
-    return () => document.removeEventListener("mousedown", handleClick);
-  }, [isDropdownOpen]);
-
   // Focus management for mobile menu
   useEffect(() => {
     if (isMenuOpen) {
-      const firstFocusableElement = mobileMenuRef.current?.querySelector(
-        "a, button"
-      );
+      const menuButton = menuButtonRef.current;
+      const firstFocusableElement =
+        mobileMenuRef.current?.querySelector("a, button");
       firstFocusableElement?.focus();
 
       const handleKeyDown = (e) => {
         if (e.key === "Tab") {
-          const focusableElements = mobileMenuRef.current?.querySelectorAll(
-            "a, button"
-          );
+          const focusableElements =
+            mobileMenuRef.current?.querySelectorAll("a, button");
           const firstElement = focusableElements?.[0];
           const lastElement = focusableElements?.[focusableElements.length - 1];
 
@@ -77,7 +63,7 @@ const Navbar = memo(() => {
       document.addEventListener("keydown", handleKeyDown);
       return () => {
         document.removeEventListener("keydown", handleKeyDown);
-        menuButtonRef.current?.focus();
+        menuButton?.focus();
       };
     }
   }, [isMenuOpen, toggleMobileMenu]);
@@ -131,67 +117,53 @@ const Navbar = memo(() => {
                   {t("navbar.home")}
                 </NavLink>
               </li>
-              <li className="nav-item relative" id="ourServicesDropdownWrapper">
-                <button
-                  className={`nav-link dropdown-toggle text-gray-700 hover:text-primary-700 fw-bolder no-underline transition-colors duration-200 bg-transparent border-0 ${
-                    isDropdownOpen ? "show" : ""
-                  }`}
-                  id="ourServicesDropdown"
-                  type="button"
-                  aria-haspopup="true"
-                  aria-expanded={isDropdownOpen}
-                  aria-label="Our services menu"
-                  style={{ boxShadow: "none" }}
-                  onClick={() => setIsDropdownOpen((v) => !v)}
-                  onBlur={(e) => {
-                    if (!e.currentTarget.parentNode.contains(e.relatedTarget)) {
-                      setIsDropdownOpen(false);
-                    }
-                  }}
-                >
-                  {t("navbar.ourServices")}
-                </button>
-                <ul
-                  className={`custom-dropdown-menu${
-                    isDropdownOpen ? " show" : ""
-                  }`}
-                  aria-labelledby="ourServicesDropdown"
-                  style={{
-                    display: isDropdownOpen ? "block" : "none",
-                    position: "absolute",
-                    top: "100%",
-                    left: 0,
-                    zIndex: 1000,
-                  }}
-                >
-                  <li>
-                    <NavLink
-                      className="custom-dropdown-item"
-                      to="/training"
-                      onClick={() => setIsDropdownOpen(false)}
-                    >
-                      {t("navbar.training")}
-                    </NavLink>
-                  </li>
-                  <li>
-                    <NavLink
-                      className="custom-dropdown-item"
-                      to="/consultation"
-                      onClick={() => setIsDropdownOpen(false)}
-                    >
-                      {t("navbar.consultation")}
-                    </NavLink>
-                  </li>
-                  <li>
-                    <NavLink
-                      className="custom-dropdown-item"
-                      to="/feasibility-study"
-                      onClick={() => setIsDropdownOpen(false)}
-                    >
-                      {t("navbar.feasibilityStudies")}
-                    </NavLink>
-                  </li>
-                </ul>
+              <li className="nav-item relative">
+                <Menu as="div" className="relative inline-block text-left">
+                  <Menu.Button
+                    className="nav-link dropdown-toggle text-gray-700 hover:text-primary-700 fw-bolder no-underline transition-colors duration-200 bg-transparent border-0"
+                    aria-label="Our services menu"
+                  >
+                    {t("navbar.ourServices")}
+                  </Menu.Button>
+                  <Menu.Items className="custom-dropdown-menu show">
+                    <Menu.Item>
+                      {({ active }) => (
+                        <NavLink
+                          className={`custom-dropdown-item ${
+                            active ? "bg-gray-100" : ""
+                          }`}
+                          to="/training"
+                        >
+                          {t("navbar.training")}
+                        </NavLink>
+                      )}
+                    </Menu.Item>
+                    <Menu.Item>
+                      {({ active }) => (
+                        <NavLink
+                          className={`custom-dropdown-item ${
+                            active ? "bg-gray-100" : ""
+                          }`}
+                          to="/consultation"
+                        >
+                          {t("navbar.consultation")}
+                        </NavLink>
+                      )}
+                    </Menu.Item>
+                    <Menu.Item>
+                      {({ active }) => (
+                        <NavLink
+                          className={`custom-dropdown-item ${
+                            active ? "bg-gray-100" : ""
+                          }`}
+                          to="/feasibility-study"
+                        >
+                          {t("navbar.feasibilityStudies")}
+                        </NavLink>
+                      )}
+                    </Menu.Item>
+                  </Menu.Items>
+                </Menu>
               </li>
               <li>
                 <NavLink
@@ -216,11 +188,11 @@ const Navbar = memo(() => {
 
           {/* Language & Auth Buttons */}
           <div className="hidden lg:flex items-center gap-4">
-            <TransButton />
+            <TransButton color="pure-black" />
             <Button
               label={t("navbar.joinUs")}
               onClick={openRegisterModal}
-              customClasses="bg-primary-500 text-white hover:bg-primary-700"
+              customClasses="bg-primary-500 text-white hover:bg-primary-700 px-6 py-2"
             />
           </div>
 
@@ -258,54 +230,52 @@ const Navbar = memo(() => {
             </NavLink>
           </li>
           <li className="nav-item relative">
-            <button
-              className="nav-link dropdown-toggle w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary-700 hover:bg-gray-50 bg-transparent border-0"
-              onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-              aria-haspopup="true"
-              aria-expanded={isDropdownOpen}
-            >
-              {t("navbar.ourServices")}
-            </button>
-            {isDropdownOpen && (
-              <ul className="pl-4">
-                <li>
-                  <NavLink
-                    to="/training"
-                    className="block px-3 py-2 rounded-md text-sm font-medium text-gray-600 hover:text-primary-700 hover:bg-gray-50"
-                    onClick={() => {
-                      toggleMobileMenu();
-                      setIsDropdownOpen(false);
-                    }}
-                  >
-                    {t("navbar.training")}
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink
-                    to="/consultation"
-                    className="block px-3 py-2 rounded-md text-sm font-medium text-gray-600 hover:text-primary-700 hover:bg-gray-50"
-                    onClick={() => {
-                      toggleMobileMenu();
-                      setIsDropdownOpen(false);
-                    }}
-                  >
-                    {t("navbar.consultation")}
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink
-                    to="/feasibility-study"
-                    className="block px-3 py-2 rounded-md text-sm font-medium text-gray-600 hover:text-primary-700 hover:bg-gray-50"
-                    onClick={() => {
-                      toggleMobileMenu();
-                      setIsDropdownOpen(false);
-                    }}
-                  >
-                    {t("navbar.feasibilityStudies")}
-                  </NavLink>
-                </li>
-              </ul>
-            )}
+            <Menu as="div" className="relative w-full text-left">
+              <Menu.Button className="nav-link dropdown-toggle w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary-700 hover:bg-gray-50 bg-transparent border-0">
+                {t("navbar.ourServices")}
+              </Menu.Button>
+              <Menu.Items className="ps-4">
+                <Menu.Item>
+                  {({ active }) => (
+                    <NavLink
+                      to="/training"
+                      className={`block px-3 py-2 rounded-md text-sm font-medium text-gray-600 hover:text-primary-700 ${
+                        active ? "bg-gray-50" : ""
+                      }`}
+                      onClick={toggleMobileMenu}
+                    >
+                      {t("navbar.training")}
+                    </NavLink>
+                  )}
+                </Menu.Item>
+                <Menu.Item>
+                  {({ active }) => (
+                    <NavLink
+                      to="/consultation"
+                      className={`block px-3 py-2 rounded-md text-sm font-medium text-gray-600 hover:text-primary-700 ${
+                        active ? "bg-gray-50" : ""
+                      }`}
+                      onClick={toggleMobileMenu}
+                    >
+                      {t("navbar.consultation")}
+                    </NavLink>
+                  )}
+                </Menu.Item>
+                <Menu.Item>
+                  {({ active }) => (
+                    <NavLink
+                      to="/feasibility-study"
+                      className={`block px-3 py-2 rounded-md text-sm font-medium text-gray-600 hover:text-primary-700 ${
+                        active ? "bg-gray-50" : ""
+                      }`}
+                      onClick={toggleMobileMenu}
+                    >
+                      {t("navbar.feasibilityStudies")}
+                    </NavLink>
+                  )}
+                </Menu.Item>
+              </Menu.Items>
+            </Menu>
           </li>
           <li>
             <NavLink
@@ -328,14 +298,14 @@ const Navbar = memo(() => {
         </ul>
         <div className="px-4 py-3 border-t border-gray-200">
           <div className="flex items-center justify-between">
-            <TransButton />
+            <TransButton color="black" />
             <Button
               label={t("navbar.joinUs")}
               onClick={() => {
                 openRegisterModal();
                 toggleMobileMenu();
               }}
-              customClasses="bg-primary-500 text-white hover:bg-primary-700"
+              customClasses="bg-primary-500 text-white hover:bg-primary-700 px-6 py-2"
             />
           </div>
         </div>

@@ -1,7 +1,12 @@
 import "./LearningCard.css";
 import Button from "../Button/Button";
 
-export default function LearningCard({ image, title, description, buttonText, cardId }) {
+export default function LearningCard({
+  image,
+  title,
+  description,
+  cardId,
+}) {
   return (
     <div className="flex flex-col items-center text-center h-full">
       <div
@@ -15,20 +20,16 @@ export default function LearningCard({ image, title, description, buttonText, ca
           loading="lazy"
         />
         <div className="mt-16 sm:mt-20 md:mt-16 z-20">
-          <h3 id={cardId} className="text-lg sm:text-xl md:text-xl font-bold mb-2 md:mb-4">
+          <h3
+            id={cardId}
+            className="text-lg sm:text-xl md:text-xl font-bold mb-2 md:mb-4"
+          >
             {title}
           </h3>
           <p className="text-xs sm:text-sm md:text-sm leading-relaxed">
             {description}
           </p>
         </div>
-      </div>
-      <div className="learning-card-button w-full mt-4">
-        <Button
-          label={buttonText}
-          customClasses="bg-white shadow text-primary-800 border-2 border-primary-800 btn-hover-primary w-full"
-          padding="12px 16px "
-        />
       </div>
     </div>
   );
