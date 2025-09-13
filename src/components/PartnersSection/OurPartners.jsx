@@ -31,7 +31,7 @@ const OurPartners = () => {
         <SectionHeader
           id="partners-heading"
           title={t("partners.title")}
-          lineColor="#ffc107"
+          lineColor="#4A8B8B"
         />
 
         <div className="section-container flex flex-col items-center justify-center mt-4 mb-8">

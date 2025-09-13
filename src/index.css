@@ -254,13 +254,13 @@ html[lang="ar"] .footer-li:hover {
   --color-primary-800: #10202e;
   --color-primary-900: #0a151f;
 
-  /* Secondary (Earthy Teal - #467471) */
+  /* Secondary (Earthy Teal - #4A8B8B) */
   --color-secondary-50: #e6f1f0;
   --color-secondary-100: #c5dedd;
   --color-secondary-200: #a2c9c7;
   --color-secondary-300: #7db3b0;
   --color-secondary-400: #5b9f9a;
-  --color-secondary-500: #467471; /* Main secondary */
+  --color-secondary-500: #4a8b8b; /* Main secondary */
   --color-secondary-600: #3c6462;
   --color-secondary-700: #325554;
   --color-secondary-800: #284645;

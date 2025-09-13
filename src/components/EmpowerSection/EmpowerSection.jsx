@@ -41,7 +41,7 @@ export default function EmpowerSection() {
       <SectionHeader
         title={t("empower.title")}
         highlightedWord={t("empower.highlightedWord")}
-        lineColor="#FFE047"
+        lineColor="#4A8B8B"
         titleId="empower-heading"
       />
 

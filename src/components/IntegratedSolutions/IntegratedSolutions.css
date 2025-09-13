@@ -9,13 +9,13 @@
   gap: 3rem;
   align-items: center;
 }
-.integrated-solutions-section .card h3{
-  color: #38b2ac;
-    font-size: 2.5rem;
-    font-weight: bold;
+.integrated-solutions-section .card h3 {
+  color: #4a8b8b;
+  font-size: 2.5rem;
+  font-weight: bold;
 }
 .integrated-solutions-section .left-column .subtitle {
-  color: #38b2ac;
+  color: #4a8b8b;
   font-weight: bold;
   text-transform: uppercase;
   display: block;
@@ -49,7 +49,7 @@
 }
 
 .integrated-solutions-section .icon-wrapper {
-  background-color: #38b2ac;
+  background-color: #4a8b8b;
   color: #fff;
   width: 60px;
   height: 60px;
@@ -87,7 +87,7 @@
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: #38b2ac;
+  background-color: #4a8b8b;
   color: #fff;
   padding: 2rem;
   display: flex;
@@ -128,7 +128,5 @@
   .integrated-solutions-section .right-column .overlay {
     flex-direction: column;
     text-align: center;
-
   }
-
 }

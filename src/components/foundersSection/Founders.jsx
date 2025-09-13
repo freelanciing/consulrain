@@ -7,16 +7,21 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import SectionHeader from "../SectionHeader/SectionHeader";
 
+import sherinImg from "/images/hero/people1.png";
+import husseinImg from "/images/HusseinAfifi.png";
+
 const Founders = () => {
   const { t } = useTranslation();
   const founders = [
     {
       name: t("founders.founder1.name"),
       bio: t("founders.founder1.bio"),
+      img: husseinImg,
     },
     {
       name: t("founders.founder2.name"),
       bio: t("founders.founder2.bio"),
+      img: sherinImg,
     },
   ];
   return (
@@ -49,13 +54,20 @@ const Founders = () => {
                 "founders.of"
               )} ${founders.length}`}
             >
-              <div className="px-8 py-10 md:px-12 md:py-12 h-[500px] rounded-xl shadow-md flex flex-col">
-                <h6 className="text-xl md:text-2xl font-bold mb-4 font-[Gilroy-SemiBold]">
-                  {founder.name}
-                </h6>
-                <p className="text-base md:text-lg font-[Gilroy-Regular] font-normal leading-relaxed">
-                  {founder.bio}
-                </p>
+              <div className="px-8 py-10 md:px-12 md:py-12 h-auto md:h-[500px] rounded-xl shadow-md flex flex-col md:flex-row items-center gap-8">
+                <img
+                  src={founder.img}
+                  alt={founder.name}
+                  className="w-48 h-48 md:w-64 md:h-64 rounded-full object-cover shadow-lg"
+                />
+                <div className="flex flex-col text-center md:text-left">
+                  <h6 className="text-3xl md:!text-4xl !font-extrabold mb-4">
+                    {founder.name}
+                  </h6>
+                  <p className="text-base md:text-lg font-normal leading-relaxed">
+                    {founder.bio}
+                  </p>
+                </div>
               </div>
             </SwiperSlide>
           ))}

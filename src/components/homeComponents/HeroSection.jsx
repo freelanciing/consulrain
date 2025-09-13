@@ -44,7 +44,10 @@ const HeroSection = () => {
         aria-label="A collage of diverse professionals"
       >
         <div className="flex gap-x-2">
-          <div className="relative flex pt-7 w-32 h-32 md:w-48 md:h-48 xl:w-56 xl:h-56 mt-4 rounded-tl-[50%] border-8 border-white bg-pastel-blue">
+          <div
+            className="relative flex pt-7 w-32 h-32 md:w-48 md:h-48 xl:w-56 xl:h-56 mt-4 rounded-tl-[50%] border-8 border-white"
+            style={{ backgroundColor: "#182F40" }}
+          >
             <img
               className="mx-auto w-auto h-auto"
               width="180"
@@ -54,7 +57,7 @@ const HeroSection = () => {
               alt={t("hero.alt.person1")}
             />
           </div>
-          <div className="relative flex pt-7 w-32 h-32 md:w-48 md:h-48 xl:w-56 xl:h-56 rounded-tr-[50%] border-8 border-white bg-pastel-green">
+          <div className="relative flex pt-7 w-32 h-32 md:w-48 md:h-48 xl:w-56 xl:h-56 rounded-tr-[50%] border-8 border-white bg-accent-300">
             <img
               className="mx-auto w-auto h-auto"
               width="180"
@@ -66,7 +69,7 @@ const HeroSection = () => {
           </div>
         </div>
         <div className="flex gap-x-2">
-          <div className="relative flex pt-7 w-32 h-32 md:w-48 md:h-48 xl:w-56 xl:h-56 rounded-bl-[50%] border-8 border-white bg-pastel-purple">
+          <div className="relative flex pt-7 w-32 h-32 md:w-48 md:h-48 xl:w-56 xl:h-56 rounded-bl-[50%] border-8 border-white  bg-neutral-300">
             <img
               className="mx-auto w-auto h-auto"
               width="180"
@@ -76,7 +79,10 @@ const HeroSection = () => {
               alt={t("hero.alt.person3")}
             />
           </div>
-          <div className="relative flex pt-7 w-32 h-32 md:w-48 md:h-48 xl:w-56 xl:h-56 rounded-br-[50%] border-8 border-white bg-pastel-yellow">
+          <div
+            className="relative flex pt-7 w-32 h-32 md:w-48 md:h-48 xl:w-56 xl:h-56 rounded-br-[50%] border-8 border-white"
+            style={{ backgroundColor: "#4A8B8B" }}
+          >
             <img
               className="mx-auto w-auto h-auto"
               width="180"

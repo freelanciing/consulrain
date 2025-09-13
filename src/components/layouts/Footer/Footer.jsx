@@ -58,7 +58,7 @@ export default function Footer() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Facebook"
-                    className="w-8 h-8 flex items-center justify-center rounded-full bg-[#467471] hover:bg-[#182f40] transition-colors duration-200"
+                    className="w-8 h-8 flex items-center justify-center rounded-full bg-[#4A8B8B] hover:bg-[#182f40] transition-colors duration-200"
                   >
                     <i
                       className="fab fa-facebook-f text-white hover:text-white text-lg"
@@ -70,7 +70,7 @@ export default function Footer() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Snapchat"
-                    className="w-8 h-8 flex items-center justify-center rounded-full bg-[#467471] hover:bg-[#182f40] transition-colors duration-200"
+                    className="w-8 h-8 flex items-center justify-center rounded-full bg-[#4A8B8B] hover:bg-[#182f40] transition-colors duration-200"
                   >
                     <i
                       className="fab fa-snapchat-ghost text-white hover:text-white text-lg"
@@ -82,7 +82,7 @@ export default function Footer() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="LinkedIn"
-                    className="w-8 h-8 flex items-center justify-center rounded-full bg-[#467471] hover:bg-[#182f40] transition-colors duration-200"
+                    className="w-8 h-8 flex items-center justify-center rounded-full bg-[#4A8B8B] hover:bg-[#182f40] transition-colors duration-200"
                   >
                     <i
                       className="fab fa-linkedin-in text-white hover:text-white text-lg"
@@ -94,7 +94,7 @@ export default function Footer() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="TikTok"
-                    className="w-8 h-8 flex items-center justify-center rounded-full bg-[#467471] hover:bg-[#182f40] transition-colors duration-200"
+                    className="w-8 h-8 flex items-center justify-center rounded-full bg-[#4A8B8B] hover:bg-[#182f40] transition-colors duration-200"
                   >
                     <i
                       className="fab fa-tiktok text-white hover:text-white text-lg"
@@ -106,7 +106,7 @@ export default function Footer() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Instagram"
-                    className="w-8 h-8 flex items-center justify-center rounded-full bg-[#467471] hover:bg-[#182f40] transition-colors duration-200"
+                    className="w-8 h-8 flex items-center justify-center rounded-full bg-[#4A8B8B] hover:bg-[#182f40] transition-colors duration-200"
                   >
                     <i
                       className="fab fa-instagram text-white hover:text-white text-lg"

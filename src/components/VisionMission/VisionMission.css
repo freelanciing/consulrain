@@ -51,7 +51,7 @@
 }
 
 .card.highlighted {
-  background-color: #38b2ac; /* Teal color */
+  background-color: #4a8b8b; /* Teal color */
 }
 
 .card h2 {
@@ -80,7 +80,7 @@
 }
 
 .card:not(.highlighted) .learn-more-btn {
-  background-color: #38b2ac;
+  background-color: #4a8b8b;
   color: #ffffff;
 }
 

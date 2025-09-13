@@ -42,7 +42,7 @@ export default function Topbar() {
       <div className="flex items-center gap-4 w-full">
         <a
           href={`mailto:${contactEmail}`}
-          className="flex items-center gap-1 text-white hover:text-[#467471] transition-colors duration-200"
+          className="flex items-center gap-1 text-white hover:text-[#4A8B8B] transition-colors duration-200"
           dir="ltr"
           style={{ textAlign: "left" }}
           aria-label={`Email us at ${contactEmail}`}
@@ -55,7 +55,7 @@ export default function Topbar() {
         </a>
         <a
           href={`tel:${contactPhone.replace(/[^\d+]/g, "")}`}
-          className="flex items-center gap-1 text-white hover:text-[#467471] transition-colors duration-200"
+          className="flex items-center gap-1 text-white hover:text-[#4A8B8B] transition-colors duration-200"
           dir="ltr"
           style={{ textAlign: "left" }}
           aria-label={`Call us at ${contactPhone}`}
@@ -74,7 +74,7 @@ export default function Topbar() {
             rel="noopener noreferrer"
             aria-label={t(`topbar.social.${item.label.toLowerCase()}`)}
             className="w-8 h-8 flex items-center justify-center rounded-full"
-            style={{ backgroundColor: "#467471" }}
+            style={{ backgroundColor: "#4A8B8B" }}
           >
             <i className={`${item.iconClass} text-white text-lg`}></i>
           </a>
