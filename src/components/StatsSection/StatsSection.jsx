@@ -57,11 +57,18 @@ export default function StatsSection() {
   ];
 
   return (
-    <section className="stats py-16 bg-primary-50 text-center">
-      <div className="max-w-8xl mx-auto  px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
+    <section
+      className="stats py-16 bg-primary-50 text-center"
+      role="region"
+      aria-labelledby="stats-heading"
+    >
+      <h2 id="stats-heading" className="sr-only">
+        {t("stats.sectionTitle")}
+      </h2>
+      <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+        <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
           {stats.map((stat, index) => (
-            <div key={index} className="flex items-center gap-6">
+            <li key={index} className="flex items-center gap-6">
               <div className="bg-blue-100 imgBg rounded-full flex-shrink-0">
                 {stat.icon}
               </div>
@@ -73,9 +80,9 @@ export default function StatsSection() {
                   {stat.label}
                 </p>
               </div>
-            </div>
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
     </section>
   );

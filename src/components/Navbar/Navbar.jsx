@@ -1,4 +1,4 @@
-import React, { useState, useCallback, memo, useEffect } from "react";
+import React, { useState, useCallback, memo, useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import { NavLink } from "react-router-dom";
 import TransButton from "../TransButton";
@@ -8,42 +8,24 @@ import "./Navbar.css";
 import "./DropdownPalette.css";
 
 // Lazy load modal components for better performance
-// const LoginModal = React.lazy(() => import("../LoginModal/LoginModal"));
 const RegisterModal = React.lazy(() =>
   import("../RegisterModal/RegisterModal")
 );
 
 const Navbar = memo(() => {
-  const { t, i18n } = useTranslation();
-  const isRTL = i18n.dir() === "rtl";
-  // Manually initialize Bootstrap dropdowns after mount
-  useEffect(() => {
-    if (typeof window !== "undefined" && window.bootstrap) {
-      const dropdownTriggerList = [].slice.call(
-        document.querySelectorAll('[data-bs-toggle="dropdown"]')
-      );
-      dropdownTriggerList.forEach(function (dropdownTriggerEl) {
-        new window.bootstrap.Dropdown(dropdownTriggerEl);
-      });
-    }
-  }, []);
+  const { t } = useTranslation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  // const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
   const [isRegisterModalOpen, setIsRegisterModalOpen] = useState(false);
 
-  // const openLoginModal = useCallback(() => {
-  //   setIsRegisterModalOpen(false);
-  //   setIsLoginModalOpen(true);
-  // }, []);
+  const menuButtonRef = useRef(null);
+  const mobileMenuRef = useRef(null);
 
   const openRegisterModal = useCallback(() => {
-    // setIsLoginModalOpen(false);
     setIsRegisterModalOpen(true);
   }, []);
 
   const closeAllModals = useCallback(() => {
-    // setIsLoginModalOpen(false);
     setIsRegisterModalOpen(false);
   }, []);
 
@@ -63,6 +45,42 @@ const Navbar = memo(() => {
     document.addEventListener("mousedown", handleClick);
     return () => document.removeEventListener("mousedown", handleClick);
   }, [isDropdownOpen]);
+
+  // Focus management for mobile menu
+  useEffect(() => {
+    if (isMenuOpen) {
+      const firstFocusableElement = mobileMenuRef.current?.querySelector(
+        "a, button"
+      );
+      firstFocusableElement?.focus();
+
+      const handleKeyDown = (e) => {
+        if (e.key === "Tab") {
+          const focusableElements = mobileMenuRef.current?.querySelectorAll(
+            "a, button"
+          );
+          const firstElement = focusableElements?.[0];
+          const lastElement = focusableElements?.[focusableElements.length - 1];
+
+          if (e.shiftKey && document.activeElement === firstElement) {
+            lastElement?.focus();
+            e.preventDefault();
+          } else if (!e.shiftKey && document.activeElement === lastElement) {
+            firstElement?.focus();
+            e.preventDefault();
+          }
+        } else if (e.key === "Escape") {
+          toggleMobileMenu();
+        }
+      };
+
+      document.addEventListener("keydown", handleKeyDown);
+      return () => {
+        document.removeEventListener("keydown", handleKeyDown);
+        menuButtonRef.current?.focus();
+      };
+    }
+  }, [isMenuOpen, toggleMobileMenu]);
 
   return (
     <nav
@@ -103,40 +121,35 @@ const Navbar = memo(() => {
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center justify-center flex-1 mx-8 h-full">
-            <ul className="flex items-center gap-8 m-0" role="menubar">
-              <li role="none">
+            <ul className="flex items-center gap-8 m-0">
+              <li>
                 <NavLink
                   to="/home"
-                  className=" text-gray-700 hover:text-primary-700 font-bold no-underline transition-colors duration-200 text-black"
-                  role="menuitem"
+                  className="hover:text-primary-700 font-bold no-underline transition-colors duration-200 text-black"
                   aria-label="home page"
                 >
                   {t("navbar.home")}
                 </NavLink>
               </li>
-              <li
-                className="nav-item relative"
-                id="ourServicesDropdownWrapper"
-                role="none"
-              >
+              <li className="nav-item relative" id="ourServicesDropdownWrapper">
                 <button
-                  className={`nav-link dropdown-toggle text-gray-700 hover:text-primary-700  fw-bolder no-underline transition-colors duration-200 bg-transparent border-0 ${
+                  className={`nav-link dropdown-toggle text-gray-700 hover:text-primary-700 fw-bolder no-underline transition-colors duration-200 bg-transparent border-0 ${
                     isDropdownOpen ? "show" : ""
                   }`}
                   id="ourServicesDropdown"
                   type="button"
+                  aria-haspopup="true"
                   aria-expanded={isDropdownOpen}
                   aria-label="Our services menu"
                   style={{ boxShadow: "none" }}
                   onClick={() => setIsDropdownOpen((v) => !v)}
                   onBlur={(e) => {
-                    // Only close if focus moves outside the dropdown
                     if (!e.currentTarget.parentNode.contains(e.relatedTarget)) {
                       setIsDropdownOpen(false);
                     }
                   }}
                 >
-                  {t("navbar.ourServices")}{" "}
+                  {t("navbar.ourServices")}
                 </button>
                 <ul
                   className={`custom-dropdown-menu${
@@ -175,26 +188,24 @@ const Navbar = memo(() => {
                       to="/feasibility-study"
                       onClick={() => setIsDropdownOpen(false)}
                     >
-                      {t("navbar.feasibilityStudies")}{" "}
+                      {t("navbar.feasibilityStudies")}
                     </NavLink>
                   </li>
                 </ul>
               </li>
-              <li role="none">
+              <li>
                 <NavLink
                   to="/about"
-                  className="text-gray-700 hover:text-primary-700 font-bold no-underline transition-colors duration-200 text-black"
-                  role="menuitem"
+                  className="hover:text-primary-700 font-bold no-underline transition-colors duration-200 text-black"
                   aria-label="About page"
                 >
                   {t("navbar.about")}
                 </NavLink>
               </li>
-              <li role="none">
+              <li>
                 <NavLink
                   to="/contact"
-                  className="text-gray-700 hover:text-primary-700 font-bold no-underline transition-colors duration-200 text-black"
-                  role="menuitem"
+                  className="hover:text-primary-700 font-bold no-underline transition-colors duration-200 text-black"
                   aria-label="Contact Us page"
                 >
                   {t("navbar.contact")}
@@ -203,181 +214,144 @@ const Navbar = memo(() => {
             </ul>
           </div>
 
-          {/* Right side - Desktop */}
-          <div className="hidden lg:flex items-center gap-3">
+          {/* Language & Auth Buttons */}
+          <div className="hidden lg:flex items-center gap-4">
             <TransButton />
-            {/* <button
-              onClick={openLoginModal}
-              className="text-primary-500 font-bold no-underline hover:text-primary-700 transition-colors duration-200 px-2"
-            >
-              {t("navbar.login")}
-            </button> */}
             <Button
               label={t("navbar.joinUs")}
-              padding="0 40px"
-              handleClick={openRegisterModal}
+              onClick={openRegisterModal}
+              customClasses="bg-primary-500 text-white hover:bg-primary-700"
             />
           </div>
 
-          {/* Mobile menu button */}
+          {/* Mobile Menu Button */}
           <button
-            className="lg:hidden p-2 rounded-md text-gray-700 hover:text-primary-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-primary-500"
+            ref={menuButtonRef}
+            className="lg:hidden hamburger-icon"
             onClick={toggleMobileMenu}
-            aria-label={
-              isMenuOpen ? "Close navigation menu" : "Open navigation menu"
-            }
+            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
             aria-expanded={isMenuOpen}
             aria-controls="mobile-menu"
-            type="button"
           >
-            <svg
-              className="h-6 w-6"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
+            <i
+              className={`fas ${isMenuOpen ? "fa-times" : "fa-bars"}`}
               aria-hidden="true"
-            >
-              {isMenuOpen ? (
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              ) : (
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              )}
-            </svg>
+            ></i>
           </button>
         </div>
+      </div>
 
-        {/* Mobile Navigation */}
-        {isMenuOpen && (
-          <div
-            className="lg:hidden py-4 border-t border-gray-200"
-            id="mobile-menu"
-            role="menu"
-            aria-labelledby="mobile-menu-button"
-          >
-            <div className="flex flex-col">
-              <NavLink
-                to="/Home"
-                className="text-gray-700 hover:text-primary-700 font-bold no-underline decoration-none py-2 text-black"
-                style={{ textDecoration: "none" }}
-                onClick={() => setIsMenuOpen(false)}
-                role="menuitem"
-                aria-label="Home"
-              >
-                {t("navbar.home")}
-              </NavLink>
-              <NavLink
-                to="/About"
-                className="text-gray-700 hover:text-primary-700 font-bold no-underline decoration-none text-black"
-                style={{ textDecoration: "none" }}
-                onClick={() => setIsMenuOpen(false)}
-                role="menuitem"
-                aria-label="About us"
-              >
-                {t("navbar.about")}
-              </NavLink>
-              <button
-                type="button"
-                className="text-gray-700 hover:text-primary-700 font-bold no-underline decoration-none py-2 text-black text-left"
-                style={{ textDecoration: "none" }}
-                onClick={() => setIsDropdownOpen((v) => !v)}
-                aria-expanded={isDropdownOpen}
-                aria-label="Our services menu"
-              >
-                {t("navbar.ourServices")}
-              </button>
-              {isDropdownOpen && (
-                <div className={`flex flex-col ${isRTL ? "mr-4" : "ml-4"}`}>
+      {/* Mobile Menu */}
+      <div
+        id="mobile-menu"
+        ref={mobileMenuRef}
+        className={`lg:hidden ${isMenuOpen ? "block" : "hidden"} bg-primary-50`}
+      >
+        <ul className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+          <li>
+            <NavLink
+              to="/home"
+              className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary-700 hover:bg-gray-50"
+              onClick={toggleMobileMenu}
+            >
+              {t("navbar.home")}
+            </NavLink>
+          </li>
+          <li className="nav-item relative">
+            <button
+              className="nav-link dropdown-toggle w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary-700 hover:bg-gray-50 bg-transparent border-0"
+              onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+              aria-haspopup="true"
+              aria-expanded={isDropdownOpen}
+            >
+              {t("navbar.ourServices")}
+            </button>
+            {isDropdownOpen && (
+              <ul className="pl-4">
+                <li>
                   <NavLink
-                    className="text-gray-700 hover:bg-primary-50 px-4 py-2 rounded text-left"
                     to="/training"
-                    onClick={() => setIsMenuOpen(false)}
+                    className="block px-3 py-2 rounded-md text-sm font-medium text-gray-600 hover:text-primary-700 hover:bg-gray-50"
+                    onClick={() => {
+                      toggleMobileMenu();
+                      setIsDropdownOpen(false);
+                    }}
                   >
                     {t("navbar.training")}
                   </NavLink>
+                </li>
+                <li>
                   <NavLink
-                    className="text-gray-700 hover:bg-primary-50 px-4 py-2 rounded text-left"
                     to="/consultation"
-                    onClick={() => setIsMenuOpen(false)}
+                    className="block px-3 py-2 rounded-md text-sm font-medium text-gray-600 hover:text-primary-700 hover:bg-gray-50"
+                    onClick={() => {
+                      toggleMobileMenu();
+                      setIsDropdownOpen(false);
+                    }}
                   >
                     {t("navbar.consultation")}
                   </NavLink>
+                </li>
+                <li>
                   <NavLink
-                    className="text-gray-700 hover:bg-primary-50 px-4 py-2 rounded text-left"
                     to="/feasibility-study"
-                    onClick={() => setIsMenuOpen(false)}
+                    className="block px-3 py-2 rounded-md text-sm font-medium text-gray-600 hover:text-primary-700 hover:bg-gray-50"
+                    onClick={() => {
+                      toggleMobileMenu();
+                      setIsDropdownOpen(false);
+                    }}
                   >
-                    {t("navbar.feasibilityStudy")}
+                    {t("navbar.feasibilityStudies")}
                   </NavLink>
-                </div>
-              )}
-
-              <NavLink
-                to="/training"
-                className="text-gray-700 hover:text-primary-700 font-bold no-underline transition-colors duration-200 text-black"
-                role="menuitem"
-                aria-label="our training"
-              >
-                {t("navbar.training")}
-              </NavLink>
-
-              <div className="flex flex-col space-y-3 pt-4 border-t border-gray-200">
-                <TransButton />
-                {/* <button
-                  onClick={() => {
-                    setIsMenuOpen(false);
-                    openLoginModal();
-                  }}
-                  className="text-primary-500 font-bold no-underline decoration-none hover:text-primary-700 my-2 text-left"
-                  style={{ textDecoration: "none" }}
-                  type="button"
-                  aria-label="Login to your account"
-                >
-                  {t("navbar.login")}
-                </button> */}
-                <Button
-                  label={t("navbar.joinUs")}
-                  handleClick={() => {
-                    openRegisterModal();
-                    setIsMenuOpen(false);
-                  }}
-                  aria-label="Join our platform"
-                />
-              </div>
-            </div>
+                </li>
+              </ul>
+            )}
+          </li>
+          <li>
+            <NavLink
+              to="/about"
+              className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary-700 hover:bg-gray-50"
+              onClick={toggleMobileMenu}
+            >
+              {t("navbar.about")}
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/contact"
+              className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary-700 hover:bg-gray-50"
+              onClick={toggleMobileMenu}
+            >
+              {t("navbar.contact")}
+            </NavLink>
+          </li>
+        </ul>
+        <div className="px-4 py-3 border-t border-gray-200">
+          <div className="flex items-center justify-between">
+            <TransButton />
+            <Button
+              label={t("navbar.joinUs")}
+              onClick={() => {
+                openRegisterModal();
+                toggleMobileMenu();
+              }}
+              customClasses="bg-primary-500 text-white hover:bg-primary-700"
+            />
           </div>
-        )}
+        </div>
       </div>
 
-      {/* Modal Components with Suspense for lazy loading */}
-      <React.Suspense fallback={<div aria-hidden="true">Loading...</div>}>
-        {/* Login Modal */}
-        {/* <LoginModal
-          isOpen={isLoginModalOpen}
-          onClose={closeAllModals}
-          onSwitchToRegister={openRegisterModal}
-        /> */}
-
-        {/* Register Modal */}
-        <RegisterModal
-          isOpen={isRegisterModalOpen}
-          onClose={closeAllModals}
-          // onSwitchToLogin={openLoginModal}
-        />
-      </React.Suspense>
+      {/* Modals */}
+      {isRegisterModalOpen && (
+        <React.Suspense fallback={<div>Loading...</div>}>
+          <RegisterModal
+            isOpen={isRegisterModalOpen}
+            onClose={closeAllModals}
+          />
+        </React.Suspense>
+      )}
     </nav>
   );
 });
-
-Navbar.displayName = "Navbar";
 
 export default Navbar;

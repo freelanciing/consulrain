@@ -1,6 +1,8 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 export default function Topbar() {
+  const { t } = useTranslation();
   const contactEmail = "info@consulrain.com";
   const contactPhone = "+20 155 620 5466";
   const socialLinks = [
@@ -31,9 +33,11 @@ export default function Topbar() {
     },
   ];
   return (
-    <div
+    <header
       className="w-full bg-primary-700 text-white flex justify-between items-center px-4 py-2 text-sm"
       style={{ backgroundColor: "#182f40", position: "fixed", zIndex: "99" }}
+      role="banner"
+      aria-label="Top bar with contact information and social media links"
     >
       <div className="flex items-center gap-4 w-full">
         <a
@@ -41,16 +45,23 @@ export default function Topbar() {
           className="flex items-center gap-1 text-white hover:text-[#467471] transition-colors duration-200"
           dir="ltr"
           style={{ textAlign: "left" }}
+          aria-label={`Email us at ${contactEmail}`}
         >
-          <i className="fas fa-envelope text-primary-400"></i> {contactEmail}
+          <i
+            className="fas fa-envelope text-primary-400"
+            aria-hidden="true"
+          ></i>
+          <span className="sr-only">Email:</span> {contactEmail}
         </a>
         <a
           href={`tel:${contactPhone.replace(/[^\d+]/g, "")}`}
           className="flex items-center gap-1 text-white hover:text-[#467471] transition-colors duration-200"
           dir="ltr"
           style={{ textAlign: "left" }}
+          aria-label={`Call us at ${contactPhone}`}
         >
-          <i className="fas fa-phone text-primary-400"></i> {contactPhone}
+          <i className="fas fa-phone text-primary-400" aria-hidden="true"></i>
+          <span className="sr-only">Phone:</span> {contactPhone}
         </a>
       </div>
       {/* Social icons: hidden on mobile, flex on md+ screens */}
@@ -61,7 +72,7 @@ export default function Topbar() {
             href={item.url}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label={item.label}
+            aria-label={t(`topbar.social.${item.label.toLowerCase()}`)}
             className="w-8 h-8 flex items-center justify-center rounded-full"
             style={{ backgroundColor: "#467471" }}
           >
@@ -69,6 +80,6 @@ export default function Topbar() {
           </a>
         ))}
       </div>
-    </div>
+    </header>
   );
 }

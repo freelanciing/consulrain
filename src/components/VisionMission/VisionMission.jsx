@@ -22,19 +22,30 @@ const VisionMission = () => {
   ];
 
   return (
-    <section className="vision-mission-section mx-0">
+    <section
+      className="vision-mission-section mx-0"
+      aria-labelledby="vision-mission-heading"
+    >
+      <h2 id="vision-mission-heading" className="sr-only">
+        {t("visionMission.sectionTitle")}
+      </h2>
       <div className="container">
         <div className="cards-container">
           {cards.map((card, index) => (
             <div
               key={index}
               className={`card ${card.isHighlighted ? "highlighted" : ""}`}
+              role="article"
+              aria-labelledby={`vision-mission-card-title-${index}`}
             >
               <div className="card-content">
-                <h2>{card.title}</h2>
+                <h3 id={`vision-mission-card-title-${index}`}>
+                  {card.title}
+                </h3>
                 <p>{card.subtitle}</p>
                 <Link to="/about" className="learn-more-btn">
-                  {t("visionMission.learnMore")} <span>&rarr;</span>
+                  {t("visionMission.learnMore")}{" "}
+                  <span aria-hidden="true">&rarr;</span>
                 </Link>
               </div>
             </div>

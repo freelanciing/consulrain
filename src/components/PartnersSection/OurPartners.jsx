@@ -9,24 +9,30 @@ import SectionHeader from "../SectionHeader/SectionHeader";
 
 const OurPartners = () => {
   const { t } = useTranslation();
-  const swiperContent = [
-    "./images/aimco.png",
-    "./images/aldaka.png",
-    "./images/anderen.png",
-    "./images/arkoda.jpg",
-    "./images/mba_trading.jpg",
-    "./images/osus.png",
-    "./images/rec.png",
-    "./images/rustin.png",
-    "./images/saudi_mix.png",
+  const partners = [
+    { src: "./images/aimco.png", alt: "Aimco" },
+    { src: "./images/aldaka.png", alt: "Aldaka" },
+    { src: "./images/anderen.png", alt: "Anderen" },
+    { src: "./images/arkoda.jpg", alt: "Arkoda" },
+    { src: "./images/mba_trading.jpg", alt: "MBA Trading" },
+    { src: "./images/osus.png", alt: "Osus" },
+    { src: "./images/rec.png", alt: "REC" },
+    { src: "./images/rustin.png", alt: "Rustin" },
+    { src: "./images/saudi_mix.png", alt: "Saudi Mix" },
   ];
   return (
     <>
       <div
         className="w-full flex flex-col items-center justify-center px-4 md:px-12 lg:px-24 py-8 bg-cover bg-center relative mb-20"
         style={{ backgroundImage: "url('/images/map.png')" }}
+        role="region"
+        aria-labelledby="partners-heading"
       >
-        <SectionHeader title={t("partners.title")} lineColor="#ffc107" />
+        <SectionHeader
+          id="partners-heading"
+          title={t("partners.title")}
+          lineColor="#ffc107"
+        />
 
         <div className="section-container flex flex-col items-center justify-center mt-4 mb-8">
           <p
@@ -54,16 +60,19 @@ const OurPartners = () => {
               1024: { slidesPerView: 4, spaceBetween: 40 },
             }}
             className="mb-12"
+            aria-label="Our Partners Carousel"
           >
-            {swiperContent.map((content, index) => (
+            {partners.map((partner, index) => (
               <SwiperSlide
                 key={index}
                 className="flex items-center justify-center mb-0"
+                role="group"
+                aria-label={`${index + 1} of ${partners.length}`}
               >
                 <div className="flex items-center justify-center h-[7rem] w-full">
                   <img
-                    src={content}
-                    alt={`Slide ${index}`}
+                    src={partner.src}
+                    alt={partner.alt}
                     className="h-12 mx-auto"
                     loading="lazy"
                   />

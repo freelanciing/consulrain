@@ -8,7 +8,7 @@ import "swiper/css/pagination";
 import SectionHeader from "../SectionHeader/SectionHeader";
 
 const Founders = () => {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const founders = [
     {
       name: t("founders.founder1.name"),
@@ -21,8 +21,16 @@ const Founders = () => {
   ];
   return (
     <div className="w-full min-h-screen flex flex-col items-center justify-center px-6 md:px-16 lg:px-28 py-20 text-pure-white">
-      <div className="w-full flex flex-col items-center justify-center rounded-2xl bg-gradient-to-r from-primary-500 to-primary-400 p-10 space-y-8">
-        <SectionHeader title={t("founders.title")} lineColor="#32d8cc" />
+      <div
+        className="w-full flex flex-col items-center justify-center rounded-2xl bg-gradient-to-r from-primary-500 to-primary-400 p-10 space-y-8"
+        role="region"
+        aria-labelledby="founders-heading"
+      >
+        <SectionHeader
+          title={t("founders.title")}
+          lineColor="#32d8cc"
+          titleId="founders-heading"
+        />
         <Swiper
           modules={[Pagination, Autoplay, Navigation]}
           navigation
@@ -30,9 +38,17 @@ const Founders = () => {
           spaceBetween={32}
           slidesPerView={1}
           className="w-full relative z-10"
+          aria-label={t("founders.title")}
         >
           {founders.map((founder, idx) => (
-            <SwiperSlide key={idx}>
+            <SwiperSlide
+              key={idx}
+              role="group"
+              aria-roledescription="slide"
+              aria-label={`${t("founders.slideLabel")} ${idx + 1} ${t(
+                "founders.of"
+              )} ${founders.length}`}
+            >
               <div className="px-8 py-10 md:px-12 md:py-12 h-[500px] rounded-xl shadow-md flex flex-col">
                 <h6 className="text-xl md:text-2xl font-bold mb-4 font-[Gilroy-SemiBold]">
                   {founder.name}

@@ -10,7 +10,8 @@ export default function Footer() {
 
   return (
     <div>
-      <footer className="bg-pure-turquoise">
+      <footer className="bg-pure-turquoise" role="contentinfo" aria-labelledby="footer-heading">
+        <h2 id="footer-heading" className="sr-only">Footer</h2>
         <div className="h-7"></div>
         {/* company data and links */}
         <div className="flex justify-center">
@@ -48,7 +49,7 @@ export default function Footer() {
                     aria-label="Facebook"
                     className="w-8 h-8 flex items-center justify-center rounded-full bg-[#467471] hover:bg-[#182f40] transition-colors duration-200"
                   >
-                    <i className="fab fa-facebook-f text-white hover:text-white text-lg"></i>
+                    <i className="fab fa-facebook-f text-white hover:text-white text-lg" aria-hidden="true"></i>
                   </a>
                   <a
                     href="https://snapchat.com/add/consulrain"
@@ -57,7 +58,7 @@ export default function Footer() {
                     aria-label="Snapchat"
                     className="w-8 h-8 flex items-center justify-center rounded-full bg-[#467471] hover:bg-[#182f40] transition-colors duration-200"
                   >
-                    <i className="fab fa-snapchat-ghost text-white hover:text-white text-lg"></i>
+                    <i className="fab fa-snapchat-ghost text-white hover:text-white text-lg" aria-hidden="true"></i>
                   </a>
                   <a
                     href="https://linkedin.com/company/consulrain"
@@ -66,7 +67,7 @@ export default function Footer() {
                     aria-label="LinkedIn"
                     className="w-8 h-8 flex items-center justify-center rounded-full bg-[#467471] hover:bg-[#182f40] transition-colors duration-200"
                   >
-                    <i className="fab fa-linkedin-in text-white hover:text-white text-lg"></i>
+                    <i className="fab fa-linkedin-in text-white hover:text-white text-lg" aria-hidden="true"></i>
                   </a>
                   <a
                     href="https://tiktok.com/@consulrain"
@@ -75,7 +76,7 @@ export default function Footer() {
                     aria-label="TikTok"
                     className="w-8 h-8 flex items-center justify-center rounded-full bg-[#467471] hover:bg-[#182f40] transition-colors duration-200"
                   >
-                    <i className="fab fa-tiktok text-white hover:text-white text-lg"></i>
+                    <i className="fab fa-tiktok text-white hover:text-white text-lg" aria-hidden="true"></i>
                   </a>
                   <a
                     href="https://instagram.com/consulrain"
@@ -84,7 +85,7 @@ export default function Footer() {
                     aria-label="Instagram"
                     className="w-8 h-8 flex items-center justify-center rounded-full bg-[#467471] hover:bg-[#182f40] transition-colors duration-200"
                   >
-                    <i className="fab fa-instagram text-white hover:text-white text-lg"></i>
+                    <i className="fab fa-instagram text-white hover:text-white text-lg" aria-hidden="true"></i>
                   </a>
                 </div>
               </div>
@@ -95,14 +96,17 @@ export default function Footer() {
               className={`our-services-footer ${
                 isArabic ? "text-right" : "text-left"
               }`}
+              role="navigation"
+              aria-labelledby="services-footer-heading"
             >
-              <p
+              <h3
+                id="services-footer-heading"
                 className={`font-bold text-lg mb-6 ${
                   isArabic ? "pr-6 text-white" : "pl-6 text-white"
                 }`}
               >
                 {t("footer.ourServices.Our Services")}
-              </p>
+              </h3>
               <ul className="cat-dropdown-menu">
                 {[
                   { label: t("footer.training.Training"), path: "/training" },
@@ -129,14 +133,17 @@ export default function Footer() {
               className={`our-company-footer ${
                 isArabic ? "text-right" : "text-left"
               }`}
+              role="navigation"
+              aria-labelledby="company-footer-heading"
             >
-              <p
+              <h3
+                id="company-footer-heading"
                 className={`font-bold text-lg mb-6 ${
                   isArabic ? "pr-6 text-white" : "pl-6 text-white"
                 }`}
               >
                 {t("footer.company.Company")}
-              </p>
+              </h3>
               <ul className="cat-dropdown-menu">
                 {[
                   { label: `${t("navbar.about")}`, href: "/about" },
@@ -157,25 +164,25 @@ export default function Footer() {
             </div>
 
             {/* Contact Us */}
-            <div
+            <address
               className={`contact-us-footer ${
                 isArabic ? "text-right" : "text-left"
               }`}
             >
-              <p
+              <h3
                 className={`font-bold text-lg mb-6 ${
                   isArabic ? "pr-6 text-white" : "pl-6 text-white"
                 }`}
               >
                 {t("footer.contactUs")}
-              </p>
+              </h3>
               <ul className="cat-dropdown-menu">
                 <li>
                   <p className="p4 leading-4 md:w-32 text-blue-100 w-full mb-3">
                     <span className="font-GilroySemiBold">
                       {t("contact.email")}
                     </span>{" "}
-                    {t("contact.emailValue")}
+                    <a href={`mailto:${t("contact.emailValue")}`}>{t("contact.emailValue")}</a>
                   </p>
                 </li>
 
@@ -184,9 +191,9 @@ export default function Footer() {
                     <span className="font-GilroySemiBold block">
                       {t("contact.phone")}
                     </span>
-                    <span dir="ltr" style={{ textAlign: "left" }}>
+                    <a href={`tel:${t("contact.phoneValue")}`} dir="ltr" style={{ textAlign: "left" }}>
                       {t("contact.phoneValue")}
-                    </span>
+                    </a>
                   </p>
                 </li>
               </ul>
@@ -194,7 +201,7 @@ export default function Footer() {
               <div className="border-1 border-primary-50 rounded-lg mt-4">
                 <TransButton />
               </div>
-            </div>
+            </address>
           </div>
         </div>
 

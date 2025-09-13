@@ -75,7 +75,8 @@
     "satisfiedUsers": "Satisfied Users",
     "learningHours": "Learning Hours",
     "employmentRate": "Employment Rate",
-    "impactedCountries": "Impacted Countries"
+    "impactedCountries": "Impacted Countries",
+    "sectionTitle": "Our Impact in Numbers"
   },
   "login": {
     "title": "Log in to your account",
@@ -90,7 +91,8 @@
     "loginButton": "Login",
     "forgotPassword": "Forgot your password?",
     "noAccount": "Don't have an account?",
-    "joinUs": "Join Us"
+    "joinUs": "Join Us",
+    "close": "Close"
   },
   "register": {
     "title": "Join Us",
@@ -102,7 +104,12 @@
     "phone": "Phone",
     "name": "Name",
     "namePlaceholder": "Enter your full name",
-    "phonePlaceholder": "Enter your phone number"
+    "phonePlaceholder": "Enter your phone number",
+    "close": "Close",
+    "agreeToTermsError": "Please agree to the terms and conditions",
+    "successMessage": "Registration sent successfully!",
+    "errorMessage": "Failed to send registration. Please try again.",
+    "alreadyHaveAccount": "Already have an account?"
   },
   "privacyPolicy": {
     "privacyPolicy": "Privacy Policy",
@@ -163,7 +170,13 @@
   "hero": {
     "title": "Turning Vision into Reality, Strategically",
     "subtitle": "ConsulRain drives business growth through expert consulting and targeted training in management, finance, and operations.",
-    "cta": "Learning Journeys"
+    "cta": "Learning Journeys",
+    "alt": {
+      "person1": "A smiling man in a suit",
+      "person2": "A woman with glasses in a professional setting",
+      "person3": "A person in a hard hat at a construction site",
+      "person4": "A woman in a business meeting"
+    }
   },
   "feedback": {
     "button": "Feedback",
@@ -191,6 +204,15 @@
       "cancel": "Cancel",
       "allow": "Allow"
     },
+    "topbar": {
+    "social": {
+      "facebook": "Follow us on Facebook",
+      "snapchat": "Follow us on Snapchat",
+      "linkedin": "Follow us on LinkedIn",
+      "tiktok": "Follow us on TikTok",
+      "instagram": "Follow us on Instagram"
+    }
+  },
     "files": {
       "screenshot": "screenshot.png"
     }
@@ -423,7 +445,8 @@
       "title": "Our Journey",
       "subtitle": "Our journey as a distinguished regional consultancy and training firm began in Algeria, with our headquarters proudly established in Egypt. For over two decades, we have empowered organizations to find clarity amidst complexity, through thoughtful analysis, precise diagnosis, and bespoke solution design. We do not merely deliver services; we cultivate long-term partnerships, grounded in integrity, excellence, and a shared vision for lasting impact."
     },
-    "learnMore": "LEARN MORE"
+    "learnMore": "LEARN MORE",
+    "sectionTitle": "Our Vision, Mission, and Journey"
   },
   "integratedSolutions": {
     "subtitle": "INTEGRATED SOLUTIONS",
@@ -444,7 +467,8 @@
       "expertise": "Cutting-Edge Expertise",
       "approach": "Holistic Solutions Approach",
       "collaboration": "Client-Centric Collaboration"
-    }
+    },
+    "imageAlt": "A team of professionals collaborating in a modern office setting."
   },
   "copyright": {
     "text": "ConsulRain. All Rights Reserved."

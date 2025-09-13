@@ -1,4 +1,3 @@
-// src/components/LearningSolutions.jsx
 import React from "react";
 import { useTranslation } from "react-i18next";
 import LearningCard from "../LearningCard/LearningCard";
