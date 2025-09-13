@@ -27,6 +27,7 @@ export default function SplashPage() {
             src={logoImage}
             alt="ConsulRain Logo"
             className="spinning-logo"
+            loading="lazy"
           />
         </div>
 

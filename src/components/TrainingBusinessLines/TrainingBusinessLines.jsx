@@ -58,6 +58,7 @@ const TrainingBusinessLines = () => {
                       src={service.image}
                       alt=""
                       className="mb-4 w-[50%] object-contain"
+                      loading="lazy"
                     />
                     <h6 className="">{service.title}</h6>
                   </div>

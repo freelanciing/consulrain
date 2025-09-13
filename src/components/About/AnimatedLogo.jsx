@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import logo from "../../assets/logo.png";
 
 /**
@@ -66,7 +66,7 @@ const AnimatedLogo = ({ sectionRefs }) => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [sectionRefs]);
+  }, [sectionRefs, spin]);
 
   // Spin animation: only update transform (rotation) on spin
   useEffect(() => {
@@ -92,6 +92,7 @@ const AnimatedLogo = ({ sectionRefs }) => {
     <img
       src={logo}
       alt="Logo background"
+      loading="lazy"
       style={{
         position: "fixed",
         zIndex: 0,

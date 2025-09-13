@@ -23,6 +23,7 @@ export default function Consultation() {
             src={ConsultationHeroImg}
             alt="Consultation Hero"
             className="consultation-hero-img"
+            loading="lazy"
           />
           <div className="consultation-hero-overlay" />
           <div className="consultation-hero-text">
@@ -83,6 +84,7 @@ export default function Consultation() {
                 src={ConsultationHeroImg}
                 alt="Consultation Team"
                 className="consultation-intro-img"
+                loading="lazy"
               />
               <div className="consultation-intro-img-overlay">
                 <div className="consultation-intro-experience">

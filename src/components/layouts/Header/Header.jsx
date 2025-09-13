@@ -16,7 +16,7 @@ export default function Header() {
           {/* Logo and Main Navigation */}
           <div className="flex items-center py-4 2xl:ps-20 xl:ps-17 lg:ps-8 ps-4 max-h-20 w-full ">
             <Link to="/" className="block" aria-label="Home">
-              <img src={logoimg} className="w-30 h-8" alt="Site Logo" />
+              <img src={logoimg} className="w-30 h-8" alt="Site Logo" loading="lazy" />
             </Link>
           </div>
 

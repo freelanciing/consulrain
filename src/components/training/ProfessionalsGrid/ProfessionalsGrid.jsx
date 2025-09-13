@@ -74,6 +74,7 @@ const ProfessionalsGrid = () => {
             src="/images/hero/people1.png"
             alt="Young man in white t-shirt"
             className="w-16 h-20 md:w-20 md:h-28 object-cover rounded"
+            loading="lazy"
           />
         </div>
 
@@ -83,6 +84,7 @@ const ProfessionalsGrid = () => {
             src="/images/hero/people2.png"
             alt="Woman in hijab, green blazer"
             className="w-20 h-28 md:w-24 md:h-36 object-cover rounded"
+            loading="lazy"
           />
         </div>
 
@@ -92,6 +94,7 @@ const ProfessionalsGrid = () => {
             src="/images/hero/people3.png"
             alt="Man in suit"
             className="w-24 h-32 md:w-28 md:h-40 object-cover rounded"
+            loading="lazy"
           />
         </div>
 
@@ -101,6 +104,7 @@ const ProfessionalsGrid = () => {
             src="/images/hero/people4.png"
             alt="Woman in hijab holding a laptop"
             className="w-16 h-20 md:w-20 md:h-28 object-cover rounded"
+            loading="lazy"
           />
         </div>
       </div>

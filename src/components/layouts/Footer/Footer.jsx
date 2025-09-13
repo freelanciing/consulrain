@@ -26,7 +26,7 @@ export default function Footer() {
               } justify-start min-w-[220px]`}
             >
               <div className="flex items-center gap-3 mb-3">
-                <img src={logo} alt="ConsulRain Logo" className="w-16 h-16" />
+                <img src={logo} alt="ConsulRain Logo" className="w-16 h-16" loading="lazy" />
                 <h2 className="text-white font-bold text-2xl whitespace-nowrap">
                   {t("footer.ConsulRainCo")}
                 </h2>

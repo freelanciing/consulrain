@@ -34,7 +34,7 @@ const IntegratedSolutions = () => {
           </div>
           <div className="right-column">
             <div className="image-container">
-              <img src="/images/whoWeAre.jpeg" alt="Integrated Solutions" />
+              <img src="/images/whoWeAre.jpeg" alt="Integrated Solutions" loading="lazy" />
               <div className="overlay">
                 <div className="experience mx-auto text-center">
                   <h3 >10+</h3>

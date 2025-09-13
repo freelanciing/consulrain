@@ -12,6 +12,7 @@ export default function StatsSection() {
           src="https://sprints.ai/assets/default/img/home/counters/learners.png"
           alt={t("stats.satisfiedUsers")}
           className="w-16 h-16 object-contain"
+          loading="lazy"
         />
       ),
       number: "100K+",
@@ -23,6 +24,7 @@ export default function StatsSection() {
           src="https://sprints.ai/assets/default/img/home/counters/clock.png"
           alt={t("stats.learningHours")}
           className="w-16 h-16 object-contain"
+          loading="lazy"
         />
       ),
       number: "2M+",
@@ -34,6 +36,7 @@ export default function StatsSection() {
           src="https://sprints.ai/assets/default/img/home/counters/world-pin.png"
           alt={t("stats.employmentRate")}
           className="w-16 h-16 object-contain"
+          loading="lazy"
         />
       ),
       number: "86%",
@@ -45,6 +48,7 @@ export default function StatsSection() {
           src="https://sprints.ai/assets/default/img/home/counters/world.png"
           alt={t("stats.impactedCountries")}
           className="w-16 h-16 object-contain"
+          loading="lazy"
         />
       ),
       number: "14+",

@@ -8,7 +8,7 @@ import "swiper/css/pagination";
 import SectionHeader from "../SectionHeader/SectionHeader";
 
 const OurPartners = () => {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const swiperContent = [
     "./images/aimco.png",
     "./images/aldaka.png",
@@ -65,6 +65,7 @@ const OurPartners = () => {
                     src={content}
                     alt={`Slide ${index}`}
                     className="h-12 mx-auto"
+                    loading="lazy"
                   />
                 </div>
               </SwiperSlide>

@@ -53,7 +53,7 @@ const Services = () => {
                                 <SwiperSlide key={i}>
                                   
                                     <div className='service-card rounded-lg bg-white  text-center mb-8 flex flex-col items-center justify-center min-h-[260px] h-full'>
-                                        <img src={service.image} alt="" className="mb-4 w-[50%] object-contain" />
+                                        <img src={service.image} alt="" className="mb-4 w-[50%] object-contain" loading="lazy" />
                                         <h6 className="">{service.title}</h6>
                                     </div>
                                 </SwiperSlide>
