@@ -257,13 +257,7 @@
     }
   },
   "About": {
-    "title": "About us",
-    "ourJourney": "Our Journey",
-    "ourJourneyContent": "Our journey as a distinguished regional consultancy and training firm began in Algeria, with our headquarters proudly established in Egypt. For over two decades, we have empowered organizations to find clarity amidst complexity, through thoughtful analysis, precise diagnosis, and bespoke solution design. We do not merely deliver services; we cultivate long-term partnerships, grounded in integrity, excellence, and a shared vision for lasting impact.",
-    "vision": "Our Vision",
-    "ourVisionContent": "To build impactful and enduring partnerships through tailored training and consulting services, empowering decision-makers across sectors to enhance value, drive growth, and foster sustainable development.",
-    "mission": "Our Mission",
-    "ourMissionContent": " Our mission goes beyond just providing training or consultation. We aim to empower organizations and maximum efficiency by integrated solutions."
+    "title": "About us"
   },
   "feasibility": {
     "title": "Feasibility Studies",
@@ -415,5 +409,41 @@
       }
     },
     "learnMore": "LEARN MORE"
+  },
+  "visionMission": {
+    "vision": {
+      "title": "Our Vision",
+      "subtitle": "To build impactful and enduring partnerships through tailored training and consulting services, empowering decision-makers across sectors to enhance value, drive growth, and foster sustainable development. We strive to be the region's leading catalyst for innovation, merging deep industry expertise with forward-thinking strategies. Our goal is to create a future where businesses are not only successful but also resilient and adaptive to market changes, setting new benchmarks for excellence and integrity in every engagement."
+    },
+    "mission": {
+      "title": "Our Mission",
+      "subtitle": "Our mission goes beyond just providing training or consultation. We aim to empower organizations and maximize efficiency by delivering integrated solutions that are both innovative and practical. We are committed to delivering measurable results by combining strategic insights with hands-on implementation, ensuring our clients achieve their most critical business objectives with clarity and confidence. Our approach is rooted in a deep understanding of our clients' unique challenges and a relentless drive to help them succeed."
+    },
+    "journey": {
+      "title": "Our Journey",
+      "subtitle": "Our journey as a distinguished regional consultancy and training firm began in Algeria, with our headquarters proudly established in Egypt. For over two decades, we have empowered organizations to find clarity amidst complexity, through thoughtful analysis, precise diagnosis, and bespoke solution design. We do not merely deliver services; we cultivate long-term partnerships, grounded in integrity, excellence, and a shared vision for lasting impact."
+    },
+    "learnMore": "LEARN MORE"
+  },
+  "integratedSolutions": {
+    "subtitle": "INTEGRATED SOLUTIONS",
+    "title": "We Offer a Wide Variety of IT Services",
+    "description": "Our team of experts provides a wide range of IT services to help your business succeed. We are committed to delivering high-quality solutions that meet your needs.",
+    "cards": {
+      "workers": {
+        "title": "Skilled Workers",
+        "description": "Our team consists of highly skilled and experienced professionals."
+      },
+      "process": {
+        "title": "Best Process",
+        "description": "We follow the best industry practices to deliver outstanding results."
+      }
+    },
+    "experience": "Years Of Experience",
+    "features": {
+      "expertise": "Cutting-Edge Expertise",
+      "approach": "Holistic Solutions Approach",
+      "collaboration": "Client-Centric Collaboration"
+    }
   }
 }

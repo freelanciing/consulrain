@@ -1,0 +1,102 @@
+.vision-mission-section {
+  position: relative;
+  background-image: url("/images/bgService.jpg");
+  background-size: cover;
+  background-position: center;
+  padding: 5rem 0;
+}
+
+.vision-mission-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(44, 95, 122, 0.85); /* Primary color overlay */
+  z-index: 1;
+}
+
+.vision-mission-section .container {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.cards-container {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.card {
+  background-color: #2d3748; /* Dark gray background */
+  color: #ffffff;
+  padding: 2rem;
+  border-radius: 8px;
+  width: 30%;
+  display: flex; /* Use flexbox for layout */
+  flex-direction: column; /* Stack items vertically */
+  min-width: 300px;
+  flex-grow: 1;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* Allow content to grow and fill space */
+}
+
+.card.highlighted {
+  background-color: #38b2ac; /* Teal color */
+}
+
+.card h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.card p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  flex-grow: 1; /* Allow paragraph to grow */
+}
+
+.learn-more-btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s;
+  text-align: center;
+  align-self: flex-start;
+  margin-top: auto; /* Push button to the bottom */
+}
+
+.card:not(.highlighted) .learn-more-btn {
+  background-color: #38b2ac;
+  color: #ffffff;
+}
+
+.card:not(.highlighted) .learn-more-btn:hover {
+  background-color: #2c7a7b;
+}
+
+.card.highlighted .learn-more-btn {
+  background-color: #2d3748;
+  color: #ffffff;
+}
+
+.card.highlighted .learn-more-btn:hover {
+  background-color: #1a202c;
+}
+
+.learn-more-btn span {
+  margin-left: 0.5rem;
+}

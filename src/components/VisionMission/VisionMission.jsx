@@ -1,0 +1,48 @@
+import React from "react";
+import { Link } from "react-router-dom";
+import "./VisionMission.css";
+import { useTranslation } from "react-i18next";
+
+const VisionMission = () => {
+  const { t } = useTranslation();
+  const cards = [
+    {
+      title: t("visionMission.vision.title"),
+      subtitle: t("visionMission.vision.subtitle"),
+    },
+    {
+      title: t("visionMission.mission.title"),
+      subtitle: t("visionMission.mission.subtitle"),
+      isHighlighted: true,
+    },
+    {
+      title: t("visionMission.journey.title"),
+      subtitle: t("visionMission.journey.subtitle"),
+    },
+  ];
+
+  return (
+    <section className="vision-mission-section mx-0">
+      <div className="container">
+        <div className="cards-container">
+          {cards.map((card, index) => (
+            <div
+              key={index}
+              className={`card ${card.isHighlighted ? "highlighted" : ""}`}
+            >
+              <div className="card-content">
+                <h2>{card.title}</h2>
+                <p>{card.subtitle}</p>
+                <Link to="/about" className="learn-more-btn">
+                  {t("visionMission.learnMore")} <span>&rarr;</span>
+                </Link>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default VisionMission;

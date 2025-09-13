@@ -4,12 +4,15 @@ import { EmpowerSection, StatsSection } from "../../components";
 import Founders from "../../components/foundersSection/Founders";
 import OurPartners from "../../components/PartnersSection/OurPartners";
 import Services from "../../components/OurServices/OurServices";
-
+import VisionMission from "../../components/VisionMission/VisionMission";
+import IntegratedSolutions from "../../components/IntegratedSolutions/IntegratedSolutions";
 
 export default function HomePage() {
   return (
     <div>
-      <HeroSection />
+      <HeroSection /> 
+      <IntegratedSolutions />
+      <VisionMission />
       <StatsSection />
       <EmpowerSection />
       <Services />

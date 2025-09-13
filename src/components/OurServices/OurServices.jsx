@@ -42,7 +42,7 @@ const OurServices = () => {
   return (
     <section id="offer" className="offer pt-5 mx-0">
       <div className="container">
-        <div className="offer__text text-center w-50 mx-auto">
+        <div className="offer__text text-center w-full lg:w-1/2   mx-auto">
           <span
             className="fs-6 text-uppercase text--orange mb-3 fw-bold"
             role="heading"
