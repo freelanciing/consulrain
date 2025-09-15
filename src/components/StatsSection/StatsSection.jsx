@@ -15,7 +15,7 @@ export default function StatsSection() {
           loading="lazy"
         />
       ),
-      number: "100K+",
+      number: "90%",
       label: t("stats.satisfiedUsers"),
     },
     {
@@ -27,7 +27,7 @@ export default function StatsSection() {
           loading="lazy"
         />
       ),
-      number: "2M+",
+      number: "20K+",
       label: t("stats.learningHours"),
     },
     {
@@ -39,8 +39,8 @@ export default function StatsSection() {
           loading="lazy"
         />
       ),
-      number: "86%",
-      label: t("stats.employmentRate"),
+      number: "95%",
+      label: t("stats.projectSuccessRate"),
     },
     {
       icon: (
@@ -51,14 +51,14 @@ export default function StatsSection() {
           loading="lazy"
         />
       ),
-      number: "14+",
+      number: "8+",
       label: t("stats.impactedCountries"),
     },
   ];
 
   return (
     <section
-      className="stats py-16 bg-primary-50 text-center"
+      className="stats py-16 bg-primary-50 text-center mx-0"
       role="region"
       aria-labelledby="stats-heading"
     >
@@ -68,7 +68,7 @@ export default function StatsSection() {
       <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
         <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
           {stats.map((stat, index) => (
-            <li key={index} className="flex items-center gap-6">
+            <li key={index} className="flex items-center gap-2">
               <div className="bg-blue-100 imgBg rounded-full flex-shrink-0">
                 {stat.icon}
               </div>

@@ -99,6 +99,7 @@
     "satisfiedUsers": "المستخدمون الراضون",
     "learningHours": "ساعات التعلم",
     "employmentRate": "معدل التوظيف",
+    "projectSuccessRate": "نسبة نجاح المشاريع",
     "impactedCountries": "البلدان المتأثرة"
   },
   "login": {
