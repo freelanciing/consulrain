@@ -106,12 +106,14 @@ export default function ContactUs() {
       <section className="contact-us-section min-h-screen bg-[#f7f7f7] flex flex-col justify-center items-center py-10">
         <div className="w-full max-w-5xl mx-auto bg-white rounded-xl shadow-lg p-0 flex flex-col md:flex-row overflow-hidden">
           {/* Left: Contact Form */}
-          <div className="flex-1 p-8 flex flex-col justify-center">
-            <h2 className="text-2xl font-bold mb-2 text-brand">
+          <div className="flex-1 p-8 flex flex-col justify-center text-center">
+            <h2 className="text-3xl font-bold mb-2 text-brand">
               {t("contact.formTitle")}
             </h2>
-            <p className="mb-6 text-brand-muted">{t("contact.formSubtitle")}</p>
-            <form onSubmit={handleSubmit} className="space-y-5">
+            <p className="mb-8 text-lg text-brand-muted">
+              {t("contact.formSubtitle")}
+            </p>
+            <form onSubmit={handleSubmit} className="space-y-5 text-left">
               <input
                 type="text"
                 name="name"
