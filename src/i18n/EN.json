@@ -355,7 +355,7 @@
   },
   "consultation": {
     "title": "Consultation",
-    "intro": "Our consultation is rooted in collaboration and strategic clarity. We partner closely with leadership teams to navigate complex business challenges, resolve operational challenges, and shape forward-thinking strategies that drive sustainable success.",
+    "intro": "Our consultation model is built on strategic collaboration and measurable outcomes. We partner with leadership teams to address complex business and operational challenges. Turning Strategy Into Impact We team up with leaders to crack tough challenges and spark real results—boosting performance, accelerating growth, and driving success through smart, KPI-driven strategies.",
     "showIntro": "Read More",
     "hideIntro": "Close",
     "scopeTitle": "Scope of Services",
@@ -371,9 +371,10 @@
     },
     "experience": "Years of Experience",
     "experiencePoints": {
-      "0": "Cutting-Edge Expertise",
-      "1": "Holistic Solutions Approach",
-      "2": "Client-Centric Collaboration"
+      "0": "Driving Measurable Success Through Strategic Consultation",
+      "1": "Operational Excellence",
+      "2": "Strategic Growth",
+      "3": "Customer Impact"
     },
     "contact": {
       "title": "The best",

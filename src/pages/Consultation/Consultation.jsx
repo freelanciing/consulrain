@@ -112,7 +112,7 @@ export default function Consultation() {
         <div className="consultation-intro-features">
           <div className="consultation-intro-left">
             <h2 className="consultation-intro-highlight">
-              {t("consultation.empower.title")}
+              {t("scopeOfServices.subtitle")}
             </h2>
             <h1 className="consultation-intro-title">
               {t("consultation.title")}
@@ -161,7 +161,7 @@ export default function Consultation() {
               />
               <div className="consultation-intro-img-overlay">
                 <div className="consultation-intro-experience">
-                  <span className="consultation-intro-years">10+</span>
+                  <span className="consultation-intro-years">20+</span>
                   <span className="consultation-intro-years-label">
                     {t("consultation.experience")}
                   </span>
