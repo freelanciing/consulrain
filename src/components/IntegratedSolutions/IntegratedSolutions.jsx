@@ -46,7 +46,7 @@ const IntegratedSolutions = () => {
               />
               <div className="overlay">
                 <div className="experience mx-auto text-center">
-                  <h3>10+</h3>
+                  <h3>20+</h3>
                   <p>{t("integratedSolutions.experience")}</p>
                 </div>
                 <div className="features">
