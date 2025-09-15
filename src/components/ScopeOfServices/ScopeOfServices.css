@@ -1,0 +1,17 @@
+.service-item {
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  padding: 8px;
+  border-radius: 6px;
+}
+
+.service-item:hover {
+  background-color: #f3f4f6; /* A light gray for hover effect */
+}
+
+.service-modal-list-item {
+  margin-bottom: 0.5rem;
+  padding-left: 1em;
+  position: relative;
+}
+

@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import checkmark from "../../../public/images/1.svg";
 import image from "../../../public/images/At the office-cuate.png";
+import ServiceModal from "../ServiceModal/ServiceModal"; // Import the modal
+import "./ScopeOfServices.css"; // Import the new CSS
 
 const ScopeOfServices = () => {
   const { t, i18n } = useTranslation();
   const isRtl = i18n.dir() === "rtl";
+  const [selectedService, setSelectedService] = useState(null);
 
   const serviceKeys = [
     "supplyChain",
@@ -22,6 +25,27 @@ const ScopeOfServices = () => {
     "foodSafety",
     "informationTechnology",
   ];
+
+  const handleServiceClick = (key) => {
+    setSelectedService(key);
+  };
+
+  const handleCloseModal = () => {
+    setSelectedService(null);
+  };
+
+  const renderDescription = (description) => {
+    return description.split("\n").map((line, index) => {
+      if (line.trim().startsWith("•")) {
+        return (
+          <li key={index} className="service-modal-list-item">
+            {line.replace("•", "").trim()}
+          </li>
+        );
+      }
+      return <p key={index}>{line}</p>;
+    });
+  };
 
   return (
     <section className="py-12 bg-white">
@@ -47,7 +71,16 @@ const ScopeOfServices = () => {
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4">
               {serviceKeys.map((key, index) => (
-                <div key={index} className="flex items-start">
+                <div
+                  key={index}
+                  className="flex items-start service-item"
+                  onClick={() => handleServiceClick(key)}
+                  role="button"
+                  tabIndex="0"
+                  onKeyDown={(e) =>
+                    e.key === "Enter" && handleServiceClick(key)
+                  }
+                >
                   <img
                     src={checkmark}
                     alt="checkmark"
@@ -69,6 +102,17 @@ const ScopeOfServices = () => {
           </div>
         </div>
       </div>
+      {selectedService && (
+        <ServiceModal
+          isOpen={!!selectedService}
+          onClose={handleCloseModal}
+          title={t(`scopeOfServices.serviceDetails.${selectedService}.title`)}
+        >
+          {renderDescription(
+            t(`scopeOfServices.serviceDetails.${selectedService}.description`)
+          )}
+        </ServiceModal>
+      )}
     </section>
   );
 };

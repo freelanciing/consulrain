@@ -427,8 +427,8 @@
   },
   "ourServicesSection": {
     "title": "Our Services",
-    "subtitle": "Empowering Your Team Training & Consultation",
-    "description": "Unlock your organization’s full potential with our expert-led training programs and strategic consultation services. We help you build skills, foster collaboration, and develop actionable strategies for sustainable growth and operational excellence.",
+    "subtitle": "Training, Consultation & Feasibility Studies",
+    "description": "Unlock your organization’s full potential with our expert-led training programs, strategic consultation, and in-depth feasibility studies. We help you build skills, foster collaboration, and develop actionable strategies for sustainable growth and operational excellence.",
     "cards": {
       "training": {
         "title": "Training",
@@ -498,22 +498,75 @@
   "scopeOfServices": {
     "title": "SCOPE OF SERVICES",
     "subtitle": "Ready to Empower",
-    "description": "With a deep understanding of today’s business dynamics we deliver targeted solutions across key areas:",
+    "description": "With a deep understanding of today’s business dynamics, we deliver targeted solutions across key domains:",
     "services": {
-      "supplyChain": "Supply chain & Logistics",
+      "supplyChain": "Supply Chain & Logistics",
+      "sales": "Sales",
       "administration": "Administration",
+      "marketing": "Marketing",
       "leadership": "Leadership",
-      "softskills": "Softskills",
+      "compliance": "Compliance",
+      "softskills": "Soft Skills",
+      "financeAccounting": "Finance & Accounting",
       "production": "Production",
+      "foodSafety": "Food Safety",
       "qualityControl": "Quality Control",
       "humanResources": "Human Resources",
-      "sales": "Sales",
-      "marketing": "Marketing",
-      "compliance": "Compliance",
-      "financeAccounting": "Finance & Accounting",
-      "foodSafety": "Food Safety",
       "informationTechnology": "Information Technology"
+    },
+    "serviceDetails": {
+      "supplyChain": {
+        "title": "Supply Chain & Logistics",
+        "description": "We help organizations streamline their supply chain operations, reduce lead times, and optimize logistics networks. Our programs focus on inventory management, demand forecasting, procurement strategies, and end-to-end visibility to enhance efficiency and reduce costs."
+      },
+      "sales": {
+        "title": "Sales",
+        "description": "Our sales training and consulting services empower teams to close more deals, build stronger client relationships, and improve conversion rates. We focus on consultative selling, sales pipeline management, negotiation skills, and performance analytics."
+      },
+      "administration": {
+        "title": "Administration",
+        "description": "We enhance administrative efficiency through process optimization, time management, and digital tools. Our training equips administrative professionals with the skills to support leadership, manage workflows, and maintain organizational agility."
+      },
+      "marketing": {
+        "title": "Marketing",
+        "description": "We support marketing teams in building data-driven strategies, enhancing brand positioning, and executing high-impact campaigns. Topics include digital marketing, customer segmentation, content strategy, and marketing analytics."
+      },
+      "leadership": {
+        "title": "Leadership",
+        "description": "Our leadership development programs are designed to cultivate visionary, emotionally intelligent, and results-driven leaders. We focus on strategic thinking, decision-making, team empowerment, and change management."
+      },
+      "compliance": {
+        "title": "Compliance",
+        "description": "We help organizations stay ahead of regulatory requirements and international standards. Our training covers key ISO certifications including:\n• ISO 9001 – Quality Management Systems\n• ISO 27001 – Information Security Management\n• ISO 22301 – Business Continuity Management\n• ISO 14001 – Environmental Management\n• ISO 45001 – Occupational Health & Safety\n• ISO 31000 – Risk Management Guidelines\n• ISO 22000 – Food Safety Management Systems\n\nWe also focus on internal controls, audit readiness, and ethical practices—ensuring full compliance, operational resilience, and reduced legal exposure."
+      },
+      "softskills": {
+        "title": "Soft Skills",
+        "description": "We develop essential interpersonal skills that drive collaboration, communication, and workplace harmony. Topics include emotional intelligence, conflict resolution, adaptability, and presentation skills."
+      },
+      "financeAccounting": {
+        "title": "Finance & Accounting",
+        "description": "We provide training and consulting in financial planning, budgeting, cost control, and reporting. Our programs help teams make informed decisions, ensure compliance, and improve financial performance."
+      },
+      "production": {
+        "title": "Production",
+        "description": "We work with production teams to enhance operational efficiency, reduce waste, and implement lean manufacturing principles. Our focus includes process improvement, quality assurance, and production planning."
+      },
+      "foodSafety": {
+        "title": "Food Safety",
+        "description": "We deliver specialized training in food safety standards, HACCP, and hygiene practices to ensure compliance & Conformance with local and international regulations—protecting both consumers and brand reputation. Our programs include:\n• Highfield-accredited courses – Covering food hygiene, allergen awareness, and safe food handling\n• Prerequisite Programs (PRPs) – Including not limited to: cleaning & sanitation, pest control, personal hygiene, and supplier management\n• Catering Services Compliance – Ensuring safe food preparation, storage, and service in commercial kitchens\n\nThis comprehensive approach helps organizations maintain high safety standards, meet regulatory requirements, and build trust with customers."
+      },
+      "qualityControl": {
+        "title": "Quality Control",
+        "description": "Our quality control programs focus on inspection techniques, root cause analysis, and continuous improvement. We help organizations maintain high standards and reduce defects across products and services."
+      },
+      "humanResources": {
+        "title": "Human Resources",
+        "description": "We support HR teams in talent acquisition, performance management, employee engagement, and organizational development. Our services align HR practices with business strategy to drive growth."
+      },
+      "informationTechnology": {
+        "title": "Information Technology",
+        "description": "We provide comprehensive IT training and consulting services designed to empower organizations in today’s digital landscape. Our programs cover:\n• Cybersecurity – Protecting digital assets through threat detection, risk mitigation, and compliance with global standards like ISO/IEC 27001.\n• Data Analytics – Equipping teams with tools and techniques to extract insights, visualize trends, and make data-driven decisions using platforms like Power BI, Tableau, and Python.\n• Cloud Computing – Training on cloud infrastructure, migration strategies, and services such as AWS, Microsoft Azure, and Google Cloud to enhance scalability and efficiency.\n• Digital Transformation – Guiding businesses through technology adoption, process automation, and innovation strategies to stay competitive and agile.\n• IT Governance & Compliance – Ensuring alignment with frameworks like COBIT, ITIL, and ISO standards for secure and efficient IT operations.\n• Software & Systems Training – Covering ERP systems, CRM platforms, and productivity tools to improve operational workflows and user proficiency.\n\nOur goal is to equip teams with the technical skills, strategic mindset, and digital fluency needed to thrive in a tech-driven world."
+      }
     }
-  },
-  "consultingAndTraining": "Consulting & Training"
+  }
 }
