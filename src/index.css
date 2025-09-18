@@ -47,7 +47,12 @@ body[lang="ar"] {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 } */
-
+nav a,
+nav a:visited,
+nav a:active {
+  color: #000 !important;
+  text-decoration: none;
+}
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 12px;
