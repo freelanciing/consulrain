@@ -1,0 +1,13 @@
+// Bootstrap partial import example for Vite/React
+// Create this file to import only the Bootstrap components you need
+// Then import this file in your main.jsx instead of the full bootstrap.min.css
+
+// Import only the Bootstrap SCSS modules you use
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/maps";
+@import "bootstrap/scss/mixins";
+// Example: Only import grid and buttons
+@import "bootstrap/scss/grid";
+@import "bootstrap/scss/buttons";
+// Add more as needed (see Bootstrap docs)

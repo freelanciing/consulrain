@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import "./FeasibilityStudies.css";
-
+import { Helmet } from "react-helmet-async";
 const services = [
   {
     key: "market",
@@ -72,6 +72,11 @@ export default function FeasibilityStudies() {
   const { t } = useTranslation();
   const [showModal, setShowModal] = useState(false);
   return (
+    <>
+         <Helmet>
+        <title>Feasibility Studies | ConsulRain</title>
+        <meta name="description" content="Explore our comprehensive feasibility studies for market, technical, financial, legal, and organizational analysis." />
+      </Helmet>
     <div className="feasibility-hero animate-fade-in">
       <div className="feasibility-hero-content">
         <h1 className="feasibility-title">{t("feasibility.title")}</h1>
@@ -131,5 +136,5 @@ export default function FeasibilityStudies() {
         ))}
       </div>
     </div>
-  );
+  </>);
 }

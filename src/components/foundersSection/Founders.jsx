@@ -8,8 +8,8 @@ import "swiper/css/pagination";
 import SectionHeader from "../SectionHeader/SectionHeader";
 import "./Founders.css";
 
-import sherinImg from "/images/hero/people1.png";
-import husseinImg from "/images/HusseinAfifi.png";
+import sherinImg from "/images/hero/people1.webp";
+import husseinImg from "/images/HusseinAfifi.webp";
 
 const Founders = () => {
   const { t, i18n } = useTranslation();
@@ -56,7 +56,7 @@ const Founders = () => {
                 "founders.of"
               )} ${founders.length}`}
             >
-              <div className="px-8 py-10 md:px-12 md:py-12 h-auto md:h-[500px] rounded-xl shadow-md flex flex-col md:flex-row items-center gap-8">
+              <div className="px-8 py-10 md:px-12 md:py-12 h-auto md:h-[500px] flex flex-col md:flex-row items-center gap-8">
                 <img
                   src={founder.img}
                   alt={founder.name}

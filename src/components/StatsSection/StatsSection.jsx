@@ -1,4 +1,3 @@
-// src/components/StatsSection/StatsSection.jsx
 import React from "react";
 import { useTranslation } from "react-i18next";
 
@@ -9,7 +8,7 @@ export default function StatsSection() {
     {
       icon: (
         <img
-          src="https://sprints.ai/assets/default/img/home/counters/learners.png"
+          src="/images/learners.webp"
           alt={t("stats.satisfiedUsers")}
           className="w-16 h-16 object-contain"
           loading="lazy"
@@ -21,7 +20,7 @@ export default function StatsSection() {
     {
       icon: (
         <img
-          src="https://sprints.ai/assets/default/img/home/counters/clock.png"
+          src="/images/clock.webp"
           alt={t("stats.learningHours")}
           className="w-16 h-16 object-contain"
           loading="lazy"
@@ -33,7 +32,7 @@ export default function StatsSection() {
     {
       icon: (
         <img
-          src="https://sprints.ai/assets/default/img/home/counters/world-pin.png"
+          src="/images/world-pin.webp"
           alt={t("stats.employmentRate")}
           className="w-16 h-16 object-contain"
           loading="lazy"
@@ -45,7 +44,7 @@ export default function StatsSection() {
     {
       icon: (
         <img
-          src="https://sprints.ai/assets/default/img/home/counters/world.png"
+          src="/images/world.webp"
           alt={t("stats.impactedCountries")}
           className="w-16 h-16 object-contain"
           loading="lazy"

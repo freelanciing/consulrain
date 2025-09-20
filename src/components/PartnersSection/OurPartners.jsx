@@ -10,15 +10,15 @@ import SectionHeader from "../SectionHeader/SectionHeader";
 const OurPartners = () => {
   const { t } = useTranslation();
   const partners = [
-    { src: "./images/aimco.png", alt: "Aimco" },
-    { src: "./images/aldaka.png", alt: "Aldaka" },
-    { src: "./images/anderen.png", alt: "Anderen" },
-    { src: "./images/arkoda.jpg", alt: "Arkoda" },
-    { src: "./images/mba_trading.jpg", alt: "MBA Trading" },
-    { src: "./images/osus.png", alt: "Osus" },
-    { src: "./images/rec.png", alt: "REC" },
-    { src: "./images/rustin.png", alt: "Rustin" },
-    { src: "./images/saudi_mix.png", alt: "Saudi Mix" },
+    { src: "./images/aimco.webp", alt: "Aimco" },
+    { src: "./images/aldaka.webp", alt: "Aldaka" },
+    { src: "./images/anderen.webp", alt: "Anderen" },
+    { src: "./images/arkoda.webp", alt: "Arkoda" },
+    { src: "./images/mba_trading.webp", alt: "MBA Trading" },
+    { src: "./images/osus.webp", alt: "Osus" },
+    { src: "./images/rec.webp", alt: "REC" },
+    { src: "./images/rustin.webp", alt: "Rustin" },
+    { src: "./images/saudi_mix.webp", alt: "Saudi Mix" },
   ];
   return (
     <>

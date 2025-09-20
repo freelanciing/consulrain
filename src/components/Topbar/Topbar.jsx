@@ -8,27 +8,27 @@ export default function Topbar() {
   const socialLinks = [
     {
       iconClass: "fab fa-facebook-f",
-      url: "https://facebook.com/consulrain",
+      url: "https://facebook.com",
       label: "Facebook",
     },
     {
       iconClass: "fab fa-snapchat-ghost",
-      url: "https://snapchat.com/add/consulrain",
+      url: "https://snapchat.com",
       label: "Snapchat",
     },
     {
       iconClass: "fab fa-linkedin-in",
-      url: "https://linkedin.com/company/consulrain",
+      url: "https://linkedin.com",
       label: "LinkedIn",
     },
     {
       iconClass: "fab fa-tiktok",
-      url: "https://tiktok.com/@consulrain",
+      url: "https://tiktok.com",
       label: "TikTok",
     },
     {
       iconClass: "fab fa-instagram",
-      url: "https://instagram.com/consulrain",
+      url: "https://instagram.com",
       label: "Instagram",
     },
   ];

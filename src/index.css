@@ -1,29 +1,19 @@
-/* @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
-/* glory font family */
-/*  */
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
-
-/* <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Glory:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet"> */
 @import "tailwindcss";
 @font-face {
-  font-family: "Dimashq";
-  src: url("./assets/fonts/alfont_com_خط-الإيغور.ttf") format("opentype");
+  font-family: "AlfontUyghur";
+  src: url("./assets/fonts/alfont_com_خط-الإيغور.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
-
 html[lang="en"],
 body[lang="en"] {
   font-family: "Montserrat", sans-serif !important;
 }
 html[lang="ar"],
 body[lang="ar"] {
-  font-family: "Dimashq", sans-serif !important;
+  font-family: "AlfontUyghur", sans-serif !important;
 }
 @layer base {
   * {
@@ -33,20 +23,6 @@ body[lang="ar"] {
     scroll-behavior: smooth;
   }
 }
-/*
-
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-} */
 nav a,
 nav a:visited,
 nav a:active {
@@ -241,12 +217,8 @@ html[lang="ar"] .footer-li:hover {
 
 @theme {
   /* --font-display: "Glory", sans-serif; */
-
   --font-display: "Montserrat", sans-serif;
-  /* --font-display: "Bangla MN", "Noto Sans Bengali", "Hind Siliguri", "Poppins",
-    sans-serif; */
-
-  /* the system colors */
+ /* the system colors */
 
   --color-primary-50: #e8eef1;
   --color-primary-100: #cfdde4;

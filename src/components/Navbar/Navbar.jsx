@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import { NavLink } from "react-router-dom";
 import { Menu } from "@headlessui/react";
 import TransButton from "../TransButton";
-import logo from "../../assets/logo.png";
+import logo from "../../assets/logo.webp";
 import Button from "../Button/Button";
 import "./Navbar.css";
 import "./DropdownPalette.css";

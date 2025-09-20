@@ -1,7 +1,7 @@
 import TransButton from "../../TransButton";
 import SocialFooter from "./SocialFooter";
 import { useTranslation } from "react-i18next";
-import logo from "/images/spinnerLogo.png";
+import logo from "/images/spinnerLogo.webp";
 import { NavLink } from "react-router-dom";
 
 export default function Footer() {

@@ -71,7 +71,7 @@ const ProfessionalsGrid = () => {
         {/* Person 1 (Top Left) */}
         <div className="absolute top-[10%] left-[2%] md:left-[5%] bg-pastel-blue rounded-xl p-1.5">
           <img
-            src="/images/hero/people1.png"
+            src="/images/hero/people1.webp"
             alt="Young man in white t-shirt"
             className="w-16 h-20 md:w-20 md:h-28 object-cover rounded"
             loading="lazy"
@@ -81,7 +81,7 @@ const ProfessionalsGrid = () => {
         {/* Person 2 (Center Left Woman in Hijab) */}
         <div className="absolute top-[40%] left-[10%] md:left-[15%] bg-pastel-green rounded-xl p-1.5">
           <img
-            src="/images/hero/people2.png"
+            src="/images/hero/people2.webp"
             alt="Woman in hijab, green blazer"
             className="w-20 h-28 md:w-24 md:h-36 object-cover rounded"
             loading="lazy"
@@ -91,7 +91,7 @@ const ProfessionalsGrid = () => {
         {/* Person 3 (Center Right Man in Suit) */}
         <div className="absolute top-[35%] right-[15%] md:right-[20%] bg-pastel-blue rounded-xl p-1.5">
           <img
-            src="/images/hero/people3.png"
+            src="/images/hero/people3.webp"
             alt="Man in suit"
             className="w-24 h-32 md:w-28 md:h-40 object-cover rounded"
             loading="lazy"
@@ -101,7 +101,7 @@ const ProfessionalsGrid = () => {
         {/* Person 4 (Top Right Woman in Hijab with Laptop) */}
         <div className="absolute top-[10%] right-[2%] md:right-[5%] bg-pastel-green rounded-xl p-1.5">
           <img
-            src="/images/hero/people4.png"
+            src="/images/hero/people4.webp"
             alt="Woman in hijab holding a laptop"
             className="w-16 h-20 md:w-20 md:h-28 object-cover rounded"
             loading="lazy"

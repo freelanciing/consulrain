@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import checkmark from "../../../public/images/1.svg";
-import image from "../../../public/images/At the office-cuate.png";
+import image from "../../../public/images/At the office-cuate.webp";
 import ServiceModal from "../ServiceModal/ServiceModal"; // Import the modal
 import "./ScopeOfServices.css"; // Import the new CSS
 

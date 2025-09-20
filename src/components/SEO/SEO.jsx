@@ -1,6 +1,6 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
-import logoImg from "../../assets/logo.png";
+import logoImg from "../../assets/logo.webp";
 
 const SEO = ({
   title = "ConsulRain - Professional Business Consulting Services",
@@ -17,6 +17,15 @@ const SEO = ({
       <meta name="description" content={description} />
       <meta name="keywords" content={keywords} />
       <meta name="author" content="ConsulRain" />
+
+      {/* Font Preload for Priority Loading */}
+      <link
+        rel="preload"
+        href="/assets/fonts/alfont_com_خط-الإيغور.ttf"
+        as="font"
+        type="font/ttf"
+        crossOrigin="anonymous"
+      />
 
       {/* Favicon */}
       <link rel="icon" type="image/png" href={logoImg} />

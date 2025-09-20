@@ -40,7 +40,7 @@ const IntegratedSolutions = () => {
           <div className="right-column">
             <div className="image-container">
               <img
-                src="/images/whoWeAre.jpeg"
+                src="/images/whoWeAre.webp"
                 alt={t("integratedSolutions.imageAlt")}
                 loading="lazy"
               />

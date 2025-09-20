@@ -53,7 +53,7 @@ const HeroSection = () => {
               width="180"
               height="180"
               loading="lazy"
-              src="/images/hero/people1.png"
+              src="/images/hero/people1.webp"
               alt={t("hero.alt.person1")}
             />
           </div>
@@ -63,7 +63,7 @@ const HeroSection = () => {
               width="180"
               height="180"
               loading="lazy"
-              src="/images/hero/people2.png"
+              src="/images/hero/people2.webp"
               alt={t("hero.alt.person2")}
             />
           </div>
@@ -75,7 +75,7 @@ const HeroSection = () => {
               width="180"
               height="180"
               loading="lazy"
-              src="/images/hero/people3.png"
+              src="/images/hero/people3.webp"
               alt={t("hero.alt.person3")}
             />
           </div>
@@ -88,7 +88,7 @@ const HeroSection = () => {
               width="180"
               height="180"
               loading="lazy"
-              src="/images/hero/people4.png"
+              src="/images/hero/people4.webp"
               alt={t("hero.alt.person4")}
             />
           </div>

@@ -3,7 +3,7 @@ import SplashPage from "./splash/SplashPage";
 import TrainingPage from "./training/TrainingPage";
 import About from "./about/About";
 import ContactUs from "../components/contactUs/contactUs";
-import ConsultationPage from "./consultation/Consultation";
+import ConsultationPage from "./Consultation/Consultation";
 import FeasibilityStudies from "./FeasibilityStudies/FeasibilityStudies";
 export {
   HomePage,

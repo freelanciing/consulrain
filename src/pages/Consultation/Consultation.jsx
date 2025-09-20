@@ -1,6 +1,6 @@
 import MySwal from "../../swalConfig";
 import ScopeOfServices from "../../components/ScopeOfServices/ScopeOfServices";
-import ConsultationHeroImg from "../../../public/images/Consultation.jpg";
+import ConsultationHeroImg from "../../../public/images/Consultation.webp";
 import { useTranslation } from "react-i18next";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -21,6 +21,7 @@ import {
   EMAILJS_USER_ID,
 } from "../../emailjsConfig";
 import "./Consultation.css";
+import { Helmet } from "react-helmet-async";
 
 export default function Consultation() {
   const { t } = useTranslation();
@@ -90,6 +91,13 @@ export default function Consultation() {
 
   return (
     <>
+      <Helmet>
+        <title>Consultation | ConsulRain</title>
+        <meta
+          name="description"
+          content="Request expert consultation from ConsulRain for management, finance, and operations solutions."
+        />
+      </Helmet>
       {/* Hero Section */}
       <div className="consultation-hero-img-section">
         <div className="consultation-hero-img-wrapper">

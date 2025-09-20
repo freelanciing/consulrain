@@ -1,11 +1,11 @@
 import React from "react";
-import logoimg from "../../../assets/completeLogo.png";
-import instagram from "../../../assets/Instagram.png";
-import facebook from "../../../assets/Facebook.png";
-import twitter from "../../../assets/Twitter.png";
-import linkedin from "../../../assets/Linkedin.png";
-import youtube from "../../../assets/Youtube.png";
-import whatsapp from "../../../assets/Whatsapp.png";
+import logoimg from "../../../assets/completeLogo.webp";
+import instagram from "../../../assets/Instagram.webp";
+import facebook from "../../../assets/Facebook.webp";
+import twitter from "../../../assets/Twitter.webp";
+import linkedin from "../../../assets/Linkedin.webp";
+import youtube from "../../../assets/Youtube.webp";
+import whatsapp from "../../../assets/Whatsapp.webp";
 export default function SocialFooter() {
   return (
     <div>

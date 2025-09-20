@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import MySwal from "../../swalConfig";
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -8,7 +9,7 @@ import {
   EMAILJS_TEMPLATE_ID,
   EMAILJS_USER_ID,
 } from "../../emailjsConfig";
-import headerBg from "../../assets/contact-header-bg.jpg";
+import headerBg from "../../assets/contact-header-bg.webp";
 import "./contact.css";
 
 export default function ContactUs() {
@@ -76,6 +77,13 @@ export default function ContactUs() {
 
   return (
     <>
+      <Helmet>
+        <title>Contact Us | ConsulRain</title>
+        <meta
+          name="description"
+          content="Contact ConsulRain for business inquiries, support, or partnership opportunities. We're here to help you grow."
+        />
+      </Helmet>
       {/* Header section */}
       <div
         className="w-full flex items-center justify-center mb-8"

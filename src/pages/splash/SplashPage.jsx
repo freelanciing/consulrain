@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import logoImage from "/public/images/spinnerLogo.png"; // Ensure the path is correct
+import logoImage from "/public/images/spinnerLogo.webp"; // Ensure the path is correct
 import { useTranslation } from "react-i18next";
 import "./SplashPage.css";
 

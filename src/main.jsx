@@ -5,7 +5,10 @@ import { HelmetProvider } from "react-helmet-async";
 import "./i18n";
 import { LanguageProvider } from "./context/LanguageContext.jsx";
 import "./index.css";
-import "bootstrap/dist/css/bootstrap.min.css";
+// To use Bootstrap partials, comment the next two lines and uncomment the partials import below
+// import "bootstrap/dist/css/bootstrap.min.css";
+// import "bootstrap/dist/js/bootstrap.bundle.min.js";
+import "./bootstrap-partials.scss";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import App from "./App.jsx";

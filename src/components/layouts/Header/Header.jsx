@@ -1,6 +1,6 @@
 import TransButton from "../../TransButton";
 // import { useTranslation } from "react-i18next";
-import logoimg from "../../../assets/logo.png";
+import logoimg from "../../../assets/logo.webp";
 import { Link, NavLink } from "react-router-dom";
 
 export default function Header() {
